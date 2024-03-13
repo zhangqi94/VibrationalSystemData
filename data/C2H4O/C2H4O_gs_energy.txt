@@ -1,0 +1,19 @@
+================================================================================
+file_name: /data/zhangqidata/Vibration/C2H4O/C2H4O_n_15_alp_1000_orb_1_rnvp_64_mlp_64_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_046600.pkl
+Summarize (1): E
+level 000:  E: 12461.561984245523 (0.037917560055) [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/zhangqidata/Vibration/C2H4O/C2H4O_n_15_alp_1000_orb_1_rnvp_16_mlp_128_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_046700.pkl
+Summarize (1): E
+level 000:  E: 12461.585216399324 (0.041216679909) [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/zhangqidata/Vibration/C2H4O/C2H4O_n_15_alp_1000_orb_1_rnvp_16_mlp_256_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_023100.pkl
+Summarize (1): E
+level 000:  E: 12461.738058423089 (0.076930240905) [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/zhangqidata/Vibration/C2H4O/C2H4O_n_15_alp_1000_orb_1_rnvp_16_mlp_256_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_031200.pkl
+Summarize (1): E
+level 000:  E: 12461.625051355213 (0.053118855879) [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE

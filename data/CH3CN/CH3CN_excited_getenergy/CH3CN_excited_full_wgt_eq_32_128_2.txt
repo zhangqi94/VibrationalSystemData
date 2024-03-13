@@ -1,0 +1,3107 @@
+jax.__version__: 0.4.24
+Tue Mar  5 16:17:11 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A800 80GB PCIe          Off | 00000000:25:00.0 Off |                  Off |
+| N/A   38C    P0              69W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+
+mode: CH3CN   w2_indices: nan   lam: nan
+n: 12   dim: 1   alpha: 1000.0
+flow_type: RNVP
+flow_depth: 32   mlp_width: 128   mlp_depth: 2
+mc_therm: 20   mc_steps: 200   mc_stddev: 0.2
+batch: 65536   acc_steps: 8   num_devices: 1
+mc_therm: 20   mc_steps: 200   mc_stddev: 0.2
+
+========== Initialize Hamiltonian ==========
+Harmonic oscillator:
+    mode: CH3CN, n: 12, dim: 1
+w0, harmonic constants: 12
+k30, non-zero terms: 108
+k40, non-zero terms: 191
+
+========== Initialize orbitals ==========
+Total number of orbitals: 84
+Energy of non-interacting system:
+    0, E: 9905.50, level: ZPE
+    1, E: 10266.50, level: v11
+    2, E: 10266.50, level: v12
+    3, E: 10627.50, level: 2v11
+    4, E: 10627.50, level: v11 + v12
+    5, E: 10627.50, level: 2v12
+    6, E: 10825.50, level: v4
+    7, E: 10966.50, level: v9
+    8, E: 10966.50, level: v10
+    9, E: 10988.50, level: 3v11
+    10, E: 10988.50, level: 2v11 + v12
+    11, E: 10988.50, level: v11 + 2v12
+    12, E: 10988.50, level: 3v12
+    13, E: 11186.50, level: v4 + v11
+    14, E: 11186.50, level: v4 + v12
+    15, E: 11318.50, level: v3
+    16, E: 11327.50, level: v9 + v11
+    17, E: 11327.50, level: v10 + v11
+    18, E: 11327.50, level: v9 + v12
+    19, E: 11327.50, level: v10 + v12
+    20, E: 11349.50, level: 4v11
+    21, E: 11349.50, level: 3v11 + v12
+    22, E: 11349.50, level: 2v11 + 2v12
+    23, E: 11349.50, level: v11 + 3v12
+    24, E: 11349.50, level: 4v12
+    25, E: 11392.50, level: v7
+    26, E: 11392.50, level: v8
+    27, E: 11547.50, level: v4 + 2v11
+    28, E: 11547.50, level: v4 + v11 + v12
+    29, E: 11547.50, level: v4 + 2v12
+    30, E: 11679.50, level: v3 + v11
+    31, E: 11679.50, level: v3 + v12
+    32, E: 11688.50, level: v9 + 2v11
+    33, E: 11688.50, level: v10 + 2v11
+    34, E: 11688.50, level: v9 + v11 + v12
+    35, E: 11688.50, level: v10 + v11 + v12
+    36, E: 11688.50, level: v9 + 2v12
+    37, E: 11688.50, level: v10 + 2v12
+    38, E: 11710.50, level: 5v11
+    39, E: 11710.50, level: 4v11 + v12
+    40, E: 11710.50, level: 3v11 + 2v12
+    41, E: 11710.50, level: 2v11 + 3v12
+    42, E: 11710.50, level: v11 + 4v12
+    43, E: 11710.50, level: 5v12
+    44, E: 11745.50, level: 2v4
+    45, E: 11753.50, level: v7 + v11
+    46, E: 11753.50, level: v8 + v11
+    47, E: 11753.50, level: v7 + v12
+    48, E: 11753.50, level: v8 + v12
+    49, E: 11886.50, level: v4 + v9
+    50, E: 11886.50, level: v4 + v10
+    51, E: 11908.50, level: v4 + 3v11
+    52, E: 11908.50, level: v4 + 2v11 + v12
+    53, E: 11908.50, level: v4 + v11 + 2v12
+    54, E: 11908.50, level: v4 + 3v12
+    55, E: 12027.50, level: 2v9
+    56, E: 12027.50, level: v9 + v10
+    57, E: 12027.50, level: 2v10
+    58, E: 12040.50, level: v3 + 2v11
+    59, E: 12040.50, level: v3 + v11 + v12
+    60, E: 12040.50, level: v3 + 2v12
+    61, E: 12049.50, level: v9 + 3v11
+    62, E: 12049.50, level: v10 + 3v11
+    63, E: 12049.50, level: v9 + 2v11 + v12
+    64, E: 12049.50, level: v10 + 2v11 + v12
+    65, E: 12049.50, level: v9 + v11 + 2v12
+    66, E: 12049.50, level: v10 + v11 + 2v12
+    67, E: 12049.50, level: v9 + 3v12
+    68, E: 12049.50, level: v10 + 3v12
+    69, E: 12071.50, level: 6v11
+    70, E: 12071.50, level: 5v11 + v12
+    71, E: 12071.50, level: 4v11 + 2v12
+    72, E: 12071.50, level: 3v11 + 3v12
+    73, E: 12071.50, level: 2v11 + 4v12
+    74, E: 12071.50, level: v11 + 5v12
+    75, E: 12071.50, level: 6v12
+    76, E: 12106.50, level: 2v4 + v11
+    77, E: 12106.50, level: 2v4 + v12
+    78, E: 12114.50, level: v7 + 2v11
+    79, E: 12114.50, level: v8 + 2v11
+    80, E: 12114.50, level: v7 + v11 + v12
+    81, E: 12114.50, level: v8 + v11 + v12
+    82, E: 12114.50, level: v7 + 2v12
+    83, E: 12114.50, level: v8 + 2v12
+
+========== Initialize flow model & logpsi_wavefunction ==========
+RNVP:    depth: 32 ,  mlp hidden layers: 128, 2
+    parameters in the flow model: 680716
+
+========== Check point ==========
+Number of GPU devices: 1
+x.shape: (1, 65536, 12, 1)
+
+========== Energy levels measured ==========
+Calculate these energy levels: (Energies for non-interacting systems)
+    000, E: 9905.500000, level: ZPE
+    001, E: 10266.500000, level: v11
+    002, E: 10266.500000, level: v12
+    003, E: 10627.500000, level: 2v11
+    004, E: 10627.500000, level: v11 + v12
+    005, E: 10627.500000, level: 2v12
+    006, E: 10825.500000, level: v4
+    007, E: 10966.500000, level: v9
+    008, E: 10966.500000, level: v10
+    009, E: 10988.500000, level: 3v11
+    010, E: 10988.500000, level: 2v11 + v12
+    011, E: 10988.500000, level: v11 + 2v12
+    012, E: 10988.500000, level: 3v12
+    013, E: 11186.500000, level: v4 + v11
+    014, E: 11186.500000, level: v4 + v12
+    015, E: 11318.500000, level: v3
+    016, E: 11327.500000, level: v9 + v11
+    017, E: 11327.500000, level: v10 + v11
+    018, E: 11327.500000, level: v9 + v12
+    019, E: 11327.500000, level: v10 + v12
+    020, E: 11349.500000, level: 4v11
+    021, E: 11349.500000, level: 3v11 + v12
+    022, E: 11349.500000, level: 2v11 + 2v12
+    023, E: 11349.500000, level: v11 + 3v12
+    024, E: 11349.500000, level: 4v12
+    025, E: 11392.500000, level: v7
+    026, E: 11392.500000, level: v8
+    027, E: 11547.500000, level: v4 + 2v11
+    028, E: 11547.500000, level: v4 + v11 + v12
+    029, E: 11547.500000, level: v4 + 2v12
+    030, E: 11679.500000, level: v3 + v11
+    031, E: 11679.500000, level: v3 + v12
+    032, E: 11688.500000, level: v9 + 2v11
+    033, E: 11688.500000, level: v10 + 2v11
+    034, E: 11688.500000, level: v9 + v11 + v12
+    035, E: 11688.500000, level: v10 + v11 + v12
+    036, E: 11688.500000, level: v9 + 2v12
+    037, E: 11688.500000, level: v10 + 2v12
+    038, E: 11710.500000, level: 5v11
+    039, E: 11710.500000, level: 4v11 + v12
+    040, E: 11710.500000, level: 3v11 + 2v12
+    041, E: 11710.500000, level: 2v11 + 3v12
+    042, E: 11710.500000, level: v11 + 4v12
+    043, E: 11710.500000, level: 5v12
+    044, E: 11745.500000, level: 2v4
+    045, E: 11753.500000, level: v7 + v11
+    046, E: 11753.500000, level: v8 + v11
+    047, E: 11753.500000, level: v7 + v12
+    048, E: 11753.500000, level: v8 + v12
+    049, E: 11886.500000, level: v4 + v9
+    050, E: 11886.500000, level: v4 + v10
+    051, E: 11908.500000, level: v4 + 3v11
+    052, E: 11908.500000, level: v4 + 2v11 + v12
+    053, E: 11908.500000, level: v4 + v11 + 2v12
+    054, E: 11908.500000, level: v4 + 3v12
+    055, E: 12027.500000, level: 2v9
+    056, E: 12027.500000, level: v9 + v10
+    057, E: 12027.500000, level: 2v10
+    058, E: 12040.500000, level: v3 + 2v11
+    059, E: 12040.500000, level: v3 + v11 + v12
+    060, E: 12040.500000, level: v3 + 2v12
+    061, E: 12049.500000, level: v9 + 3v11
+    062, E: 12049.500000, level: v10 + 3v11
+    063, E: 12049.500000, level: v9 + 2v11 + v12
+    064, E: 12049.500000, level: v10 + 2v11 + v12
+    065, E: 12049.500000, level: v9 + v11 + 2v12
+    066, E: 12049.500000, level: v10 + v11 + 2v12
+    067, E: 12049.500000, level: v9 + 3v12
+    068, E: 12049.500000, level: v10 + 3v12
+    069, E: 12071.500000, level: 6v11
+    070, E: 12071.500000, level: 5v11 + v12
+    071, E: 12071.500000, level: 4v11 + 2v12
+    072, E: 12071.500000, level: 3v11 + 3v12
+    073, E: 12071.500000, level: 2v11 + 4v12
+    074, E: 12071.500000, level: v11 + 5v12
+    075, E: 12071.500000, level: 6v12
+    076, E: 12106.500000, level: 2v4 + v11
+    077, E: 12106.500000, level: 2v4 + v12
+    078, E: 12114.500000, level: v7 + 2v11
+    079, E: 12114.500000, level: v8 + 2v11
+    080, E: 12114.500000, level: v7 + v11 + v12
+    081, E: 12114.500000, level: v8 + v11 + v12
+    082, E: 12114.500000, level: v7 + 2v12
+    083, E: 12114.500000, level: v8 + 2v12
+
+========== Start measuring ==========
+
+================================================================================
+---- thermal step: 1,  ac: 0.6272,  dx: 0.2000,  dt: 16.001 ----
+---- thermal step: 2,  ac: 0.6020,  dx: 0.2200,  dt: 5.647 ----
+---- thermal step: 3,  ac: 0.5665,  dx: 0.2420,  dt: 5.659 ----
+---- thermal step: 4,  ac: 0.5289,  dx: 0.2662,  dt: 5.689 ----
+---- thermal step: 5,  ac: 0.4894,  dx: 0.2928,  dt: 5.694 ----
+---- thermal step: 6,  ac: 0.4891,  dx: 0.2928,  dt: 5.714 ----
+---- thermal step: 7,  ac: 0.4896,  dx: 0.2928,  dt: 5.699 ----
+---- thermal step: 8,  ac: 0.4893,  dx: 0.2928,  dt: 5.719 ----
+---- thermal step: 9,  ac: 0.4893,  dx: 0.2928,  dt: 5.717 ----
+---- thermal step: 10,  ac: 0.4894,  dx: 0.2928,  dt: 5.719 ----
+---- thermal step: 11,  ac: 0.4894,  dx: 0.2928,  dt: 5.734 ----
+---- thermal step: 12,  ac: 0.4894,  dx: 0.2928,  dt: 5.734 ----
+---- thermal step: 13,  ac: 0.4895,  dx: 0.2928,  dt: 5.750 ----
+---- thermal step: 14,  ac: 0.4895,  dx: 0.2928,  dt: 5.753 ----
+---- thermal step: 15,  ac: 0.4897,  dx: 0.2928,  dt: 5.754 ----
+---- thermal step: 16,  ac: 0.4896,  dx: 0.2928,  dt: 5.773 ----
+---- thermal step: 17,  ac: 0.4892,  dx: 0.2928,  dt: 5.774 ----
+---- thermal step: 18,  ac: 0.4893,  dx: 0.2928,  dt: 5.782 ----
+---- thermal step: 19,  ac: 0.4894,  dx: 0.2928,  dt: 5.780 ----
+---- thermal step: 20,  ac: 0.4894,  dx: 0.2928,  dt: 5.791 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 1,  ac: 0.4892,  dx: 0.2928,  dt: 49.657 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 2,  ac: 0.4892,  dx: 0.2928,  dt: 43.696 ----
+---- accept step: 3,  ac: 0.4891,  dx: 0.2928,  dt: 7.314 ----
+---- accept step: 4,  ac: 0.4896,  dx: 0.2928,  dt: 7.296 ----
+---- accept step: 5,  ac: 0.4894,  dx: 0.2928,  dt: 7.352 ----
+---- accept step: 6,  ac: 0.4893,  dx: 0.2928,  dt: 7.362 ----
+---- accept step: 7,  ac: 0.4896,  dx: 0.2928,  dt: 7.397 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 8,  ac: 0.4893,  dx: 0.2928,  dt: 51.151 ----
+state: 0 [0 0 0 0 0 0 0 0 0 0 0 0] ZPE
+         E: 9838.758450 (0.080190)  K: 4890.103386 (3.218095)  V: 4948.655063 (3.224408)
+         ac: 0.4893  dt: 307.301
+
+================================================================================
+---- thermal step: 1,  ac: 0.4689,  dx: 0.2928,  dt: 5.685 ----
+---- thermal step: 2,  ac: 0.5131,  dx: 0.2635,  dt: 5.691 ----
+---- thermal step: 3,  ac: 0.5130,  dx: 0.2635,  dt: 5.712 ----
+---- thermal step: 4,  ac: 0.5130,  dx: 0.2635,  dt: 5.710 ----
+---- thermal step: 5,  ac: 0.5131,  dx: 0.2635,  dt: 5.727 ----
+---- thermal step: 6,  ac: 0.5128,  dx: 0.2635,  dt: 5.726 ----
+---- thermal step: 7,  ac: 0.5133,  dx: 0.2635,  dt: 5.725 ----
+---- thermal step: 8,  ac: 0.5131,  dx: 0.2635,  dt: 5.744 ----
+---- thermal step: 9,  ac: 0.5131,  dx: 0.2635,  dt: 5.750 ----
+---- thermal step: 10,  ac: 0.5130,  dx: 0.2635,  dt: 5.756 ----
+---- thermal step: 11,  ac: 0.5128,  dx: 0.2635,  dt: 5.761 ----
+---- thermal step: 12,  ac: 0.5130,  dx: 0.2635,  dt: 5.775 ----
+---- thermal step: 13,  ac: 0.5133,  dx: 0.2635,  dt: 5.765 ----
+---- thermal step: 14,  ac: 0.5130,  dx: 0.2635,  dt: 5.783 ----
+---- thermal step: 15,  ac: 0.5130,  dx: 0.2635,  dt: 5.792 ----
+---- thermal step: 16,  ac: 0.5131,  dx: 0.2635,  dt: 5.807 ----
+---- thermal step: 17,  ac: 0.5131,  dx: 0.2635,  dt: 5.805 ----
+---- thermal step: 18,  ac: 0.5130,  dx: 0.2635,  dt: 5.809 ----
+---- thermal step: 19,  ac: 0.5131,  dx: 0.2635,  dt: 5.808 ----
+---- thermal step: 20,  ac: 0.5132,  dx: 0.2635,  dt: 5.808 ----
+---- accept step: 1,  ac: 0.5129,  dx: 0.2635,  dt: 7.443 ----
+---- accept step: 2,  ac: 0.5128,  dx: 0.2635,  dt: 7.519 ----
+---- accept step: 3,  ac: 0.5131,  dx: 0.2635,  dt: 7.483 ----
+---- accept step: 4,  ac: 0.5130,  dx: 0.2635,  dt: 7.483 ----
+---- accept step: 5,  ac: 0.5132,  dx: 0.2635,  dt: 7.492 ----
+---- accept step: 6,  ac: 0.5131,  dx: 0.2635,  dt: 7.486 ----
+---- accept step: 7,  ac: 0.5129,  dx: 0.2635,  dt: 7.494 ----
+---- accept step: 8,  ac: 0.5131,  dx: 0.2635,  dt: 7.501 ----
+state: 1 [0 0 0 0 0 0 0 0 0 0 1 0] v11
+         E: 10199.520937 (0.079076)  K: 5074.198438 (3.224122)  V: 5125.322499 (3.229659)
+         ac: 0.5130  dt: 175.224
+
+================================================================================
+---- thermal step: 1,  ac: 0.5132,  dx: 0.2635,  dt: 5.821 ----
+---- thermal step: 2,  ac: 0.5129,  dx: 0.2635,  dt: 5.842 ----
+---- thermal step: 3,  ac: 0.5133,  dx: 0.2635,  dt: 5.827 ----
+---- thermal step: 4,  ac: 0.5130,  dx: 0.2635,  dt: 5.831 ----
+---- thermal step: 5,  ac: 0.5132,  dx: 0.2635,  dt: 5.836 ----
+---- thermal step: 6,  ac: 0.5130,  dx: 0.2635,  dt: 5.830 ----
+---- thermal step: 7,  ac: 0.5131,  dx: 0.2635,  dt: 5.834 ----
+---- thermal step: 8,  ac: 0.5132,  dx: 0.2635,  dt: 5.830 ----
+---- thermal step: 9,  ac: 0.5130,  dx: 0.2635,  dt: 5.836 ----
+---- thermal step: 10,  ac: 0.5128,  dx: 0.2635,  dt: 5.834 ----
+---- thermal step: 11,  ac: 0.5130,  dx: 0.2635,  dt: 5.833 ----
+---- thermal step: 12,  ac: 0.5132,  dx: 0.2635,  dt: 5.824 ----
+---- thermal step: 13,  ac: 0.5132,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.5129,  dx: 0.2635,  dt: 5.840 ----
+---- thermal step: 15,  ac: 0.5127,  dx: 0.2635,  dt: 5.838 ----
+---- thermal step: 16,  ac: 0.5131,  dx: 0.2635,  dt: 5.846 ----
+---- thermal step: 17,  ac: 0.5132,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 18,  ac: 0.5130,  dx: 0.2635,  dt: 5.842 ----
+---- thermal step: 19,  ac: 0.5132,  dx: 0.2635,  dt: 5.843 ----
+---- thermal step: 20,  ac: 0.5132,  dx: 0.2635,  dt: 5.844 ----
+---- accept step: 1,  ac: 0.5132,  dx: 0.2635,  dt: 7.447 ----
+---- accept step: 2,  ac: 0.5130,  dx: 0.2635,  dt: 7.536 ----
+---- accept step: 3,  ac: 0.5131,  dx: 0.2635,  dt: 7.533 ----
+---- accept step: 4,  ac: 0.5131,  dx: 0.2635,  dt: 7.524 ----
+---- accept step: 5,  ac: 0.5128,  dx: 0.2635,  dt: 7.490 ----
+---- accept step: 6,  ac: 0.5130,  dx: 0.2635,  dt: 7.531 ----
+---- accept step: 7,  ac: 0.5130,  dx: 0.2635,  dt: 7.529 ----
+---- accept step: 8,  ac: 0.5131,  dx: 0.2635,  dt: 7.519 ----
+state: 2 [0 0 0 0 0 0 0 0 0 0 0 1] v12
+         E: 10199.494667 (0.079747)  K: 5065.908126 (3.237662)  V: 5133.586541 (3.243525)
+         ac: 0.5130  dt: 177.020
+
+================================================================================
+---- thermal step: 1,  ac: 0.4901,  dx: 0.2635,  dt: 5.857 ----
+---- thermal step: 2,  ac: 0.4972,  dx: 0.2635,  dt: 5.874 ----
+---- thermal step: 3,  ac: 0.4980,  dx: 0.2635,  dt: 5.877 ----
+---- thermal step: 4,  ac: 0.4982,  dx: 0.2635,  dt: 5.881 ----
+---- thermal step: 5,  ac: 0.4983,  dx: 0.2635,  dt: 5.878 ----
+---- thermal step: 6,  ac: 0.4983,  dx: 0.2635,  dt: 5.876 ----
+---- thermal step: 7,  ac: 0.4982,  dx: 0.2635,  dt: 5.879 ----
+---- thermal step: 8,  ac: 0.4982,  dx: 0.2635,  dt: 5.876 ----
+---- thermal step: 9,  ac: 0.4984,  dx: 0.2635,  dt: 5.878 ----
+---- thermal step: 10,  ac: 0.4984,  dx: 0.2635,  dt: 5.876 ----
+---- thermal step: 11,  ac: 0.4984,  dx: 0.2635,  dt: 5.876 ----
+---- thermal step: 12,  ac: 0.4983,  dx: 0.2635,  dt: 5.866 ----
+---- thermal step: 13,  ac: 0.4977,  dx: 0.2635,  dt: 5.879 ----
+---- thermal step: 14,  ac: 0.4982,  dx: 0.2635,  dt: 5.887 ----
+---- thermal step: 15,  ac: 0.4983,  dx: 0.2635,  dt: 5.868 ----
+---- thermal step: 16,  ac: 0.4981,  dx: 0.2635,  dt: 5.870 ----
+---- thermal step: 17,  ac: 0.4982,  dx: 0.2635,  dt: 5.873 ----
+---- thermal step: 18,  ac: 0.4984,  dx: 0.2635,  dt: 5.873 ----
+---- thermal step: 19,  ac: 0.4984,  dx: 0.2635,  dt: 5.882 ----
+---- thermal step: 20,  ac: 0.4983,  dx: 0.2635,  dt: 5.870 ----
+---- accept step: 1,  ac: 0.4985,  dx: 0.2635,  dt: 7.478 ----
+---- accept step: 2,  ac: 0.4982,  dx: 0.2635,  dt: 7.549 ----
+---- accept step: 3,  ac: 0.4983,  dx: 0.2635,  dt: 7.562 ----
+---- accept step: 4,  ac: 0.4983,  dx: 0.2635,  dt: 7.554 ----
+---- accept step: 5,  ac: 0.4981,  dx: 0.2635,  dt: 7.564 ----
+---- accept step: 6,  ac: 0.4985,  dx: 0.2635,  dt: 7.558 ----
+---- accept step: 7,  ac: 0.4985,  dx: 0.2635,  dt: 7.560 ----
+---- accept step: 8,  ac: 0.4983,  dx: 0.2635,  dt: 7.564 ----
+state: 3 [0 0 0 0 0 0 0 0 0 0 2 0] 2v11
+         E: 10562.250042 (0.079550)  K: 5257.424221 (3.245457)  V: 5304.825821 (3.250013)
+         ac: 0.4983  dt: 178.063
+
+================================================================================
+---- thermal step: 1,  ac: 0.4947,  dx: 0.2635,  dt: 5.883 ----
+---- thermal step: 2,  ac: 0.4940,  dx: 0.2635,  dt: 5.878 ----
+---- thermal step: 3,  ac: 0.4939,  dx: 0.2635,  dt: 5.880 ----
+---- thermal step: 4,  ac: 0.4941,  dx: 0.2635,  dt: 5.878 ----
+---- thermal step: 5,  ac: 0.4939,  dx: 0.2635,  dt: 5.878 ----
+---- thermal step: 6,  ac: 0.4941,  dx: 0.2635,  dt: 5.880 ----
+---- thermal step: 7,  ac: 0.4940,  dx: 0.2635,  dt: 5.877 ----
+---- thermal step: 8,  ac: 0.4943,  dx: 0.2635,  dt: 5.894 ----
+---- thermal step: 9,  ac: 0.4942,  dx: 0.2635,  dt: 5.904 ----
+---- thermal step: 10,  ac: 0.4939,  dx: 0.2635,  dt: 5.882 ----
+---- thermal step: 11,  ac: 0.4939,  dx: 0.2635,  dt: 5.869 ----
+---- thermal step: 12,  ac: 0.4938,  dx: 0.2635,  dt: 5.866 ----
+---- thermal step: 13,  ac: 0.4941,  dx: 0.2635,  dt: 5.882 ----
+---- thermal step: 14,  ac: 0.4942,  dx: 0.2635,  dt: 5.868 ----
+---- thermal step: 15,  ac: 0.4939,  dx: 0.2635,  dt: 5.865 ----
+---- thermal step: 16,  ac: 0.4938,  dx: 0.2635,  dt: 5.864 ----
+---- thermal step: 17,  ac: 0.4936,  dx: 0.2635,  dt: 5.867 ----
+---- thermal step: 18,  ac: 0.4941,  dx: 0.2635,  dt: 5.868 ----
+---- thermal step: 19,  ac: 0.4940,  dx: 0.2635,  dt: 5.872 ----
+---- thermal step: 20,  ac: 0.4942,  dx: 0.2635,  dt: 5.865 ----
+---- accept step: 1,  ac: 0.4938,  dx: 0.2635,  dt: 7.512 ----
+---- accept step: 2,  ac: 0.4942,  dx: 0.2635,  dt: 7.575 ----
+---- accept step: 3,  ac: 0.4940,  dx: 0.2635,  dt: 7.518 ----
+---- accept step: 4,  ac: 0.4939,  dx: 0.2635,  dt: 7.522 ----
+---- accept step: 5,  ac: 0.4938,  dx: 0.2635,  dt: 7.514 ----
+---- accept step: 6,  ac: 0.4938,  dx: 0.2635,  dt: 7.501 ----
+---- accept step: 7,  ac: 0.4942,  dx: 0.2635,  dt: 7.507 ----
+---- accept step: 8,  ac: 0.4943,  dx: 0.2635,  dt: 7.542 ----
+state: 4 [0 0 0 0 0 0 0 0 0 0 1 1] v11 + v12
+         E: 10561.771954 (0.078953)  K: 5250.930168 (3.243688)  V: 5310.841786 (3.248397)
+         ac: 0.4940  dt: 177.888
+
+================================================================================
+---- thermal step: 1,  ac: 0.4978,  dx: 0.2635,  dt: 5.845 ----
+---- thermal step: 2,  ac: 0.4981,  dx: 0.2635,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.4983,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 4,  ac: 0.4982,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 5,  ac: 0.4983,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 6,  ac: 0.4985,  dx: 0.2635,  dt: 5.849 ----
+---- thermal step: 7,  ac: 0.4983,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 8,  ac: 0.4983,  dx: 0.2635,  dt: 5.856 ----
+---- thermal step: 9,  ac: 0.4983,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4982,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.4984,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.4984,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.4981,  dx: 0.2635,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.4983,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 15,  ac: 0.4984,  dx: 0.2635,  dt: 5.855 ----
+---- thermal step: 16,  ac: 0.4980,  dx: 0.2635,  dt: 5.861 ----
+---- thermal step: 17,  ac: 0.4981,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.4984,  dx: 0.2635,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.4982,  dx: 0.2635,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.4981,  dx: 0.2635,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.4983,  dx: 0.2635,  dt: 7.440 ----
+---- accept step: 2,  ac: 0.4980,  dx: 0.2635,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.4984,  dx: 0.2635,  dt: 7.516 ----
+---- accept step: 4,  ac: 0.4982,  dx: 0.2635,  dt: 7.506 ----
+---- accept step: 5,  ac: 0.4984,  dx: 0.2635,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.4984,  dx: 0.2635,  dt: 7.516 ----
+---- accept step: 7,  ac: 0.4985,  dx: 0.2635,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.4983,  dx: 0.2635,  dt: 7.514 ----
+state: 5 [0 0 0 0 0 0 0 0 0 0 0 2] 2v12
+         E: 10562.272294 (0.079671)  K: 5249.771362 (3.249093)  V: 5312.500932 (3.253919)
+         ac: 0.4983  dt: 177.221
+
+================================================================================
+---- thermal step: 1,  ac: 0.5135,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 2,  ac: 0.5138,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 3,  ac: 0.5136,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 4,  ac: 0.5137,  dx: 0.2635,  dt: 5.849 ----
+---- thermal step: 5,  ac: 0.5135,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.5134,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 7,  ac: 0.5134,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 8,  ac: 0.5134,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 9,  ac: 0.5135,  dx: 0.2635,  dt: 5.849 ----
+---- thermal step: 10,  ac: 0.5135,  dx: 0.2635,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.5135,  dx: 0.2635,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.5136,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 14,  ac: 0.5135,  dx: 0.2635,  dt: 5.849 ----
+---- thermal step: 15,  ac: 0.5133,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 16,  ac: 0.5134,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 17,  ac: 0.5134,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 18,  ac: 0.5136,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.5133,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 20,  ac: 0.5135,  dx: 0.2635,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.5135,  dx: 0.2635,  dt: 7.428 ----
+---- accept step: 2,  ac: 0.5135,  dx: 0.2635,  dt: 7.509 ----
+---- accept step: 3,  ac: 0.5135,  dx: 0.2635,  dt: 7.500 ----
+---- accept step: 4,  ac: 0.5136,  dx: 0.2635,  dt: 7.505 ----
+---- accept step: 5,  ac: 0.5134,  dx: 0.2635,  dt: 7.501 ----
+---- accept step: 6,  ac: 0.5135,  dx: 0.2635,  dt: 7.513 ----
+---- accept step: 7,  ac: 0.5136,  dx: 0.2635,  dt: 7.502 ----
+---- accept step: 8,  ac: 0.5134,  dx: 0.2635,  dt: 7.512 ----
+state: 6 [0 0 0 1 0 0 0 0 0 0 0 0] v4
+         E: 10738.061772 (0.093753)  K: 5340.894751 (3.287510)  V: 5397.167021 (3.290005)
+         ac: 0.5135  dt: 177.107
+
+================================================================================
+---- thermal step: 1,  ac: 0.5138,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 2,  ac: 0.5137,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.5138,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 4,  ac: 0.5138,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 5,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 6,  ac: 0.5136,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 7,  ac: 0.5138,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 8,  ac: 0.5139,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 9,  ac: 0.5136,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 10,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 11,  ac: 0.5138,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.5138,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.5136,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 14,  ac: 0.5135,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 15,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.5139,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 17,  ac: 0.5137,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 18,  ac: 0.5136,  dx: 0.2635,  dt: 5.847 ----
+---- thermal step: 19,  ac: 0.5136,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 20,  ac: 0.5138,  dx: 0.2635,  dt: 5.849 ----
+---- accept step: 1,  ac: 0.5135,  dx: 0.2635,  dt: 7.433 ----
+---- accept step: 2,  ac: 0.5138,  dx: 0.2635,  dt: 7.508 ----
+---- accept step: 3,  ac: 0.5137,  dx: 0.2635,  dt: 7.500 ----
+---- accept step: 4,  ac: 0.5138,  dx: 0.2635,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.5137,  dx: 0.2635,  dt: 7.504 ----
+---- accept step: 6,  ac: 0.5140,  dx: 0.2635,  dt: 7.500 ----
+---- accept step: 7,  ac: 0.5135,  dx: 0.2635,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.5137,  dx: 0.2635,  dt: 7.514 ----
+state: 7 [0 0 0 0 0 0 0 0 1 0 0 0] v9
+         E: 10873.304782 (0.088966)  K: 5397.956588 (3.298696)  V: 5475.348194 (3.300344)
+         ac: 0.5137  dt: 177.090
+
+================================================================================
+---- thermal step: 1,  ac: 0.5135,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 2,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 3,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 4,  ac: 0.5137,  dx: 0.2635,  dt: 5.848 ----
+---- thermal step: 5,  ac: 0.5137,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.5139,  dx: 0.2635,  dt: 5.850 ----
+---- thermal step: 7,  ac: 0.5137,  dx: 0.2635,  dt: 5.860 ----
+---- thermal step: 8,  ac: 0.5138,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 9,  ac: 0.5135,  dx: 0.2635,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.5140,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 11,  ac: 0.5138,  dx: 0.2635,  dt: 5.851 ----
+---- thermal step: 12,  ac: 0.5137,  dx: 0.2635,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.5136,  dx: 0.2635,  dt: 5.855 ----
+---- thermal step: 14,  ac: 0.5135,  dx: 0.2635,  dt: 5.855 ----
+---- thermal step: 15,  ac: 0.5139,  dx: 0.2635,  dt: 5.858 ----
+---- thermal step: 16,  ac: 0.5137,  dx: 0.2635,  dt: 5.855 ----
+---- thermal step: 17,  ac: 0.5139,  dx: 0.2635,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.5138,  dx: 0.2635,  dt: 5.855 ----
+---- thermal step: 19,  ac: 0.5135,  dx: 0.2635,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.5138,  dx: 0.2635,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5134,  dx: 0.2635,  dt: 7.442 ----
+---- accept step: 2,  ac: 0.5137,  dx: 0.2635,  dt: 7.521 ----
+---- accept step: 3,  ac: 0.5137,  dx: 0.2635,  dt: 7.509 ----
+---- accept step: 4,  ac: 0.5138,  dx: 0.2635,  dt: 7.514 ----
+---- accept step: 5,  ac: 0.5135,  dx: 0.2635,  dt: 7.518 ----
+---- accept step: 6,  ac: 0.5138,  dx: 0.2635,  dt: 7.515 ----
+---- accept step: 7,  ac: 0.5136,  dx: 0.2635,  dt: 7.524 ----
+---- accept step: 8,  ac: 0.5136,  dx: 0.2635,  dt: 7.520 ----
+state: 8 [0 0 0 0 0 0 0 0 0 1 0 0] v10
+         E: 10873.439260 (0.088914)  K: 5395.286808 (3.300405)  V: 5478.152453 (3.301871)
+         ac: 0.5136  dt: 177.261
+
+================================================================================
+---- thermal step: 1,  ac: 0.4717,  dx: 0.2635,  dt: 5.872 ----
+---- thermal step: 2,  ac: 0.5249,  dx: 0.2372,  dt: 5.873 ----
+---- thermal step: 3,  ac: 0.5273,  dx: 0.2372,  dt: 5.873 ----
+---- thermal step: 4,  ac: 0.4903,  dx: 0.2609,  dt: 5.873 ----
+---- thermal step: 5,  ac: 0.4905,  dx: 0.2609,  dt: 5.872 ----
+---- thermal step: 6,  ac: 0.4907,  dx: 0.2609,  dt: 5.875 ----
+---- thermal step: 7,  ac: 0.4907,  dx: 0.2609,  dt: 5.875 ----
+---- thermal step: 8,  ac: 0.4910,  dx: 0.2609,  dt: 5.877 ----
+---- thermal step: 9,  ac: 0.4908,  dx: 0.2609,  dt: 5.876 ----
+---- thermal step: 10,  ac: 0.4906,  dx: 0.2609,  dt: 5.875 ----
+---- thermal step: 11,  ac: 0.4906,  dx: 0.2609,  dt: 5.875 ----
+---- thermal step: 12,  ac: 0.4907,  dx: 0.2609,  dt: 5.885 ----
+---- thermal step: 13,  ac: 0.4909,  dx: 0.2609,  dt: 5.880 ----
+---- thermal step: 14,  ac: 0.4907,  dx: 0.2609,  dt: 5.879 ----
+---- thermal step: 15,  ac: 0.4907,  dx: 0.2609,  dt: 5.874 ----
+---- thermal step: 16,  ac: 0.4906,  dx: 0.2609,  dt: 5.882 ----
+---- thermal step: 17,  ac: 0.4905,  dx: 0.2609,  dt: 5.872 ----
+---- thermal step: 18,  ac: 0.4909,  dx: 0.2609,  dt: 5.875 ----
+---- thermal step: 19,  ac: 0.4909,  dx: 0.2609,  dt: 5.874 ----
+---- thermal step: 20,  ac: 0.4908,  dx: 0.2609,  dt: 5.874 ----
+---- accept step: 1,  ac: 0.4910,  dx: 0.2609,  dt: 7.459 ----
+---- accept step: 2,  ac: 0.4908,  dx: 0.2609,  dt: 7.540 ----
+---- accept step: 3,  ac: 0.4907,  dx: 0.2609,  dt: 7.529 ----
+---- accept step: 4,  ac: 0.4908,  dx: 0.2609,  dt: 7.530 ----
+---- accept step: 5,  ac: 0.4908,  dx: 0.2609,  dt: 7.527 ----
+---- accept step: 6,  ac: 0.4907,  dx: 0.2609,  dt: 7.536 ----
+---- accept step: 7,  ac: 0.4906,  dx: 0.2609,  dt: 7.524 ----
+---- accept step: 8,  ac: 0.4908,  dx: 0.2609,  dt: 7.537 ----
+state: 9 [0 0 0 0 0 0 0 0 0 0 3 0] 3v11
+         E: 10926.817542 (0.081667)  K: 5428.659126 (3.283187)  V: 5498.158416 (3.287483)
+         ac: 0.4908  dt: 177.835
+
+================================================================================
+---- thermal step: 1,  ac: 0.4853,  dx: 0.2609,  dt: 5.866 ----
+---- thermal step: 2,  ac: 0.4841,  dx: 0.2609,  dt: 5.868 ----
+---- thermal step: 3,  ac: 0.4840,  dx: 0.2609,  dt: 5.864 ----
+---- thermal step: 4,  ac: 0.4842,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 5,  ac: 0.4843,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 6,  ac: 0.4840,  dx: 0.2609,  dt: 5.866 ----
+---- thermal step: 7,  ac: 0.4840,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 8,  ac: 0.4841,  dx: 0.2609,  dt: 5.866 ----
+---- thermal step: 9,  ac: 0.4841,  dx: 0.2609,  dt: 5.866 ----
+---- thermal step: 10,  ac: 0.4840,  dx: 0.2609,  dt: 5.863 ----
+---- thermal step: 11,  ac: 0.4840,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 12,  ac: 0.4843,  dx: 0.2609,  dt: 5.864 ----
+---- thermal step: 13,  ac: 0.4844,  dx: 0.2609,  dt: 5.863 ----
+---- thermal step: 14,  ac: 0.4840,  dx: 0.2609,  dt: 5.861 ----
+---- thermal step: 15,  ac: 0.4841,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 16,  ac: 0.4841,  dx: 0.2609,  dt: 5.863 ----
+---- thermal step: 17,  ac: 0.4840,  dx: 0.2609,  dt: 5.863 ----
+---- thermal step: 18,  ac: 0.4842,  dx: 0.2609,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.4842,  dx: 0.2609,  dt: 5.863 ----
+---- thermal step: 20,  ac: 0.4841,  dx: 0.2609,  dt: 5.859 ----
+---- accept step: 1,  ac: 0.4839,  dx: 0.2609,  dt: 7.440 ----
+---- accept step: 2,  ac: 0.4838,  dx: 0.2609,  dt: 7.529 ----
+---- accept step: 3,  ac: 0.4839,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 4,  ac: 0.4841,  dx: 0.2609,  dt: 7.512 ----
+---- accept step: 5,  ac: 0.4840,  dx: 0.2609,  dt: 7.518 ----
+---- accept step: 6,  ac: 0.4839,  dx: 0.2609,  dt: 7.521 ----
+---- accept step: 7,  ac: 0.4841,  dx: 0.2609,  dt: 7.516 ----
+---- accept step: 8,  ac: 0.4841,  dx: 0.2609,  dt: 7.520 ----
+state: 10 [0 0 0 0 0 0 0 0 0 0 2 1] 2v11 + v12
+         E: 10925.557474 (0.080031)  K: 5437.883263 (3.261429)  V: 5487.674211 (3.265947)
+         ac: 0.4840  dt: 177.490
+
+================================================================================
+---- thermal step: 1,  ac: 0.4845,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 2,  ac: 0.4839,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 3,  ac: 0.4840,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 4,  ac: 0.4839,  dx: 0.2609,  dt: 5.857 ----
+---- thermal step: 5,  ac: 0.4841,  dx: 0.2609,  dt: 5.858 ----
+---- thermal step: 6,  ac: 0.4842,  dx: 0.2609,  dt: 5.858 ----
+---- thermal step: 7,  ac: 0.4840,  dx: 0.2609,  dt: 5.861 ----
+---- thermal step: 8,  ac: 0.4841,  dx: 0.2609,  dt: 5.857 ----
+---- thermal step: 9,  ac: 0.4840,  dx: 0.2609,  dt: 5.870 ----
+---- thermal step: 10,  ac: 0.4842,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.4841,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 12,  ac: 0.4843,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 13,  ac: 0.4842,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.4840,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 15,  ac: 0.4839,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 16,  ac: 0.4840,  dx: 0.2609,  dt: 5.857 ----
+---- thermal step: 17,  ac: 0.4840,  dx: 0.2609,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.4840,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 19,  ac: 0.4837,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 20,  ac: 0.4841,  dx: 0.2609,  dt: 5.856 ----
+---- accept step: 1,  ac: 0.4840,  dx: 0.2609,  dt: 7.436 ----
+---- accept step: 2,  ac: 0.4840,  dx: 0.2609,  dt: 7.529 ----
+---- accept step: 3,  ac: 0.4841,  dx: 0.2609,  dt: 7.509 ----
+---- accept step: 4,  ac: 0.4843,  dx: 0.2609,  dt: 7.520 ----
+---- accept step: 5,  ac: 0.4839,  dx: 0.2609,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.4840,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 7,  ac: 0.4840,  dx: 0.2609,  dt: 7.518 ----
+---- accept step: 8,  ac: 0.4839,  dx: 0.2609,  dt: 7.517 ----
+state: 11 [0 0 0 0 0 0 0 0 0 0 1 2] v11 + 2v12
+         E: 10925.515674 (0.079403)  K: 5439.423120 (3.260983)  V: 5486.092555 (3.265348)
+         ac: 0.4840  dt: 177.359
+
+================================================================================
+---- thermal step: 1,  ac: 0.4904,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 2,  ac: 0.4908,  dx: 0.2609,  dt: 5.869 ----
+---- thermal step: 3,  ac: 0.4908,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 4,  ac: 0.4906,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 5,  ac: 0.4907,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 6,  ac: 0.4911,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 7,  ac: 0.4907,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 8,  ac: 0.4910,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 9,  ac: 0.4906,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 10,  ac: 0.4908,  dx: 0.2609,  dt: 5.869 ----
+---- thermal step: 11,  ac: 0.4910,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 12,  ac: 0.4909,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 13,  ac: 0.4909,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 14,  ac: 0.4905,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 15,  ac: 0.4908,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 16,  ac: 0.4909,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 17,  ac: 0.4908,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 18,  ac: 0.4909,  dx: 0.2609,  dt: 5.867 ----
+---- thermal step: 19,  ac: 0.4907,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 20,  ac: 0.4905,  dx: 0.2609,  dt: 5.864 ----
+---- accept step: 1,  ac: 0.4907,  dx: 0.2609,  dt: 7.442 ----
+---- accept step: 2,  ac: 0.4908,  dx: 0.2609,  dt: 7.521 ----
+---- accept step: 3,  ac: 0.4907,  dx: 0.2609,  dt: 7.515 ----
+---- accept step: 4,  ac: 0.4907,  dx: 0.2609,  dt: 7.521 ----
+---- accept step: 5,  ac: 0.4906,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 6,  ac: 0.4904,  dx: 0.2609,  dt: 7.511 ----
+---- accept step: 7,  ac: 0.4908,  dx: 0.2609,  dt: 7.513 ----
+---- accept step: 8,  ac: 0.4904,  dx: 0.2609,  dt: 7.522 ----
+state: 12 [0 0 0 0 0 0 0 0 0 0 0 3] 3v12
+         E: 10926.656889 (0.080922)  K: 5431.879681 (3.287216)  V: 5494.777208 (3.291427)
+         ac: 0.4906  dt: 177.427
+
+================================================================================
+---- thermal step: 1,  ac: 0.4985,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 2,  ac: 0.4987,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.4985,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 4,  ac: 0.4986,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 5,  ac: 0.4990,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.4987,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 8,  ac: 0.4990,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 9,  ac: 0.4986,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 10,  ac: 0.4988,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 11,  ac: 0.4983,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 12,  ac: 0.4987,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 13,  ac: 0.4986,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.4986,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 15,  ac: 0.4988,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.4984,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 17,  ac: 0.4987,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 18,  ac: 0.4985,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 19,  ac: 0.4986,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 20,  ac: 0.4983,  dx: 0.2609,  dt: 5.846 ----
+---- accept step: 1,  ac: 0.4986,  dx: 0.2609,  dt: 7.430 ----
+---- accept step: 2,  ac: 0.4987,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.4988,  dx: 0.2609,  dt: 7.499 ----
+---- accept step: 4,  ac: 0.4985,  dx: 0.2609,  dt: 7.501 ----
+---- accept step: 5,  ac: 0.4989,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 7.497 ----
+---- accept step: 7,  ac: 0.4987,  dx: 0.2609,  dt: 7.496 ----
+---- accept step: 8,  ac: 0.4987,  dx: 0.2609,  dt: 7.509 ----
+state: 13 [0 0 0 1 0 0 0 0 0 0 1 0] v4 + v11
+         E: 11097.058680 (0.098302)  K: 5518.330495 (3.301309)  V: 5578.728185 (3.302412)
+         ac: 0.4987  dt: 177.059
+
+================================================================================
+---- thermal step: 1,  ac: 0.4987,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 2,  ac: 0.4989,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 3,  ac: 0.4989,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 4,  ac: 0.4988,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 5,  ac: 0.4988,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.4985,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 7,  ac: 0.4986,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 8,  ac: 0.4988,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 9,  ac: 0.4984,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 10,  ac: 0.4986,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 11,  ac: 0.4986,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.4987,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.4986,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 14,  ac: 0.4988,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 15,  ac: 0.4987,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.4988,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 17,  ac: 0.4984,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 18,  ac: 0.4987,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 19,  ac: 0.4988,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 20,  ac: 0.4988,  dx: 0.2609,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.4986,  dx: 0.2609,  dt: 7.427 ----
+---- accept step: 2,  ac: 0.4986,  dx: 0.2609,  dt: 7.511 ----
+---- accept step: 3,  ac: 0.4986,  dx: 0.2609,  dt: 7.498 ----
+---- accept step: 4,  ac: 0.4987,  dx: 0.2609,  dt: 7.498 ----
+---- accept step: 5,  ac: 0.4989,  dx: 0.2609,  dt: 7.508 ----
+---- accept step: 6,  ac: 0.4987,  dx: 0.2609,  dt: 7.503 ----
+---- accept step: 7,  ac: 0.4987,  dx: 0.2609,  dt: 7.496 ----
+---- accept step: 8,  ac: 0.4988,  dx: 0.2609,  dt: 7.512 ----
+state: 14 [0 0 0 1 0 0 0 0 0 0 0 1] v4 + v12
+         E: 11097.258118 (0.097480)  K: 5526.007002 (3.295291)  V: 5571.251116 (3.296584)
+         ac: 0.4987  dt: 177.086
+
+================================================================================
+---- thermal step: 1,  ac: 0.5175,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 2,  ac: 0.5174,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 3,  ac: 0.5176,  dx: 0.2609,  dt: 5.846 ----
+---- thermal step: 4,  ac: 0.5174,  dx: 0.2609,  dt: 5.858 ----
+---- thermal step: 5,  ac: 0.5173,  dx: 0.2609,  dt: 5.846 ----
+---- thermal step: 6,  ac: 0.5175,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 7,  ac: 0.5175,  dx: 0.2609,  dt: 5.846 ----
+---- thermal step: 8,  ac: 0.5175,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.5177,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 10,  ac: 0.5174,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 11,  ac: 0.5175,  dx: 0.2609,  dt: 5.845 ----
+---- thermal step: 12,  ac: 0.5176,  dx: 0.2609,  dt: 5.845 ----
+---- thermal step: 13,  ac: 0.5175,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 14,  ac: 0.5176,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 15,  ac: 0.5175,  dx: 0.2609,  dt: 5.846 ----
+---- thermal step: 16,  ac: 0.5175,  dx: 0.2609,  dt: 5.846 ----
+---- thermal step: 17,  ac: 0.5175,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 18,  ac: 0.5174,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 19,  ac: 0.5176,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 20,  ac: 0.5176,  dx: 0.2609,  dt: 5.847 ----
+---- accept step: 1,  ac: 0.5177,  dx: 0.2609,  dt: 7.440 ----
+---- accept step: 2,  ac: 0.5176,  dx: 0.2609,  dt: 7.511 ----
+---- accept step: 3,  ac: 0.5176,  dx: 0.2609,  dt: 7.501 ----
+---- accept step: 4,  ac: 0.5176,  dx: 0.2609,  dt: 7.499 ----
+---- accept step: 5,  ac: 0.5173,  dx: 0.2609,  dt: 7.500 ----
+---- accept step: 6,  ac: 0.5177,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.5176,  dx: 0.2609,  dt: 7.501 ----
+---- accept step: 8,  ac: 0.5175,  dx: 0.2609,  dt: 7.506 ----
+state: 15 [0 0 1 0 0 0 0 0 0 0 0 0] v3
+         E: 11234.952190 (0.109609)  K: 5580.575778 (3.371000)  V: 5654.376411 (3.370271)
+         ac: 0.5176  dt: 177.076
+
+================================================================================
+---- thermal step: 1,  ac: 0.4983,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.4990,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 3,  ac: 0.4989,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 4,  ac: 0.4989,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 5,  ac: 0.4988,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 8,  ac: 0.4987,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 9,  ac: 0.4989,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 10,  ac: 0.4988,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 11,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 12,  ac: 0.4987,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 13,  ac: 0.4985,  dx: 0.2609,  dt: 5.861 ----
+---- thermal step: 14,  ac: 0.4989,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 15,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 16,  ac: 0.4988,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.4988,  dx: 0.2609,  dt: 5.867 ----
+---- thermal step: 18,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 19,  ac: 0.4988,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 20,  ac: 0.4992,  dx: 0.2609,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.4990,  dx: 0.2609,  dt: 7.434 ----
+---- accept step: 2,  ac: 0.4989,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 3,  ac: 0.4990,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 4,  ac: 0.4987,  dx: 0.2609,  dt: 7.505 ----
+---- accept step: 5,  ac: 0.4988,  dx: 0.2609,  dt: 7.512 ----
+---- accept step: 6,  ac: 0.4987,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 7.515 ----
+---- accept step: 8,  ac: 0.4988,  dx: 0.2609,  dt: 7.516 ----
+state: 16 [0 0 0 0 0 0 0 0 1 0 1 0] v9 + v11
+         E: 11233.378678 (0.091154)  K: 5577.106417 (3.303361)  V: 5656.272262 (3.304012)
+         ac: 0.4988  dt: 177.201
+
+================================================================================
+---- thermal step: 1,  ac: 0.4985,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 2,  ac: 0.4987,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 3,  ac: 0.4989,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 4,  ac: 0.4987,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 5,  ac: 0.4988,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 8,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.4986,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 10,  ac: 0.4986,  dx: 0.2609,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.4989,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 12,  ac: 0.4989,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 13,  ac: 0.4987,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 14,  ac: 0.4989,  dx: 0.2609,  dt: 5.866 ----
+---- thermal step: 15,  ac: 0.4986,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.4984,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 17,  ac: 0.4991,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 18,  ac: 0.4987,  dx: 0.2609,  dt: 5.868 ----
+---- thermal step: 19,  ac: 0.4987,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 20,  ac: 0.4987,  dx: 0.2609,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.4990,  dx: 0.2609,  dt: 7.434 ----
+---- accept step: 2,  ac: 0.4988,  dx: 0.2609,  dt: 7.514 ----
+---- accept step: 3,  ac: 0.4987,  dx: 0.2609,  dt: 7.505 ----
+---- accept step: 4,  ac: 0.4986,  dx: 0.2609,  dt: 7.510 ----
+---- accept step: 5,  ac: 0.4990,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.4988,  dx: 0.2609,  dt: 7.503 ----
+---- accept step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 7.505 ----
+---- accept step: 8,  ac: 0.4988,  dx: 0.2609,  dt: 7.517 ----
+state: 17 [0 0 0 0 0 0 0 0 0 1 1 0] v10 + v11
+         E: 11234.161828 (0.090568)  K: 5580.257489 (3.305289)  V: 5653.904339 (3.305568)
+         ac: 0.4988  dt: 177.231
+
+================================================================================
+---- thermal step: 1,  ac: 0.4984,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 2,  ac: 0.4989,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 3,  ac: 0.4988,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 4,  ac: 0.4987,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 5,  ac: 0.4987,  dx: 0.2609,  dt: 5.854 ----
+---- thermal step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 7,  ac: 0.4991,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 8,  ac: 0.4989,  dx: 0.2609,  dt: 5.855 ----
+---- thermal step: 9,  ac: 0.4988,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4991,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.4988,  dx: 0.2609,  dt: 5.862 ----
+---- thermal step: 12,  ac: 0.4989,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.4990,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.4991,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 15,  ac: 0.4987,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 16,  ac: 0.4989,  dx: 0.2609,  dt: 5.850 ----
+---- thermal step: 17,  ac: 0.4986,  dx: 0.2609,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.4986,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 19,  ac: 0.4988,  dx: 0.2609,  dt: 5.860 ----
+---- thermal step: 20,  ac: 0.4989,  dx: 0.2609,  dt: 5.849 ----
+---- accept step: 1,  ac: 0.4987,  dx: 0.2609,  dt: 7.434 ----
+---- accept step: 2,  ac: 0.4988,  dx: 0.2609,  dt: 7.510 ----
+---- accept step: 3,  ac: 0.4987,  dx: 0.2609,  dt: 7.499 ----
+---- accept step: 4,  ac: 0.4987,  dx: 0.2609,  dt: 7.502 ----
+---- accept step: 5,  ac: 0.4986,  dx: 0.2609,  dt: 7.512 ----
+---- accept step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 7.498 ----
+---- accept step: 7,  ac: 0.4986,  dx: 0.2609,  dt: 7.510 ----
+---- accept step: 8,  ac: 0.4989,  dx: 0.2609,  dt: 7.515 ----
+state: 18 [0 0 0 0 0 0 0 0 1 0 0 1] v9 + v12
+         E: 11234.023716 (0.090422)  K: 5584.381350 (3.295040)  V: 5649.642366 (3.295936)
+         ac: 0.4987  dt: 177.185
+
+================================================================================
+---- thermal step: 1,  ac: 0.4989,  dx: 0.2609,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.4987,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 3,  ac: 0.4985,  dx: 0.2609,  dt: 5.856 ----
+---- thermal step: 4,  ac: 0.4989,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 5,  ac: 0.4989,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.4987,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 7,  ac: 0.4988,  dx: 0.2609,  dt: 5.849 ----
+---- thermal step: 8,  ac: 0.4991,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 9,  ac: 0.4986,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 10,  ac: 0.4989,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 11,  ac: 0.4988,  dx: 0.2609,  dt: 5.867 ----
+---- thermal step: 12,  ac: 0.4986,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 13,  ac: 0.4988,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.4988,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 15,  ac: 0.4990,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.4988,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 17,  ac: 0.4986,  dx: 0.2609,  dt: 5.851 ----
+---- thermal step: 18,  ac: 0.4989,  dx: 0.2609,  dt: 5.848 ----
+---- thermal step: 19,  ac: 0.4986,  dx: 0.2609,  dt: 5.847 ----
+---- thermal step: 20,  ac: 0.4988,  dx: 0.2609,  dt: 5.852 ----
+---- accept step: 1,  ac: 0.4990,  dx: 0.2609,  dt: 7.429 ----
+---- accept step: 2,  ac: 0.4989,  dx: 0.2609,  dt: 7.509 ----
+---- accept step: 3,  ac: 0.4990,  dx: 0.2609,  dt: 7.497 ----
+---- accept step: 4,  ac: 0.4990,  dx: 0.2609,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.4991,  dx: 0.2609,  dt: 7.508 ----
+---- accept step: 6,  ac: 0.4989,  dx: 0.2609,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.4989,  dx: 0.2609,  dt: 7.498 ----
+---- accept step: 8,  ac: 0.4989,  dx: 0.2609,  dt: 7.509 ----
+state: 19 [0 0 0 0 0 0 0 0 0 1 0 1] v10 + v12
+         E: 11233.655629 (0.091119)  K: 5577.487554 (3.302734)  V: 5656.168075 (3.302903)
+         ac: 0.4990  dt: 177.105
+
+================================================================================
+---- thermal step: 1,  ac: 0.4614,  dx: 0.2609,  dt: 5.865 ----
+---- thermal step: 2,  ac: 0.5158,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 3,  ac: 0.5205,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 4,  ac: 0.5220,  dx: 0.2348,  dt: 5.873 ----
+---- thermal step: 5,  ac: 0.5227,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 6,  ac: 0.5227,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 7,  ac: 0.5228,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 8,  ac: 0.5229,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 9,  ac: 0.5225,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 10,  ac: 0.5228,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 11,  ac: 0.5226,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 12,  ac: 0.5228,  dx: 0.2348,  dt: 5.865 ----
+---- thermal step: 13,  ac: 0.5227,  dx: 0.2348,  dt: 5.867 ----
+---- thermal step: 14,  ac: 0.5226,  dx: 0.2348,  dt: 5.867 ----
+---- thermal step: 15,  ac: 0.5225,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 16,  ac: 0.5228,  dx: 0.2348,  dt: 5.873 ----
+---- thermal step: 17,  ac: 0.5229,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 18,  ac: 0.5229,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 19,  ac: 0.5231,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 20,  ac: 0.5227,  dx: 0.2348,  dt: 5.863 ----
+---- accept step: 1,  ac: 0.5226,  dx: 0.2348,  dt: 7.445 ----
+---- accept step: 2,  ac: 0.5227,  dx: 0.2348,  dt: 7.531 ----
+---- accept step: 3,  ac: 0.5227,  dx: 0.2348,  dt: 7.523 ----
+---- accept step: 4,  ac: 0.5226,  dx: 0.2348,  dt: 7.516 ----
+---- accept step: 5,  ac: 0.5228,  dx: 0.2348,  dt: 7.521 ----
+---- accept step: 6,  ac: 0.5228,  dx: 0.2348,  dt: 7.530 ----
+---- accept step: 7,  ac: 0.5231,  dx: 0.2348,  dt: 7.516 ----
+---- accept step: 8,  ac: 0.5227,  dx: 0.2348,  dt: 7.527 ----
+state: 20 [0 0 0 0 0 0 0 0 0 0 4 0] 4v11
+         E: 11293.076629 (0.084244)  K: 5618.975260 (3.321312)  V: 5674.101369 (3.325806)
+         ac: 0.5227  dt: 177.559
+
+================================================================================
+---- thermal step: 1,  ac: 0.5165,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 2,  ac: 0.5156,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 3,  ac: 0.5155,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 4,  ac: 0.5153,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 5,  ac: 0.5153,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 6,  ac: 0.5151,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 7,  ac: 0.5152,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 8,  ac: 0.5155,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 9,  ac: 0.5154,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5155,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.5153,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 12,  ac: 0.5154,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 13,  ac: 0.5152,  dx: 0.2348,  dt: 5.869 ----
+---- thermal step: 14,  ac: 0.5154,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 15,  ac: 0.5154,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 16,  ac: 0.5155,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 17,  ac: 0.5152,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 18,  ac: 0.5152,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 19,  ac: 0.5156,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 20,  ac: 0.5157,  dx: 0.2348,  dt: 5.861 ----
+---- accept step: 1,  ac: 0.5154,  dx: 0.2348,  dt: 7.442 ----
+---- accept step: 2,  ac: 0.5151,  dx: 0.2348,  dt: 7.527 ----
+---- accept step: 3,  ac: 0.5155,  dx: 0.2348,  dt: 7.516 ----
+---- accept step: 4,  ac: 0.5154,  dx: 0.2348,  dt: 7.512 ----
+---- accept step: 5,  ac: 0.5155,  dx: 0.2348,  dt: 7.511 ----
+---- accept step: 6,  ac: 0.5152,  dx: 0.2348,  dt: 7.521 ----
+---- accept step: 7,  ac: 0.5152,  dx: 0.2348,  dt: 7.516 ----
+---- accept step: 8,  ac: 0.5153,  dx: 0.2348,  dt: 7.521 ----
+state: 21 [0 0 0 0 0 0 0 0 0 0 3 1] 3v11 + v12
+         E: 11291.203008 (0.082139)  K: 5610.104788 (3.299946)  V: 5681.098220 (3.304244)
+         ac: 0.5153  dt: 177.447
+
+================================================================================
+---- thermal step: 1,  ac: 0.5137,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 2,  ac: 0.5130,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 3,  ac: 0.5133,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 4,  ac: 0.5132,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 5,  ac: 0.5133,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 6,  ac: 0.5132,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 7,  ac: 0.5133,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 8,  ac: 0.5130,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 9,  ac: 0.5132,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 10,  ac: 0.5133,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.5127,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 12,  ac: 0.5129,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 13,  ac: 0.5131,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 14,  ac: 0.5130,  dx: 0.2348,  dt: 5.869 ----
+---- thermal step: 15,  ac: 0.5131,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 16,  ac: 0.5132,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 17,  ac: 0.5130,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.5131,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.5132,  dx: 0.2348,  dt: 5.860 ----
+---- thermal step: 20,  ac: 0.5129,  dx: 0.2348,  dt: 5.863 ----
+---- accept step: 1,  ac: 0.5133,  dx: 0.2348,  dt: 7.439 ----
+---- accept step: 2,  ac: 0.5131,  dx: 0.2348,  dt: 7.523 ----
+---- accept step: 3,  ac: 0.5130,  dx: 0.2348,  dt: 7.513 ----
+---- accept step: 4,  ac: 0.5131,  dx: 0.2348,  dt: 7.521 ----
+---- accept step: 5,  ac: 0.5131,  dx: 0.2348,  dt: 7.511 ----
+---- accept step: 6,  ac: 0.5133,  dx: 0.2348,  dt: 7.510 ----
+---- accept step: 7,  ac: 0.5131,  dx: 0.2348,  dt: 7.520 ----
+---- accept step: 8,  ac: 0.5130,  dx: 0.2348,  dt: 7.521 ----
+state: 22 [0 0 0 0 0 0 0 0 0 0 2 2] 2v11 + 2v12
+         E: 11290.548495 (0.081129)  K: 5610.551140 (3.283279)  V: 5679.997355 (3.287328)
+         ac: 0.5131  dt: 177.408
+
+================================================================================
+---- thermal step: 1,  ac: 0.5153,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 2,  ac: 0.5148,  dx: 0.2348,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.5149,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 4,  ac: 0.5156,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 5,  ac: 0.5150,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 6,  ac: 0.5155,  dx: 0.2348,  dt: 5.873 ----
+---- thermal step: 7,  ac: 0.5156,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 8,  ac: 0.5151,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 9,  ac: 0.5152,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 10,  ac: 0.5153,  dx: 0.2348,  dt: 5.875 ----
+---- thermal step: 11,  ac: 0.5153,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 12,  ac: 0.5152,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 13,  ac: 0.5153,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 14,  ac: 0.5153,  dx: 0.2348,  dt: 5.875 ----
+---- thermal step: 15,  ac: 0.5153,  dx: 0.2348,  dt: 5.859 ----
+---- thermal step: 16,  ac: 0.5154,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 17,  ac: 0.5153,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.5156,  dx: 0.2348,  dt: 5.872 ----
+---- thermal step: 19,  ac: 0.5156,  dx: 0.2348,  dt: 5.858 ----
+---- thermal step: 20,  ac: 0.5156,  dx: 0.2348,  dt: 5.861 ----
+---- accept step: 1,  ac: 0.5158,  dx: 0.2348,  dt: 7.438 ----
+---- accept step: 2,  ac: 0.5156,  dx: 0.2348,  dt: 7.520 ----
+---- accept step: 3,  ac: 0.5153,  dx: 0.2348,  dt: 7.508 ----
+---- accept step: 4,  ac: 0.5152,  dx: 0.2348,  dt: 7.519 ----
+---- accept step: 5,  ac: 0.5155,  dx: 0.2348,  dt: 7.513 ----
+---- accept step: 6,  ac: 0.5152,  dx: 0.2348,  dt: 7.508 ----
+---- accept step: 7,  ac: 0.5157,  dx: 0.2348,  dt: 7.511 ----
+---- accept step: 8,  ac: 0.5156,  dx: 0.2348,  dt: 7.520 ----
+state: 23 [0 0 0 0 0 0 0 0 0 0 1 3] v11 + 3v12
+         E: 11291.079601 (0.081330)  K: 5616.796337 (3.291197)  V: 5674.283265 (3.295361)
+         ac: 0.5155  dt: 177.420
+
+================================================================================
+---- thermal step: 1,  ac: 0.5223,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 2,  ac: 0.5224,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 3,  ac: 0.5229,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 4,  ac: 0.5227,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 5,  ac: 0.5228,  dx: 0.2348,  dt: 5.867 ----
+---- thermal step: 6,  ac: 0.5229,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 7,  ac: 0.5228,  dx: 0.2348,  dt: 5.873 ----
+---- thermal step: 8,  ac: 0.5230,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 9,  ac: 0.5230,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 10,  ac: 0.5230,  dx: 0.2348,  dt: 5.864 ----
+---- thermal step: 11,  ac: 0.5228,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 12,  ac: 0.5228,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 13,  ac: 0.5228,  dx: 0.2348,  dt: 5.865 ----
+---- thermal step: 14,  ac: 0.5227,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 15,  ac: 0.5227,  dx: 0.2348,  dt: 5.862 ----
+---- thermal step: 16,  ac: 0.5228,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 17,  ac: 0.5228,  dx: 0.2348,  dt: 5.866 ----
+---- thermal step: 18,  ac: 0.5227,  dx: 0.2348,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.5228,  dx: 0.2348,  dt: 5.863 ----
+---- thermal step: 20,  ac: 0.5227,  dx: 0.2348,  dt: 5.861 ----
+---- accept step: 1,  ac: 0.5227,  dx: 0.2348,  dt: 7.448 ----
+---- accept step: 2,  ac: 0.5229,  dx: 0.2348,  dt: 7.524 ----
+---- accept step: 3,  ac: 0.5229,  dx: 0.2348,  dt: 7.513 ----
+---- accept step: 4,  ac: 0.5229,  dx: 0.2348,  dt: 7.514 ----
+---- accept step: 5,  ac: 0.5230,  dx: 0.2348,  dt: 7.525 ----
+---- accept step: 6,  ac: 0.5226,  dx: 0.2348,  dt: 7.513 ----
+---- accept step: 7,  ac: 0.5229,  dx: 0.2348,  dt: 7.513 ----
+---- accept step: 8,  ac: 0.5227,  dx: 0.2348,  dt: 7.523 ----
+state: 24 [0 0 0 0 0 0 0 0 0 0 0 4] 4v12
+         E: 11293.025527 (0.083432)  K: 5617.516198 (3.313344)  V: 5675.509329 (3.317215)
+         ac: 0.5228  dt: 177.485
+
+================================================================================
+---- thermal step: 1,  ac: 0.5579,  dx: 0.2348,  dt: 5.848 ----
+---- thermal step: 2,  ac: 0.5214,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 3,  ac: 0.5215,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 4,  ac: 0.5216,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 5,  ac: 0.5216,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 6,  ac: 0.5217,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 7,  ac: 0.5217,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 8,  ac: 0.5215,  dx: 0.2583,  dt: 5.857 ----
+---- thermal step: 9,  ac: 0.5214,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 10,  ac: 0.5214,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 11,  ac: 0.5215,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 12,  ac: 0.5214,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 13,  ac: 0.5213,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 14,  ac: 0.5215,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 15,  ac: 0.5215,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 16,  ac: 0.5213,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 17,  ac: 0.5214,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 18,  ac: 0.5215,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 19,  ac: 0.5214,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 20,  ac: 0.5214,  dx: 0.2583,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5217,  dx: 0.2583,  dt: 7.419 ----
+---- accept step: 2,  ac: 0.5214,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 3,  ac: 0.5215,  dx: 0.2583,  dt: 7.490 ----
+---- accept step: 4,  ac: 0.5213,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 5,  ac: 0.5215,  dx: 0.2583,  dt: 7.501 ----
+---- accept step: 6,  ac: 0.5214,  dx: 0.2583,  dt: 7.493 ----
+---- accept step: 7,  ac: 0.5216,  dx: 0.2583,  dt: 7.491 ----
+---- accept step: 8,  ac: 0.5214,  dx: 0.2583,  dt: 7.501 ----
+state: 25 [0 0 0 0 0 0 1 0 0 0 0 0] v7
+         E: 11323.519737 (0.112780)  K: 5619.670717 (3.381071)  V: 5703.849020 (3.390323)
+         ac: 0.5215  dt: 176.961
+
+================================================================================
+---- thermal step: 1,  ac: 0.5210,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 2,  ac: 0.5217,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 3,  ac: 0.5214,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 4,  ac: 0.5213,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 5,  ac: 0.5214,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 6,  ac: 0.5214,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 7,  ac: 0.5214,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 8,  ac: 0.5214,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 9,  ac: 0.5216,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 10,  ac: 0.5214,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 11,  ac: 0.5216,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 12,  ac: 0.5213,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 13,  ac: 0.5218,  dx: 0.2583,  dt: 5.841 ----
+---- thermal step: 14,  ac: 0.5213,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 15,  ac: 0.5215,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 16,  ac: 0.5214,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 17,  ac: 0.5215,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 18,  ac: 0.5213,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 19,  ac: 0.5213,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 20,  ac: 0.5216,  dx: 0.2583,  dt: 5.840 ----
+---- accept step: 1,  ac: 0.5215,  dx: 0.2583,  dt: 7.419 ----
+---- accept step: 2,  ac: 0.5216,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 3,  ac: 0.5213,  dx: 0.2583,  dt: 7.497 ----
+---- accept step: 4,  ac: 0.5214,  dx: 0.2583,  dt: 7.493 ----
+---- accept step: 5,  ac: 0.5214,  dx: 0.2583,  dt: 7.493 ----
+---- accept step: 6,  ac: 0.5215,  dx: 0.2583,  dt: 7.499 ----
+---- accept step: 7,  ac: 0.5213,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 8,  ac: 0.5212,  dx: 0.2583,  dt: 7.507 ----
+state: 26 [0 0 0 0 0 0 0 1 0 0 0 0] v8
+         E: 11324.948857 (0.119132)  K: 5626.985222 (3.387761)  V: 5697.963635 (3.395612)
+         ac: 0.5214  dt: 176.896
+
+================================================================================
+---- thermal step: 1,  ac: 0.4803,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 2,  ac: 0.4871,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.4886,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 4,  ac: 0.4884,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 5,  ac: 0.4888,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.4888,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 7,  ac: 0.4885,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 8,  ac: 0.4887,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 9,  ac: 0.4889,  dx: 0.2583,  dt: 5.858 ----
+---- thermal step: 10,  ac: 0.4889,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 11,  ac: 0.4887,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 12,  ac: 0.4888,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.4888,  dx: 0.2583,  dt: 5.866 ----
+---- thermal step: 14,  ac: 0.4885,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 15,  ac: 0.4888,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.4887,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 17,  ac: 0.4886,  dx: 0.2583,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.4888,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.4888,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.4884,  dx: 0.2583,  dt: 5.853 ----
+---- accept step: 1,  ac: 0.4888,  dx: 0.2583,  dt: 7.432 ----
+---- accept step: 2,  ac: 0.4890,  dx: 0.2583,  dt: 7.513 ----
+---- accept step: 3,  ac: 0.4888,  dx: 0.2583,  dt: 7.515 ----
+---- accept step: 4,  ac: 0.4885,  dx: 0.2583,  dt: 7.502 ----
+---- accept step: 5,  ac: 0.4887,  dx: 0.2583,  dt: 7.512 ----
+---- accept step: 6,  ac: 0.4883,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.4888,  dx: 0.2583,  dt: 7.513 ----
+---- accept step: 8,  ac: 0.4887,  dx: 0.2583,  dt: 7.515 ----
+state: 27 [0 0 0 1 0 0 0 0 0 0 2 0] v4 + 2v11
+         E: 11458.108699 (0.104928)  K: 5696.657902 (3.321357)  V: 5761.450797 (3.321584)
+         ac: 0.4887  dt: 177.231
+
+================================================================================
+---- thermal step: 1,  ac: 0.4854,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.4848,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 3,  ac: 0.4847,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 4,  ac: 0.4849,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 5,  ac: 0.4848,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.4849,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 7,  ac: 0.4849,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 8,  ac: 0.4847,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 9,  ac: 0.4846,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 10,  ac: 0.4848,  dx: 0.2583,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.4847,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.4849,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.4847,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 14,  ac: 0.4846,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 15,  ac: 0.4847,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 16,  ac: 0.4846,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 17,  ac: 0.4848,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 18,  ac: 0.4847,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 19,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 20,  ac: 0.4846,  dx: 0.2583,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.4848,  dx: 0.2583,  dt: 7.427 ----
+---- accept step: 2,  ac: 0.4847,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 3,  ac: 0.4846,  dx: 0.2583,  dt: 7.500 ----
+---- accept step: 4,  ac: 0.4849,  dx: 0.2583,  dt: 7.506 ----
+---- accept step: 5,  ac: 0.4849,  dx: 0.2583,  dt: 7.500 ----
+---- accept step: 6,  ac: 0.4848,  dx: 0.2583,  dt: 7.510 ----
+---- accept step: 7,  ac: 0.4847,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 8,  ac: 0.4847,  dx: 0.2583,  dt: 7.512 ----
+state: 28 [0 0 0 1 0 0 0 0 0 0 1 1] v4 + v11 + v12
+         E: 11457.697543 (0.102162)  K: 5706.866966 (3.302528)  V: 5750.830577 (3.302950)
+         ac: 0.4848  dt: 177.101
+
+================================================================================
+---- thermal step: 1,  ac: 0.4886,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.4886,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.4886,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 4,  ac: 0.4890,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 5,  ac: 0.4889,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.4890,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.4886,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 8,  ac: 0.4888,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 9,  ac: 0.4888,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 10,  ac: 0.4887,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 11,  ac: 0.4889,  dx: 0.2583,  dt: 5.862 ----
+---- thermal step: 12,  ac: 0.4887,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 13,  ac: 0.4888,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.4889,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 15,  ac: 0.4886,  dx: 0.2583,  dt: 5.860 ----
+---- thermal step: 16,  ac: 0.4885,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 17,  ac: 0.4885,  dx: 0.2583,  dt: 5.856 ----
+---- thermal step: 18,  ac: 0.4888,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.4887,  dx: 0.2583,  dt: 5.858 ----
+---- thermal step: 20,  ac: 0.4885,  dx: 0.2583,  dt: 5.852 ----
+---- accept step: 1,  ac: 0.4887,  dx: 0.2583,  dt: 7.436 ----
+---- accept step: 2,  ac: 0.4890,  dx: 0.2583,  dt: 7.513 ----
+---- accept step: 3,  ac: 0.4886,  dx: 0.2583,  dt: 7.513 ----
+---- accept step: 4,  ac: 0.4887,  dx: 0.2583,  dt: 7.506 ----
+---- accept step: 5,  ac: 0.4887,  dx: 0.2583,  dt: 7.515 ----
+---- accept step: 6,  ac: 0.4887,  dx: 0.2583,  dt: 7.501 ----
+---- accept step: 7,  ac: 0.4886,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 8,  ac: 0.4888,  dx: 0.2583,  dt: 7.516 ----
+state: 29 [0 0 0 1 0 0 0 0 0 0 0 2] v4 + 2v12
+         E: 11458.202744 (0.104137)  K: 5703.236091 (3.312203)  V: 5754.966653 (3.312447)
+         ac: 0.4887  dt: 177.245
+
+================================================================================
+---- thermal step: 1,  ac: 0.5023,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 2,  ac: 0.5025,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.5024,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 4,  ac: 0.5026,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 5,  ac: 0.5025,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.5026,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 7,  ac: 0.5026,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 8,  ac: 0.5027,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 9,  ac: 0.5028,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 10,  ac: 0.5026,  dx: 0.2583,  dt: 5.842 ----
+---- thermal step: 11,  ac: 0.5027,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 12,  ac: 0.5028,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 13,  ac: 0.5029,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 14,  ac: 0.5029,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 15,  ac: 0.5024,  dx: 0.2583,  dt: 5.843 ----
+---- thermal step: 16,  ac: 0.5026,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 17,  ac: 0.5026,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 18,  ac: 0.5028,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 19,  ac: 0.5029,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 20,  ac: 0.5028,  dx: 0.2583,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.5025,  dx: 0.2583,  dt: 7.422 ----
+---- accept step: 2,  ac: 0.5026,  dx: 0.2583,  dt: 7.505 ----
+---- accept step: 3,  ac: 0.5027,  dx: 0.2583,  dt: 7.490 ----
+---- accept step: 4,  ac: 0.5027,  dx: 0.2583,  dt: 7.499 ----
+---- accept step: 5,  ac: 0.5028,  dx: 0.2583,  dt: 7.502 ----
+---- accept step: 6,  ac: 0.5027,  dx: 0.2583,  dt: 7.497 ----
+---- accept step: 7,  ac: 0.5027,  dx: 0.2583,  dt: 7.494 ----
+---- accept step: 8,  ac: 0.5027,  dx: 0.2583,  dt: 7.502 ----
+state: 30 [0 0 1 0 0 0 0 0 0 0 1 0] v3 + v11
+         E: 11595.880718 (0.109210)  K: 5764.648451 (3.378232)  V: 5831.232267 (3.376390)
+         ac: 0.5027  dt: 176.960
+
+================================================================================
+---- thermal step: 1,  ac: 0.5024,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 2,  ac: 0.5027,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 3,  ac: 0.5028,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 4,  ac: 0.5028,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 5,  ac: 0.5027,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 6,  ac: 0.5025,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 7,  ac: 0.5027,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 8,  ac: 0.5027,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 9,  ac: 0.5026,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 10,  ac: 0.5025,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 11,  ac: 0.5024,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.5028,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 13,  ac: 0.5028,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 14,  ac: 0.5031,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 15,  ac: 0.5025,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.5028,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 17,  ac: 0.5027,  dx: 0.2583,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.5026,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 19,  ac: 0.5026,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 20,  ac: 0.5029,  dx: 0.2583,  dt: 5.845 ----
+---- accept step: 1,  ac: 0.5029,  dx: 0.2583,  dt: 7.422 ----
+---- accept step: 2,  ac: 0.5028,  dx: 0.2583,  dt: 7.505 ----
+---- accept step: 3,  ac: 0.5029,  dx: 0.2583,  dt: 7.505 ----
+---- accept step: 4,  ac: 0.5029,  dx: 0.2583,  dt: 7.495 ----
+---- accept step: 5,  ac: 0.5027,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 6,  ac: 0.5028,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.5025,  dx: 0.2583,  dt: 7.495 ----
+---- accept step: 8,  ac: 0.5028,  dx: 0.2583,  dt: 7.503 ----
+state: 31 [0 0 1 0 0 0 0 0 0 0 0 1] v3 + v12
+         E: 11595.765306 (0.108832)  K: 5765.821509 (3.373009)  V: 5829.943797 (3.371800)
+         ac: 0.5028  dt: 177.024
+
+================================================================================
+---- thermal step: 1,  ac: 0.4804,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 2,  ac: 0.4876,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 3,  ac: 0.4886,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 4,  ac: 0.4888,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 5,  ac: 0.4887,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 6,  ac: 0.4889,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 7,  ac: 0.4887,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 8,  ac: 0.4886,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 9,  ac: 0.4890,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 10,  ac: 0.4891,  dx: 0.2583,  dt: 5.857 ----
+---- thermal step: 11,  ac: 0.4886,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 12,  ac: 0.4888,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 13,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 14,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 15,  ac: 0.4888,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 16,  ac: 0.4888,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.4888,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 18,  ac: 0.4887,  dx: 0.2583,  dt: 5.862 ----
+---- thermal step: 19,  ac: 0.4890,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 20,  ac: 0.4889,  dx: 0.2583,  dt: 5.852 ----
+---- accept step: 1,  ac: 0.4888,  dx: 0.2583,  dt: 7.426 ----
+---- accept step: 2,  ac: 0.4891,  dx: 0.2583,  dt: 7.511 ----
+---- accept step: 3,  ac: 0.4892,  dx: 0.2583,  dt: 7.498 ----
+---- accept step: 4,  ac: 0.4887,  dx: 0.2583,  dt: 7.510 ----
+---- accept step: 5,  ac: 0.4887,  dx: 0.2583,  dt: 7.498 ----
+---- accept step: 6,  ac: 0.4887,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 7,  ac: 0.4890,  dx: 0.2583,  dt: 7.502 ----
+---- accept step: 8,  ac: 0.4890,  dx: 0.2583,  dt: 7.512 ----
+state: 32 [0 0 0 0 0 0 0 0 1 0 2 0] v9 + 2v11
+         E: 11595.693799 (0.095111)  K: 5760.321515 (3.323285)  V: 5835.372284 (3.322862)
+         ac: 0.4889  dt: 177.139
+
+================================================================================
+---- thermal step: 1,  ac: 0.4885,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.4886,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.4888,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 4,  ac: 0.4888,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 5,  ac: 0.4888,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.4889,  dx: 0.2583,  dt: 5.866 ----
+---- thermal step: 7,  ac: 0.4888,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 8,  ac: 0.4886,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 9,  ac: 0.4890,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 10,  ac: 0.4891,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 11,  ac: 0.4889,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 12,  ac: 0.4887,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 13,  ac: 0.4885,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 14,  ac: 0.4891,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 15,  ac: 0.4888,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 16,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 17,  ac: 0.4890,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 18,  ac: 0.4891,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 19,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 20,  ac: 0.4890,  dx: 0.2583,  dt: 5.850 ----
+---- accept step: 1,  ac: 0.4889,  dx: 0.2583,  dt: 7.426 ----
+---- accept step: 2,  ac: 0.4889,  dx: 0.2583,  dt: 7.505 ----
+---- accept step: 3,  ac: 0.4889,  dx: 0.2583,  dt: 7.499 ----
+---- accept step: 4,  ac: 0.4890,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 5,  ac: 0.4888,  dx: 0.2583,  dt: 7.501 ----
+---- accept step: 6,  ac: 0.4889,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 7,  ac: 0.4889,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 8,  ac: 0.4887,  dx: 0.2583,  dt: 7.510 ----
+state: 33 [0 0 0 0 0 0 0 0 0 1 2 0] v10 + 2v11
+         E: 11596.627096 (0.094240)  K: 5757.935040 (3.330754)  V: 5838.692056 (3.330197)
+         ac: 0.4889  dt: 177.060
+
+================================================================================
+---- thermal step: 1,  ac: 0.4853,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 2,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.4847,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 4,  ac: 0.4850,  dx: 0.2583,  dt: 5.844 ----
+---- thermal step: 5,  ac: 0.4849,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 6,  ac: 0.4849,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 7,  ac: 0.4850,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 8,  ac: 0.4850,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 9,  ac: 0.4849,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 10,  ac: 0.4849,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 11,  ac: 0.4851,  dx: 0.2583,  dt: 5.857 ----
+---- thermal step: 12,  ac: 0.4846,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 13,  ac: 0.4849,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 14,  ac: 0.4848,  dx: 0.2583,  dt: 5.845 ----
+---- thermal step: 15,  ac: 0.4851,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 16,  ac: 0.4847,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 17,  ac: 0.4850,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 18,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 19,  ac: 0.4850,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 20,  ac: 0.4851,  dx: 0.2583,  dt: 5.847 ----
+---- accept step: 1,  ac: 0.4848,  dx: 0.2583,  dt: 7.428 ----
+---- accept step: 2,  ac: 0.4847,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.4850,  dx: 0.2583,  dt: 7.494 ----
+---- accept step: 4,  ac: 0.4849,  dx: 0.2583,  dt: 7.497 ----
+---- accept step: 5,  ac: 0.4849,  dx: 0.2583,  dt: 7.503 ----
+---- accept step: 6,  ac: 0.4848,  dx: 0.2583,  dt: 7.499 ----
+---- accept step: 7,  ac: 0.4851,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 8,  ac: 0.4847,  dx: 0.2583,  dt: 7.507 ----
+state: 34 [0 0 0 0 0 0 0 0 1 0 1 1] v9 + v11 + v12
+         E: 11595.349978 (0.093494)  K: 5761.290773 (3.317141)  V: 5834.059205 (3.316811)
+         ac: 0.4849  dt: 177.039
+
+================================================================================
+---- thermal step: 1,  ac: 0.4849,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 3,  ac: 0.4847,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 4,  ac: 0.4849,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 5,  ac: 0.4845,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.4847,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 7,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 8,  ac: 0.4847,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 9,  ac: 0.4847,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 10,  ac: 0.4849,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 11,  ac: 0.4847,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 12,  ac: 0.4847,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 13,  ac: 0.4849,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 14,  ac: 0.4849,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 15,  ac: 0.4850,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.4850,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.4850,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 18,  ac: 0.4848,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 19,  ac: 0.4846,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 20,  ac: 0.4847,  dx: 0.2583,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.4852,  dx: 0.2583,  dt: 7.425 ----
+---- accept step: 2,  ac: 0.4851,  dx: 0.2583,  dt: 7.510 ----
+---- accept step: 3,  ac: 0.4849,  dx: 0.2583,  dt: 7.495 ----
+---- accept step: 4,  ac: 0.4847,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 5,  ac: 0.4848,  dx: 0.2583,  dt: 7.499 ----
+---- accept step: 6,  ac: 0.4847,  dx: 0.2583,  dt: 7.506 ----
+---- accept step: 7,  ac: 0.4848,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 8,  ac: 0.4847,  dx: 0.2583,  dt: 7.504 ----
+state: 35 [0 0 0 0 0 0 0 0 0 1 1 1] v10 + v11 + v12
+         E: 11595.505909 (0.093801)  K: 5763.867519 (3.322172)  V: 5831.638390 (3.321496)
+         ac: 0.4848  dt: 177.026
+
+================================================================================
+---- thermal step: 1,  ac: 0.4882,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 2,  ac: 0.4887,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.4891,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 4,  ac: 0.4887,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 5,  ac: 0.4893,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 6,  ac: 0.4888,  dx: 0.2583,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.4889,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 8,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 9,  ac: 0.4888,  dx: 0.2583,  dt: 5.864 ----
+---- thermal step: 10,  ac: 0.4888,  dx: 0.2583,  dt: 5.855 ----
+---- thermal step: 11,  ac: 0.4887,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 12,  ac: 0.4891,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 13,  ac: 0.4892,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.4891,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 15,  ac: 0.4891,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 16,  ac: 0.4890,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 17,  ac: 0.4888,  dx: 0.2583,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.4890,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 19,  ac: 0.4890,  dx: 0.2583,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.4891,  dx: 0.2583,  dt: 5.850 ----
+---- accept step: 1,  ac: 0.4888,  dx: 0.2583,  dt: 7.431 ----
+---- accept step: 2,  ac: 0.4891,  dx: 0.2583,  dt: 7.511 ----
+---- accept step: 3,  ac: 0.4887,  dx: 0.2583,  dt: 7.502 ----
+---- accept step: 4,  ac: 0.4887,  dx: 0.2583,  dt: 7.497 ----
+---- accept step: 5,  ac: 0.4888,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 6,  ac: 0.4889,  dx: 0.2583,  dt: 7.504 ----
+---- accept step: 7,  ac: 0.4888,  dx: 0.2583,  dt: 7.500 ----
+---- accept step: 8,  ac: 0.4885,  dx: 0.2583,  dt: 7.509 ----
+state: 36 [0 0 0 0 0 0 0 0 1 0 0 2] v9 + 2v12
+         E: 11596.373130 (0.094072)  K: 5761.372869 (3.322683)  V: 5835.000261 (3.322259)
+         ac: 0.4888  dt: 177.155
+
+================================================================================
+---- thermal step: 1,  ac: 0.4889,  dx: 0.2583,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 3,  ac: 0.4889,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 4,  ac: 0.4889,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 5,  ac: 0.4889,  dx: 0.2583,  dt: 5.860 ----
+---- thermal step: 6,  ac: 0.4889,  dx: 0.2583,  dt: 5.846 ----
+---- thermal step: 7,  ac: 0.4889,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 8,  ac: 0.4889,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 9,  ac: 0.4885,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 10,  ac: 0.4890,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 11,  ac: 0.4890,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 12,  ac: 0.4886,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 13,  ac: 0.4889,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 14,  ac: 0.4888,  dx: 0.2583,  dt: 5.850 ----
+---- thermal step: 15,  ac: 0.4889,  dx: 0.2583,  dt: 5.851 ----
+---- thermal step: 16,  ac: 0.4887,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 17,  ac: 0.4888,  dx: 0.2583,  dt: 5.848 ----
+---- thermal step: 18,  ac: 0.4888,  dx: 0.2583,  dt: 5.847 ----
+---- thermal step: 19,  ac: 0.4890,  dx: 0.2583,  dt: 5.852 ----
+---- thermal step: 20,  ac: 0.4891,  dx: 0.2583,  dt: 5.846 ----
+---- accept step: 1,  ac: 0.4889,  dx: 0.2583,  dt: 7.425 ----
+---- accept step: 2,  ac: 0.4887,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.4888,  dx: 0.2583,  dt: 7.501 ----
+---- accept step: 4,  ac: 0.4890,  dx: 0.2583,  dt: 7.507 ----
+---- accept step: 5,  ac: 0.4888,  dx: 0.2583,  dt: 7.496 ----
+---- accept step: 6,  ac: 0.4890,  dx: 0.2583,  dt: 7.508 ----
+---- accept step: 7,  ac: 0.4888,  dx: 0.2583,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.4887,  dx: 0.2583,  dt: 7.511 ----
+state: 37 [0 0 0 0 0 0 0 0 0 1 0 2] v10 + 2v12
+         E: 11595.717972 (0.095762)  K: 5760.059654 (3.335753)  V: 5835.658318 (3.335220)
+         ac: 0.4888  dt: 177.087
+
+================================================================================
+---- thermal step: 1,  ac: 0.4539,  dx: 0.2583,  dt: 5.859 ----
+---- thermal step: 2,  ac: 0.5082,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 3,  ac: 0.5142,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 4,  ac: 0.5167,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 5,  ac: 0.5177,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 6,  ac: 0.5179,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 7,  ac: 0.5181,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 8,  ac: 0.5181,  dx: 0.2325,  dt: 5.864 ----
+---- thermal step: 9,  ac: 0.5185,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5187,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.5186,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 12,  ac: 0.5183,  dx: 0.2325,  dt: 5.864 ----
+---- thermal step: 13,  ac: 0.5184,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 14,  ac: 0.5181,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 15,  ac: 0.5184,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 16,  ac: 0.5184,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 17,  ac: 0.5182,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 18,  ac: 0.5184,  dx: 0.2325,  dt: 5.864 ----
+---- thermal step: 19,  ac: 0.5182,  dx: 0.2325,  dt: 5.864 ----
+---- thermal step: 20,  ac: 0.5184,  dx: 0.2325,  dt: 5.865 ----
+---- accept step: 1,  ac: 0.5181,  dx: 0.2325,  dt: 7.443 ----
+---- accept step: 2,  ac: 0.5185,  dx: 0.2325,  dt: 7.525 ----
+---- accept step: 3,  ac: 0.5186,  dx: 0.2325,  dt: 7.528 ----
+---- accept step: 4,  ac: 0.5186,  dx: 0.2325,  dt: 7.522 ----
+---- accept step: 5,  ac: 0.5182,  dx: 0.2325,  dt: 7.522 ----
+---- accept step: 6,  ac: 0.5183,  dx: 0.2325,  dt: 7.514 ----
+---- accept step: 7,  ac: 0.5186,  dx: 0.2325,  dt: 7.519 ----
+---- accept step: 8,  ac: 0.5184,  dx: 0.2325,  dt: 7.532 ----
+state: 38 [0 0 0 0 0 0 0 0 0 0 5 0] 5v11
+         E: 11661.106421 (0.088561)  K: 5800.380994 (3.366262)  V: 5860.725427 (3.372148)
+         ac: 0.5184  dt: 177.490
+
+================================================================================
+---- thermal step: 1,  ac: 0.5113,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 2,  ac: 0.5101,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 3,  ac: 0.5099,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 4,  ac: 0.5099,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 5,  ac: 0.5098,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 6,  ac: 0.5099,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 7,  ac: 0.5098,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 8,  ac: 0.5103,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 9,  ac: 0.5101,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 10,  ac: 0.5098,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.5094,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 12,  ac: 0.5096,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 13,  ac: 0.5096,  dx: 0.2325,  dt: 5.863 ----
+---- thermal step: 14,  ac: 0.5100,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 15,  ac: 0.5102,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 16,  ac: 0.5099,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 17,  ac: 0.5099,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 18,  ac: 0.5099,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.5101,  dx: 0.2325,  dt: 5.867 ----
+---- thermal step: 20,  ac: 0.5103,  dx: 0.2325,  dt: 5.859 ----
+---- accept step: 1,  ac: 0.5102,  dx: 0.2325,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.5100,  dx: 0.2325,  dt: 7.518 ----
+---- accept step: 3,  ac: 0.5098,  dx: 0.2325,  dt: 7.518 ----
+---- accept step: 4,  ac: 0.5101,  dx: 0.2325,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.5099,  dx: 0.2325,  dt: 7.521 ----
+---- accept step: 6,  ac: 0.5097,  dx: 0.2325,  dt: 7.509 ----
+---- accept step: 7,  ac: 0.5100,  dx: 0.2325,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.5099,  dx: 0.2325,  dt: 7.523 ----
+state: 39 [0 0 0 0 0 0 0 0 0 0 4 1] 4v11 + v12
+         E: 11658.675733 (0.085141)  K: 5793.590610 (3.339160)  V: 5865.085123 (3.343714)
+         ac: 0.5099  dt: 177.419
+
+================================================================================
+---- thermal step: 1,  ac: 0.5071,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 2,  ac: 0.5060,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 3,  ac: 0.5061,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 4,  ac: 0.5062,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 5,  ac: 0.5064,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 6,  ac: 0.5063,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 7,  ac: 0.5062,  dx: 0.2325,  dt: 5.870 ----
+---- thermal step: 8,  ac: 0.5058,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 9,  ac: 0.5060,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 10,  ac: 0.5063,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.5065,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 12,  ac: 0.5059,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 13,  ac: 0.5061,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 14,  ac: 0.5061,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 15,  ac: 0.5061,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 16,  ac: 0.5060,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 17,  ac: 0.5061,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 18,  ac: 0.5063,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 19,  ac: 0.5062,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 20,  ac: 0.5061,  dx: 0.2325,  dt: 5.871 ----
+---- accept step: 1,  ac: 0.5060,  dx: 0.2325,  dt: 7.437 ----
+---- accept step: 2,  ac: 0.5061,  dx: 0.2325,  dt: 7.518 ----
+---- accept step: 3,  ac: 0.5063,  dx: 0.2325,  dt: 7.510 ----
+---- accept step: 4,  ac: 0.5061,  dx: 0.2325,  dt: 7.507 ----
+---- accept step: 5,  ac: 0.5065,  dx: 0.2325,  dt: 7.517 ----
+---- accept step: 6,  ac: 0.5065,  dx: 0.2325,  dt: 7.509 ----
+---- accept step: 7,  ac: 0.5063,  dx: 0.2325,  dt: 7.505 ----
+---- accept step: 8,  ac: 0.5061,  dx: 0.2325,  dt: 7.516 ----
+state: 40 [0 0 0 0 0 0 0 0 0 0 3 2] 3v11 + 2v12
+         E: 11657.491850 (0.083898)  K: 5796.604200 (3.320007)  V: 5860.887650 (3.324506)
+         ac: 0.5062  dt: 177.356
+
+================================================================================
+---- thermal step: 1,  ac: 0.5067,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 2,  ac: 0.5057,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 3,  ac: 0.5061,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 4,  ac: 0.5064,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 5,  ac: 0.5060,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 6,  ac: 0.5062,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 7,  ac: 0.5060,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 8,  ac: 0.5061,  dx: 0.2325,  dt: 5.867 ----
+---- thermal step: 9,  ac: 0.5061,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 10,  ac: 0.5064,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.5061,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 12,  ac: 0.5062,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 13,  ac: 0.5062,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.5064,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 15,  ac: 0.5061,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.5061,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 17,  ac: 0.5059,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 18,  ac: 0.5061,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.5061,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 20,  ac: 0.5064,  dx: 0.2325,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5059,  dx: 0.2325,  dt: 7.431 ----
+---- accept step: 2,  ac: 0.5059,  dx: 0.2325,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.5059,  dx: 0.2325,  dt: 7.507 ----
+---- accept step: 4,  ac: 0.5061,  dx: 0.2325,  dt: 7.508 ----
+---- accept step: 5,  ac: 0.5060,  dx: 0.2325,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.5064,  dx: 0.2325,  dt: 7.516 ----
+---- accept step: 7,  ac: 0.5062,  dx: 0.2325,  dt: 7.504 ----
+---- accept step: 8,  ac: 0.5061,  dx: 0.2325,  dt: 7.511 ----
+state: 41 [0 0 0 0 0 0 0 0 0 0 2 3] 2v11 + 3v12
+         E: 11657.465074 (0.084281)  K: 5800.848914 (3.310255)  V: 5856.616160 (3.315178)
+         ac: 0.5061  dt: 177.274
+
+================================================================================
+---- thermal step: 1,  ac: 0.5099,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 2,  ac: 0.5092,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.5101,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 4,  ac: 0.5099,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 5,  ac: 0.5099,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 6,  ac: 0.5098,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.5100,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 8,  ac: 0.5101,  dx: 0.2325,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.5099,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 10,  ac: 0.5100,  dx: 0.2325,  dt: 5.852 ----
+---- thermal step: 11,  ac: 0.5099,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 12,  ac: 0.5100,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 13,  ac: 0.5098,  dx: 0.2325,  dt: 5.861 ----
+---- thermal step: 14,  ac: 0.5101,  dx: 0.2325,  dt: 5.854 ----
+---- thermal step: 15,  ac: 0.5103,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.5099,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 17,  ac: 0.5101,  dx: 0.2325,  dt: 5.862 ----
+---- thermal step: 18,  ac: 0.5098,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.5103,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.5099,  dx: 0.2325,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5102,  dx: 0.2325,  dt: 7.429 ----
+---- accept step: 2,  ac: 0.5100,  dx: 0.2325,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.5095,  dx: 0.2325,  dt: 7.507 ----
+---- accept step: 4,  ac: 0.5100,  dx: 0.2325,  dt: 7.501 ----
+---- accept step: 5,  ac: 0.5102,  dx: 0.2325,  dt: 7.513 ----
+---- accept step: 6,  ac: 0.5100,  dx: 0.2325,  dt: 7.511 ----
+---- accept step: 7,  ac: 0.5101,  dx: 0.2325,  dt: 7.505 ----
+---- accept step: 8,  ac: 0.5099,  dx: 0.2325,  dt: 7.509 ----
+state: 42 [0 0 0 0 0 0 0 0 0 0 1 4] v11 + 4v12
+         E: 11658.657917 (0.085271)  K: 5794.902464 (3.330506)  V: 5863.755453 (3.335475)
+         ac: 0.5100  dt: 177.236
+
+================================================================================
+---- thermal step: 1,  ac: 0.5174,  dx: 0.2325,  dt: 5.868 ----
+---- thermal step: 2,  ac: 0.5178,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 3,  ac: 0.5183,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 4,  ac: 0.5183,  dx: 0.2325,  dt: 5.854 ----
+---- thermal step: 5,  ac: 0.5183,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 6,  ac: 0.5183,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 7,  ac: 0.5184,  dx: 0.2325,  dt: 5.859 ----
+---- thermal step: 8,  ac: 0.5184,  dx: 0.2325,  dt: 5.853 ----
+---- thermal step: 9,  ac: 0.5186,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 10,  ac: 0.5187,  dx: 0.2325,  dt: 5.865 ----
+---- thermal step: 11,  ac: 0.5183,  dx: 0.2325,  dt: 5.858 ----
+---- thermal step: 12,  ac: 0.5187,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 13,  ac: 0.5183,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 14,  ac: 0.5184,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 15,  ac: 0.5186,  dx: 0.2325,  dt: 5.855 ----
+---- thermal step: 16,  ac: 0.5187,  dx: 0.2325,  dt: 5.860 ----
+---- thermal step: 17,  ac: 0.5184,  dx: 0.2325,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.5186,  dx: 0.2325,  dt: 5.854 ----
+---- thermal step: 19,  ac: 0.5185,  dx: 0.2325,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.5183,  dx: 0.2325,  dt: 5.859 ----
+---- accept step: 1,  ac: 0.5184,  dx: 0.2325,  dt: 7.434 ----
+---- accept step: 2,  ac: 0.5185,  dx: 0.2325,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.5182,  dx: 0.2325,  dt: 7.508 ----
+---- accept step: 4,  ac: 0.5184,  dx: 0.2325,  dt: 7.516 ----
+---- accept step: 5,  ac: 0.5185,  dx: 0.2325,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.5184,  dx: 0.2325,  dt: 7.510 ----
+---- accept step: 7,  ac: 0.5188,  dx: 0.2325,  dt: 7.516 ----
+---- accept step: 8,  ac: 0.5185,  dx: 0.2325,  dt: 7.518 ----
+state: 43 [0 0 0 0 0 0 0 0 0 0 0 5] 5v12
+         E: 11660.976442 (0.087792)  K: 5804.756405 (3.365372)  V: 5856.220037 (3.370214)
+         ac: 0.5185  dt: 177.302
+
+================================================================================
+---- thermal step: 1,  ac: 0.5384,  dx: 0.2325,  dt: 5.840 ----
+---- thermal step: 2,  ac: 0.5087,  dx: 0.2557,  dt: 5.849 ----
+---- thermal step: 3,  ac: 0.5110,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 4,  ac: 0.5113,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 5,  ac: 0.5112,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 6,  ac: 0.5114,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 7,  ac: 0.5114,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 8,  ac: 0.5110,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 9,  ac: 0.5115,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 10,  ac: 0.5113,  dx: 0.2557,  dt: 5.856 ----
+---- thermal step: 11,  ac: 0.5115,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 12,  ac: 0.5115,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 13,  ac: 0.5114,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 14,  ac: 0.5115,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 15,  ac: 0.5115,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 16,  ac: 0.5113,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 17,  ac: 0.5116,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 18,  ac: 0.5113,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 19,  ac: 0.5115,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 20,  ac: 0.5114,  dx: 0.2557,  dt: 5.847 ----
+---- accept step: 1,  ac: 0.5114,  dx: 0.2557,  dt: 7.423 ----
+---- accept step: 2,  ac: 0.5116,  dx: 0.2557,  dt: 7.502 ----
+---- accept step: 3,  ac: 0.5115,  dx: 0.2557,  dt: 7.493 ----
+---- accept step: 4,  ac: 0.5113,  dx: 0.2557,  dt: 7.503 ----
+---- accept step: 5,  ac: 0.5115,  dx: 0.2557,  dt: 7.496 ----
+---- accept step: 6,  ac: 0.5116,  dx: 0.2557,  dt: 7.492 ----
+---- accept step: 7,  ac: 0.5113,  dx: 0.2557,  dt: 7.497 ----
+---- accept step: 8,  ac: 0.5114,  dx: 0.2557,  dt: 7.507 ----
+state: 44 [0 0 0 2 0 0 0 0 0 0 0 0] 2v4
+         E: 11632.133803 (0.171722)  K: 5788.424775 (3.406234)  V: 5843.709028 (3.400487)
+         ac: 0.5114  dt: 176.946
+
+================================================================================
+---- thermal step: 1,  ac: 0.5064,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 2,  ac: 0.5068,  dx: 0.2557,  dt: 5.839 ----
+---- thermal step: 3,  ac: 0.5067,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 4,  ac: 0.5069,  dx: 0.2557,  dt: 5.839 ----
+---- thermal step: 5,  ac: 0.5069,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 6,  ac: 0.5068,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 7,  ac: 0.5068,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 8,  ac: 0.5066,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 9,  ac: 0.5068,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 10,  ac: 0.5065,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 11,  ac: 0.5066,  dx: 0.2557,  dt: 5.857 ----
+---- thermal step: 12,  ac: 0.5066,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 13,  ac: 0.5066,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 14,  ac: 0.5065,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 15,  ac: 0.5065,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 16,  ac: 0.5068,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 17,  ac: 0.5068,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 18,  ac: 0.5068,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 19,  ac: 0.5066,  dx: 0.2557,  dt: 5.857 ----
+---- thermal step: 20,  ac: 0.5067,  dx: 0.2557,  dt: 5.846 ----
+---- accept step: 1,  ac: 0.5067,  dx: 0.2557,  dt: 7.422 ----
+---- accept step: 2,  ac: 0.5065,  dx: 0.2557,  dt: 7.501 ----
+---- accept step: 3,  ac: 0.5068,  dx: 0.2557,  dt: 7.490 ----
+---- accept step: 4,  ac: 0.5066,  dx: 0.2557,  dt: 7.492 ----
+---- accept step: 5,  ac: 0.5066,  dx: 0.2557,  dt: 7.501 ----
+---- accept step: 6,  ac: 0.5067,  dx: 0.2557,  dt: 7.490 ----
+---- accept step: 7,  ac: 0.5064,  dx: 0.2557,  dt: 7.492 ----
+---- accept step: 8,  ac: 0.5066,  dx: 0.2557,  dt: 7.501 ----
+state: 45 [0 0 0 0 0 0 1 0 0 0 1 0] v7 + v11
+         E: 11684.884069 (0.113538)  K: 5813.175652 (3.380286)  V: 5871.708417 (3.388682)
+         ac: 0.5066  dt: 176.915
+
+================================================================================
+---- thermal step: 1,  ac: 0.5063,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 2,  ac: 0.5064,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 3,  ac: 0.5067,  dx: 0.2557,  dt: 5.839 ----
+---- thermal step: 4,  ac: 0.5066,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 5,  ac: 0.5065,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 6,  ac: 0.5069,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 7,  ac: 0.5066,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 8,  ac: 0.5067,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 9,  ac: 0.5068,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 10,  ac: 0.5066,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 11,  ac: 0.5066,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 12,  ac: 0.5065,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 13,  ac: 0.5066,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 14,  ac: 0.5067,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 15,  ac: 0.5067,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 16,  ac: 0.5065,  dx: 0.2557,  dt: 5.856 ----
+---- thermal step: 17,  ac: 0.5067,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 18,  ac: 0.5065,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 19,  ac: 0.5066,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 20,  ac: 0.5066,  dx: 0.2557,  dt: 5.841 ----
+---- accept step: 1,  ac: 0.5066,  dx: 0.2557,  dt: 7.417 ----
+---- accept step: 2,  ac: 0.5064,  dx: 0.2557,  dt: 7.502 ----
+---- accept step: 3,  ac: 0.5065,  dx: 0.2557,  dt: 7.488 ----
+---- accept step: 4,  ac: 0.5064,  dx: 0.2557,  dt: 7.489 ----
+---- accept step: 5,  ac: 0.5065,  dx: 0.2557,  dt: 7.500 ----
+---- accept step: 6,  ac: 0.5067,  dx: 0.2557,  dt: 7.492 ----
+---- accept step: 7,  ac: 0.5065,  dx: 0.2557,  dt: 7.490 ----
+---- accept step: 8,  ac: 0.5065,  dx: 0.2557,  dt: 7.505 ----
+state: 46 [0 0 0 0 0 0 0 1 0 0 1 0] v8 + v11
+         E: 11685.569432 (0.118567)  K: 5814.034346 (3.391720)  V: 5871.535086 (3.398834)
+         ac: 0.5065  dt: 176.883
+
+================================================================================
+---- thermal step: 1,  ac: 0.5061,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 2,  ac: 0.5064,  dx: 0.2557,  dt: 5.839 ----
+---- thermal step: 3,  ac: 0.5067,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 4,  ac: 0.5067,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 5,  ac: 0.5069,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 6,  ac: 0.5066,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 7,  ac: 0.5068,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 8,  ac: 0.5068,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 9,  ac: 0.5068,  dx: 0.2557,  dt: 5.855 ----
+---- thermal step: 10,  ac: 0.5067,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 11,  ac: 0.5067,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 12,  ac: 0.5066,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 13,  ac: 0.5066,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 14,  ac: 0.5066,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 15,  ac: 0.5067,  dx: 0.2557,  dt: 5.842 ----
+---- thermal step: 16,  ac: 0.5065,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 17,  ac: 0.5068,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 18,  ac: 0.5067,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 19,  ac: 0.5065,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 20,  ac: 0.5067,  dx: 0.2557,  dt: 5.839 ----
+---- accept step: 1,  ac: 0.5064,  dx: 0.2557,  dt: 7.425 ----
+---- accept step: 2,  ac: 0.5067,  dx: 0.2557,  dt: 7.500 ----
+---- accept step: 3,  ac: 0.5066,  dx: 0.2557,  dt: 7.493 ----
+---- accept step: 4,  ac: 0.5066,  dx: 0.2557,  dt: 7.489 ----
+---- accept step: 5,  ac: 0.5068,  dx: 0.2557,  dt: 7.505 ----
+---- accept step: 6,  ac: 0.5067,  dx: 0.2557,  dt: 7.496 ----
+---- accept step: 7,  ac: 0.5069,  dx: 0.2557,  dt: 7.493 ----
+---- accept step: 8,  ac: 0.5068,  dx: 0.2557,  dt: 7.501 ----
+state: 47 [0 0 0 0 0 0 1 0 0 0 0 1] v7 + v12
+         E: 11684.613266 (0.112387)  K: 5805.627302 (3.394090)  V: 5878.985964 (3.402917)
+         ac: 0.5067  dt: 176.870
+
+================================================================================
+---- thermal step: 1,  ac: 0.5064,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 2,  ac: 0.5067,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 3,  ac: 0.5066,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 4,  ac: 0.5067,  dx: 0.2557,  dt: 5.840 ----
+---- thermal step: 5,  ac: 0.5068,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 6,  ac: 0.5066,  dx: 0.2557,  dt: 5.841 ----
+---- thermal step: 7,  ac: 0.5065,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 8,  ac: 0.5068,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 9,  ac: 0.5064,  dx: 0.2557,  dt: 5.858 ----
+---- thermal step: 10,  ac: 0.5069,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 11,  ac: 0.5066,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 12,  ac: 0.5066,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 13,  ac: 0.5067,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 14,  ac: 0.5066,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 15,  ac: 0.5069,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 16,  ac: 0.5069,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 17,  ac: 0.5067,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 18,  ac: 0.5065,  dx: 0.2557,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.5066,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 20,  ac: 0.5067,  dx: 0.2557,  dt: 5.842 ----
+---- accept step: 1,  ac: 0.5064,  dx: 0.2557,  dt: 7.421 ----
+---- accept step: 2,  ac: 0.5068,  dx: 0.2557,  dt: 7.502 ----
+---- accept step: 3,  ac: 0.5067,  dx: 0.2557,  dt: 7.502 ----
+---- accept step: 4,  ac: 0.5066,  dx: 0.2557,  dt: 7.496 ----
+---- accept step: 5,  ac: 0.5067,  dx: 0.2557,  dt: 7.496 ----
+---- accept step: 6,  ac: 0.5066,  dx: 0.2557,  dt: 7.494 ----
+---- accept step: 7,  ac: 0.5065,  dx: 0.2557,  dt: 7.504 ----
+---- accept step: 8,  ac: 0.5067,  dx: 0.2557,  dt: 7.506 ----
+state: 48 [0 0 0 0 0 0 0 1 0 0 0 1] v8 + v12
+         E: 11685.891168 (0.118735)  K: 5804.998114 (3.388011)  V: 5880.893054 (3.395267)
+         ac: 0.5066  dt: 176.945
+
+================================================================================
+---- thermal step: 1,  ac: 0.5068,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 2,  ac: 0.5077,  dx: 0.2557,  dt: 5.843 ----
+---- thermal step: 3,  ac: 0.5075,  dx: 0.2557,  dt: 5.844 ----
+---- thermal step: 4,  ac: 0.5074,  dx: 0.2557,  dt: 5.848 ----
+---- thermal step: 5,  ac: 0.5072,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 6,  ac: 0.5073,  dx: 0.2557,  dt: 5.855 ----
+---- thermal step: 7,  ac: 0.5073,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 8,  ac: 0.5075,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 9,  ac: 0.5077,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 10,  ac: 0.5077,  dx: 0.2557,  dt: 5.854 ----
+---- thermal step: 11,  ac: 0.5077,  dx: 0.2557,  dt: 5.845 ----
+---- thermal step: 12,  ac: 0.5075,  dx: 0.2557,  dt: 5.849 ----
+---- thermal step: 13,  ac: 0.5071,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 14,  ac: 0.5075,  dx: 0.2557,  dt: 5.852 ----
+---- thermal step: 15,  ac: 0.5075,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 16,  ac: 0.5075,  dx: 0.2557,  dt: 5.849 ----
+---- thermal step: 17,  ac: 0.5074,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 18,  ac: 0.5075,  dx: 0.2557,  dt: 5.855 ----
+---- thermal step: 19,  ac: 0.5075,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 20,  ac: 0.5076,  dx: 0.2557,  dt: 5.850 ----
+---- accept step: 1,  ac: 0.5074,  dx: 0.2557,  dt: 7.425 ----
+---- accept step: 2,  ac: 0.5078,  dx: 0.2557,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.5075,  dx: 0.2557,  dt: 7.501 ----
+---- accept step: 4,  ac: 0.5074,  dx: 0.2557,  dt: 7.504 ----
+---- accept step: 5,  ac: 0.5075,  dx: 0.2557,  dt: 7.503 ----
+---- accept step: 6,  ac: 0.5075,  dx: 0.2557,  dt: 7.498 ----
+---- accept step: 7,  ac: 0.5076,  dx: 0.2557,  dt: 7.500 ----
+---- accept step: 8,  ac: 0.5075,  dx: 0.2557,  dt: 7.509 ----
+state: 49 [0 0 0 1 0 0 0 0 1 0 0 0] v4 + v9
+         E: 11771.978359 (0.115394)  K: 5853.766228 (3.360822)  V: 5918.212130 (3.358514)
+         ac: 0.5075  dt: 177.045
+
+================================================================================
+---- thermal step: 1,  ac: 0.5071,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 2,  ac: 0.5078,  dx: 0.2557,  dt: 5.846 ----
+---- thermal step: 3,  ac: 0.5074,  dx: 0.2557,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.5075,  dx: 0.2557,  dt: 5.848 ----
+---- thermal step: 5,  ac: 0.5076,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 6,  ac: 0.5076,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 7,  ac: 0.5075,  dx: 0.2557,  dt: 5.848 ----
+---- thermal step: 8,  ac: 0.5077,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 9,  ac: 0.5073,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 10,  ac: 0.5078,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 11,  ac: 0.5075,  dx: 0.2557,  dt: 5.849 ----
+---- thermal step: 12,  ac: 0.5075,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 13,  ac: 0.5074,  dx: 0.2557,  dt: 5.849 ----
+---- thermal step: 14,  ac: 0.5079,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 15,  ac: 0.5076,  dx: 0.2557,  dt: 5.851 ----
+---- thermal step: 16,  ac: 0.5075,  dx: 0.2557,  dt: 5.847 ----
+---- thermal step: 17,  ac: 0.5073,  dx: 0.2557,  dt: 5.850 ----
+---- thermal step: 18,  ac: 0.5078,  dx: 0.2557,  dt: 5.848 ----
+---- thermal step: 19,  ac: 0.5078,  dx: 0.2557,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.5076,  dx: 0.2557,  dt: 5.847 ----
+---- accept step: 1,  ac: 0.5075,  dx: 0.2557,  dt: 7.431 ----
+---- accept step: 2,  ac: 0.5076,  dx: 0.2557,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.5075,  dx: 0.2557,  dt: 7.500 ----
+---- accept step: 4,  ac: 0.5076,  dx: 0.2557,  dt: 7.499 ----
+---- accept step: 5,  ac: 0.5073,  dx: 0.2557,  dt: 7.508 ----
+---- accept step: 6,  ac: 0.5074,  dx: 0.2557,  dt: 7.501 ----
+---- accept step: 7,  ac: 0.5076,  dx: 0.2557,  dt: 7.497 ----
+---- accept step: 8,  ac: 0.5074,  dx: 0.2557,  dt: 7.511 ----
+state: 50 [0 0 0 1 0 0 0 0 0 1 0 0] v4 + v10
+         E: 11772.167806 (0.115921)  K: 5852.761207 (3.358418)  V: 5919.406599 (3.355183)
+         ac: 0.5075  dt: 177.056
+
+================================================================================
+---- thermal step: 1,  ac: 0.4665,  dx: 0.2557,  dt: 5.861 ----
+---- thermal step: 2,  ac: 0.5191,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 3,  ac: 0.5220,  dx: 0.2301,  dt: 5.860 ----
+---- thermal step: 4,  ac: 0.5230,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 5,  ac: 0.5236,  dx: 0.2301,  dt: 5.862 ----
+---- thermal step: 6,  ac: 0.5232,  dx: 0.2301,  dt: 5.857 ----
+---- thermal step: 7,  ac: 0.5236,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 8,  ac: 0.5239,  dx: 0.2301,  dt: 5.870 ----
+---- thermal step: 9,  ac: 0.5240,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5236,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.5237,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 12,  ac: 0.5237,  dx: 0.2301,  dt: 5.868 ----
+---- thermal step: 13,  ac: 0.5236,  dx: 0.2301,  dt: 5.861 ----
+---- thermal step: 14,  ac: 0.5239,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 15,  ac: 0.5238,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 16,  ac: 0.5234,  dx: 0.2301,  dt: 5.873 ----
+---- thermal step: 17,  ac: 0.5238,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.5235,  dx: 0.2301,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.5239,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 20,  ac: 0.5236,  dx: 0.2301,  dt: 5.857 ----
+---- accept step: 1,  ac: 0.5239,  dx: 0.2301,  dt: 7.437 ----
+---- accept step: 2,  ac: 0.5234,  dx: 0.2301,  dt: 7.521 ----
+---- accept step: 3,  ac: 0.5236,  dx: 0.2301,  dt: 7.508 ----
+---- accept step: 4,  ac: 0.5236,  dx: 0.2301,  dt: 7.509 ----
+---- accept step: 5,  ac: 0.5237,  dx: 0.2301,  dt: 7.518 ----
+---- accept step: 6,  ac: 0.5240,  dx: 0.2301,  dt: 7.514 ----
+---- accept step: 7,  ac: 0.5239,  dx: 0.2301,  dt: 7.508 ----
+---- accept step: 8,  ac: 0.5238,  dx: 0.2301,  dt: 7.520 ----
+state: 51 [0 0 0 1 0 0 0 0 0 0 3 0] v4 + 3v11
+         E: 11820.900682 (0.112661)  K: 5880.008782 (3.353156)  V: 5940.891900 (3.352455)
+         ac: 0.5237  dt: 177.380
+
+================================================================================
+---- thermal step: 1,  ac: 0.5186,  dx: 0.2301,  dt: 5.855 ----
+---- thermal step: 2,  ac: 0.5183,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 3,  ac: 0.5183,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.5185,  dx: 0.2301,  dt: 5.862 ----
+---- thermal step: 5,  ac: 0.5184,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.5183,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 7,  ac: 0.5183,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 8,  ac: 0.5182,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 9,  ac: 0.5182,  dx: 0.2301,  dt: 5.854 ----
+---- thermal step: 10,  ac: 0.5184,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 11,  ac: 0.5183,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.5183,  dx: 0.2301,  dt: 5.860 ----
+---- thermal step: 13,  ac: 0.5180,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 14,  ac: 0.5180,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 15,  ac: 0.5181,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.5182,  dx: 0.2301,  dt: 5.868 ----
+---- thermal step: 17,  ac: 0.5182,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.5181,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 19,  ac: 0.5184,  dx: 0.2301,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.5181,  dx: 0.2301,  dt: 5.860 ----
+---- accept step: 1,  ac: 0.5181,  dx: 0.2301,  dt: 7.432 ----
+---- accept step: 2,  ac: 0.5184,  dx: 0.2301,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.5182,  dx: 0.2301,  dt: 7.510 ----
+---- accept step: 4,  ac: 0.5181,  dx: 0.2301,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.5181,  dx: 0.2301,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.5184,  dx: 0.2301,  dt: 7.513 ----
+---- accept step: 7,  ac: 0.5182,  dx: 0.2301,  dt: 7.503 ----
+---- accept step: 8,  ac: 0.5183,  dx: 0.2301,  dt: 7.513 ----
+state: 52 [0 0 0 1 0 0 0 0 0 0 2 1] v4 + 2v11 + v12
+         E: 11819.766644 (0.108348)  K: 5889.637998 (3.327070)  V: 5930.128647 (3.326678)
+         ac: 0.5182  dt: 177.253
+
+================================================================================
+---- thermal step: 1,  ac: 0.5182,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 2,  ac: 0.5182,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 3,  ac: 0.5182,  dx: 0.2301,  dt: 5.855 ----
+---- thermal step: 4,  ac: 0.5185,  dx: 0.2301,  dt: 5.854 ----
+---- thermal step: 5,  ac: 0.5182,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 6,  ac: 0.5182,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.5185,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 8,  ac: 0.5183,  dx: 0.2301,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.5182,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 10,  ac: 0.5184,  dx: 0.2301,  dt: 5.852 ----
+---- thermal step: 11,  ac: 0.5184,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 12,  ac: 0.5180,  dx: 0.2301,  dt: 5.855 ----
+---- thermal step: 13,  ac: 0.5184,  dx: 0.2301,  dt: 5.861 ----
+---- thermal step: 14,  ac: 0.5181,  dx: 0.2301,  dt: 5.852 ----
+---- thermal step: 15,  ac: 0.5185,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.5183,  dx: 0.2301,  dt: 5.855 ----
+---- thermal step: 17,  ac: 0.5180,  dx: 0.2301,  dt: 5.860 ----
+---- thermal step: 18,  ac: 0.5180,  dx: 0.2301,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.5183,  dx: 0.2301,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.5181,  dx: 0.2301,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5179,  dx: 0.2301,  dt: 7.449 ----
+---- accept step: 2,  ac: 0.5183,  dx: 0.2301,  dt: 7.517 ----
+---- accept step: 3,  ac: 0.5180,  dx: 0.2301,  dt: 7.514 ----
+---- accept step: 4,  ac: 0.5184,  dx: 0.2301,  dt: 7.503 ----
+---- accept step: 5,  ac: 0.5184,  dx: 0.2301,  dt: 7.513 ----
+---- accept step: 6,  ac: 0.5183,  dx: 0.2301,  dt: 7.516 ----
+---- accept step: 7,  ac: 0.5183,  dx: 0.2301,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.5185,  dx: 0.2301,  dt: 7.515 ----
+state: 53 [0 0 0 1 0 0 0 0 0 0 1 2] v4 + v11 + 2v12
+         E: 11819.765961 (0.109530)  K: 5883.344670 (3.327233)  V: 5936.421290 (3.326512)
+         ac: 0.5183  dt: 177.279
+
+================================================================================
+---- thermal step: 1,  ac: 0.5231,  dx: 0.2301,  dt: 5.857 ----
+---- thermal step: 2,  ac: 0.5232,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 3,  ac: 0.5236,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 4,  ac: 0.5236,  dx: 0.2301,  dt: 5.861 ----
+---- thermal step: 5,  ac: 0.5238,  dx: 0.2301,  dt: 5.858 ----
+---- thermal step: 6,  ac: 0.5240,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 7,  ac: 0.5239,  dx: 0.2301,  dt: 5.862 ----
+---- thermal step: 8,  ac: 0.5237,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 9,  ac: 0.5238,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 10,  ac: 0.5238,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.5238,  dx: 0.2301,  dt: 5.859 ----
+---- thermal step: 12,  ac: 0.5239,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 13,  ac: 0.5240,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 14,  ac: 0.5237,  dx: 0.2301,  dt: 5.864 ----
+---- thermal step: 15,  ac: 0.5238,  dx: 0.2301,  dt: 5.865 ----
+---- thermal step: 16,  ac: 0.5241,  dx: 0.2301,  dt: 5.866 ----
+---- thermal step: 17,  ac: 0.5238,  dx: 0.2301,  dt: 5.864 ----
+---- thermal step: 18,  ac: 0.5237,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 19,  ac: 0.5240,  dx: 0.2301,  dt: 5.863 ----
+---- thermal step: 20,  ac: 0.5240,  dx: 0.2301,  dt: 5.868 ----
+---- accept step: 1,  ac: 0.5238,  dx: 0.2301,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.5239,  dx: 0.2301,  dt: 7.534 ----
+---- accept step: 3,  ac: 0.5241,  dx: 0.2301,  dt: 7.519 ----
+---- accept step: 4,  ac: 0.5239,  dx: 0.2301,  dt: 7.535 ----
+---- accept step: 5,  ac: 0.5241,  dx: 0.2301,  dt: 7.520 ----
+---- accept step: 6,  ac: 0.5240,  dx: 0.2301,  dt: 7.520 ----
+---- accept step: 7,  ac: 0.5238,  dx: 0.2301,  dt: 7.526 ----
+---- accept step: 8,  ac: 0.5239,  dx: 0.2301,  dt: 7.536 ----
+state: 54 [0 0 0 1 0 0 0 0 0 0 0 3] v4 + 3v12
+         E: 11820.887638 (0.112735)  K: 5878.124053 (3.351285)  V: 5942.763585 (3.350354)
+         ac: 0.5239  dt: 177.502
+
+================================================================================
+---- thermal step: 1,  ac: 0.5419,  dx: 0.2301,  dt: 5.857 ----
+---- thermal step: 2,  ac: 0.5130,  dx: 0.2532,  dt: 5.860 ----
+---- thermal step: 3,  ac: 0.5150,  dx: 0.2532,  dt: 5.861 ----
+---- thermal step: 4,  ac: 0.5157,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 5,  ac: 0.5157,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 6,  ac: 0.5159,  dx: 0.2532,  dt: 5.862 ----
+---- thermal step: 7,  ac: 0.5158,  dx: 0.2532,  dt: 5.861 ----
+---- thermal step: 8,  ac: 0.5155,  dx: 0.2532,  dt: 5.865 ----
+---- thermal step: 9,  ac: 0.5157,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5157,  dx: 0.2532,  dt: 5.862 ----
+---- thermal step: 11,  ac: 0.5158,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 12,  ac: 0.5158,  dx: 0.2532,  dt: 5.868 ----
+---- thermal step: 13,  ac: 0.5160,  dx: 0.2532,  dt: 5.866 ----
+---- thermal step: 14,  ac: 0.5160,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 15,  ac: 0.5155,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 16,  ac: 0.5158,  dx: 0.2532,  dt: 5.867 ----
+---- thermal step: 17,  ac: 0.5157,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 18,  ac: 0.5156,  dx: 0.2532,  dt: 5.874 ----
+---- thermal step: 19,  ac: 0.5157,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 20,  ac: 0.5157,  dx: 0.2532,  dt: 5.868 ----
+---- accept step: 1,  ac: 0.5157,  dx: 0.2532,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.5157,  dx: 0.2532,  dt: 7.529 ----
+---- accept step: 3,  ac: 0.5156,  dx: 0.2532,  dt: 7.523 ----
+---- accept step: 4,  ac: 0.5159,  dx: 0.2532,  dt: 7.527 ----
+---- accept step: 5,  ac: 0.5156,  dx: 0.2532,  dt: 7.526 ----
+---- accept step: 6,  ac: 0.5159,  dx: 0.2532,  dt: 7.521 ----
+---- accept step: 7,  ac: 0.5159,  dx: 0.2532,  dt: 7.525 ----
+---- accept step: 8,  ac: 0.5157,  dx: 0.2532,  dt: 7.535 ----
+state: 55 [0 0 0 0 0 0 0 0 2 0 0 0] 2v9
+         E: 11902.897132 (0.119879)  K: 5905.181173 (3.444553)  V: 5997.715959 (3.440283)
+         ac: 0.5157  dt: 177.545
+
+================================================================================
+---- thermal step: 1,  ac: 0.5120,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 2,  ac: 0.5116,  dx: 0.2532,  dt: 5.861 ----
+---- thermal step: 3,  ac: 0.5119,  dx: 0.2532,  dt: 5.874 ----
+---- thermal step: 4,  ac: 0.5120,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 5,  ac: 0.5119,  dx: 0.2532,  dt: 5.864 ----
+---- thermal step: 6,  ac: 0.5119,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 7,  ac: 0.5119,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 8,  ac: 0.5119,  dx: 0.2532,  dt: 5.861 ----
+---- thermal step: 9,  ac: 0.5115,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5119,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 11,  ac: 0.5118,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 12,  ac: 0.5118,  dx: 0.2532,  dt: 5.860 ----
+---- thermal step: 13,  ac: 0.5117,  dx: 0.2532,  dt: 5.863 ----
+---- thermal step: 14,  ac: 0.5116,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 15,  ac: 0.5117,  dx: 0.2532,  dt: 5.870 ----
+---- thermal step: 16,  ac: 0.5118,  dx: 0.2532,  dt: 5.858 ----
+---- thermal step: 17,  ac: 0.5118,  dx: 0.2532,  dt: 5.860 ----
+---- thermal step: 18,  ac: 0.5116,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 19,  ac: 0.5120,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 20,  ac: 0.5117,  dx: 0.2532,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.5119,  dx: 0.2532,  dt: 7.440 ----
+---- accept step: 2,  ac: 0.5118,  dx: 0.2532,  dt: 7.519 ----
+---- accept step: 3,  ac: 0.5118,  dx: 0.2532,  dt: 7.518 ----
+---- accept step: 4,  ac: 0.5117,  dx: 0.2532,  dt: 7.509 ----
+---- accept step: 5,  ac: 0.5115,  dx: 0.2532,  dt: 7.517 ----
+---- accept step: 6,  ac: 0.5118,  dx: 0.2532,  dt: 7.504 ----
+---- accept step: 7,  ac: 0.5117,  dx: 0.2532,  dt: 7.503 ----
+---- accept step: 8,  ac: 0.5118,  dx: 0.2532,  dt: 7.515 ----
+state: 56 [0 0 0 0 0 0 0 0 1 1 0 0] v9 + v10
+         E: 11904.633447 (0.112833)  K: 5909.676790 (3.363478)  V: 5994.956656 (3.358172)
+         ac: 0.5117  dt: 177.403
+
+================================================================================
+---- thermal step: 1,  ac: 0.5151,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 2,  ac: 0.5156,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.5157,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.5160,  dx: 0.2532,  dt: 5.865 ----
+---- thermal step: 5,  ac: 0.5155,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 6,  ac: 0.5156,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 7,  ac: 0.5158,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 8,  ac: 0.5158,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.5160,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.5157,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.5157,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.5157,  dx: 0.2532,  dt: 5.855 ----
+---- thermal step: 13,  ac: 0.5157,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 14,  ac: 0.5158,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 15,  ac: 0.5156,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.5159,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 17,  ac: 0.5155,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.5160,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 19,  ac: 0.5158,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 20,  ac: 0.5157,  dx: 0.2532,  dt: 5.858 ----
+---- accept step: 1,  ac: 0.5156,  dx: 0.2532,  dt: 7.431 ----
+---- accept step: 2,  ac: 0.5157,  dx: 0.2532,  dt: 7.516 ----
+---- accept step: 3,  ac: 0.5157,  dx: 0.2532,  dt: 7.505 ----
+---- accept step: 4,  ac: 0.5156,  dx: 0.2532,  dt: 7.504 ----
+---- accept step: 5,  ac: 0.5155,  dx: 0.2532,  dt: 7.511 ----
+---- accept step: 6,  ac: 0.5158,  dx: 0.2532,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.5156,  dx: 0.2532,  dt: 7.503 ----
+---- accept step: 8,  ac: 0.5160,  dx: 0.2532,  dt: 7.514 ----
+state: 57 [0 0 0 0 0 0 0 0 0 2 0 0] 2v10
+         E: 11902.652242 (0.120434)  K: 5907.442101 (3.451394)  V: 5995.210141 (3.445649)
+         ac: 0.5157  dt: 177.236
+
+================================================================================
+---- thermal step: 1,  ac: 0.4880,  dx: 0.2532,  dt: 5.855 ----
+---- thermal step: 2,  ac: 0.4952,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 3,  ac: 0.4966,  dx: 0.2532,  dt: 5.852 ----
+---- thermal step: 4,  ac: 0.4967,  dx: 0.2532,  dt: 5.860 ----
+---- thermal step: 5,  ac: 0.4967,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.4970,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 7,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 8,  ac: 0.4970,  dx: 0.2532,  dt: 5.858 ----
+---- thermal step: 9,  ac: 0.4966,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4971,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 11,  ac: 0.4968,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.4967,  dx: 0.2532,  dt: 5.862 ----
+---- thermal step: 13,  ac: 0.4968,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 14,  ac: 0.4966,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 15,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 17,  ac: 0.4967,  dx: 0.2532,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.4969,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 19,  ac: 0.4968,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- accept step: 1,  ac: 0.4968,  dx: 0.2532,  dt: 7.445 ----
+---- accept step: 2,  ac: 0.4969,  dx: 0.2532,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.4969,  dx: 0.2532,  dt: 7.511 ----
+---- accept step: 4,  ac: 0.4968,  dx: 0.2532,  dt: 7.504 ----
+---- accept step: 5,  ac: 0.4968,  dx: 0.2532,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.4970,  dx: 0.2532,  dt: 7.512 ----
+---- accept step: 7,  ac: 0.4968,  dx: 0.2532,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.4967,  dx: 0.2532,  dt: 7.515 ----
+state: 58 [0 0 1 0 0 0 0 0 0 0 2 0] v3 + 2v11
+         E: 11958.644203 (0.111057)  K: 5947.775163 (3.400238)  V: 6010.869041 (3.397975)
+         ac: 0.4968  dt: 177.260
+
+================================================================================
+---- thermal step: 1,  ac: 0.4937,  dx: 0.2532,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.4928,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 3,  ac: 0.4931,  dx: 0.2532,  dt: 5.851 ----
+---- thermal step: 4,  ac: 0.4929,  dx: 0.2532,  dt: 5.852 ----
+---- thermal step: 5,  ac: 0.4928,  dx: 0.2532,  dt: 5.866 ----
+---- thermal step: 6,  ac: 0.4930,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.4929,  dx: 0.2532,  dt: 5.855 ----
+---- thermal step: 8,  ac: 0.4930,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.4929,  dx: 0.2532,  dt: 5.860 ----
+---- thermal step: 10,  ac: 0.4927,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.4928,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 12,  ac: 0.4930,  dx: 0.2532,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.4929,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 14,  ac: 0.4928,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 15,  ac: 0.4929,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 16,  ac: 0.4930,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 17,  ac: 0.4932,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 18,  ac: 0.4929,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 19,  ac: 0.4933,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.4930,  dx: 0.2532,  dt: 5.855 ----
+---- accept step: 1,  ac: 0.4929,  dx: 0.2532,  dt: 7.447 ----
+---- accept step: 2,  ac: 0.4929,  dx: 0.2532,  dt: 7.516 ----
+---- accept step: 3,  ac: 0.4928,  dx: 0.2532,  dt: 7.515 ----
+---- accept step: 4,  ac: 0.4931,  dx: 0.2532,  dt: 7.504 ----
+---- accept step: 5,  ac: 0.4929,  dx: 0.2532,  dt: 7.510 ----
+---- accept step: 6,  ac: 0.4932,  dx: 0.2532,  dt: 7.514 ----
+---- accept step: 7,  ac: 0.4933,  dx: 0.2532,  dt: 7.508 ----
+---- accept step: 8,  ac: 0.4930,  dx: 0.2532,  dt: 7.512 ----
+state: 59 [0 0 1 0 0 0 0 0 0 0 1 1] v3 + v11 + v12
+         E: 11958.033936 (0.108880)  K: 5952.888257 (3.382668)  V: 6005.145678 (3.380557)
+         ac: 0.4930  dt: 177.266
+
+================================================================================
+---- thermal step: 1,  ac: 0.4965,  dx: 0.2532,  dt: 5.859 ----
+---- thermal step: 2,  ac: 0.4967,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 3,  ac: 0.4970,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 4,  ac: 0.4968,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 5,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.4967,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.4971,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 8,  ac: 0.4969,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 9,  ac: 0.4967,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4970,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.4970,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.4967,  dx: 0.2532,  dt: 5.858 ----
+---- thermal step: 13,  ac: 0.4969,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 14,  ac: 0.4969,  dx: 0.2532,  dt: 5.855 ----
+---- thermal step: 15,  ac: 0.4969,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 16,  ac: 0.4969,  dx: 0.2532,  dt: 5.857 ----
+---- thermal step: 17,  ac: 0.4969,  dx: 0.2532,  dt: 5.854 ----
+---- thermal step: 18,  ac: 0.4970,  dx: 0.2532,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.4967,  dx: 0.2532,  dt: 5.853 ----
+---- thermal step: 20,  ac: 0.4971,  dx: 0.2532,  dt: 5.856 ----
+---- accept step: 1,  ac: 0.4968,  dx: 0.2532,  dt: 7.432 ----
+---- accept step: 2,  ac: 0.4967,  dx: 0.2532,  dt: 7.513 ----
+---- accept step: 3,  ac: 0.4970,  dx: 0.2532,  dt: 7.505 ----
+---- accept step: 4,  ac: 0.4966,  dx: 0.2532,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.4970,  dx: 0.2532,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.4966,  dx: 0.2532,  dt: 7.502 ----
+---- accept step: 7,  ac: 0.4967,  dx: 0.2532,  dt: 7.507 ----
+---- accept step: 8,  ac: 0.4970,  dx: 0.2532,  dt: 7.518 ----
+state: 60 [0 0 1 0 0 0 0 0 0 0 0 2] v3 + 2v12
+         E: 11958.797604 (0.109755)  K: 5954.741377 (3.390772)  V: 6004.056228 (3.389004)
+         ac: 0.4968  dt: 177.231
+
+================================================================================
+---- thermal step: 1,  ac: 0.4707,  dx: 0.2532,  dt: 5.856 ----
+---- thermal step: 2,  ac: 0.5230,  dx: 0.2278,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.5261,  dx: 0.2278,  dt: 5.857 ----
+---- thermal step: 4,  ac: 0.4896,  dx: 0.2506,  dt: 5.860 ----
+---- thermal step: 5,  ac: 0.4898,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 6,  ac: 0.4898,  dx: 0.2506,  dt: 5.868 ----
+---- thermal step: 7,  ac: 0.4900,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 8,  ac: 0.4898,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 9,  ac: 0.4899,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 10,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.4901,  dx: 0.2506,  dt: 5.868 ----
+---- thermal step: 12,  ac: 0.4901,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 13,  ac: 0.4899,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 14,  ac: 0.4900,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 15,  ac: 0.4900,  dx: 0.2506,  dt: 5.872 ----
+---- thermal step: 16,  ac: 0.4902,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 17,  ac: 0.4901,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.4902,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 19,  ac: 0.4899,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.4900,  dx: 0.2506,  dt: 5.857 ----
+---- accept step: 1,  ac: 0.4898,  dx: 0.2506,  dt: 7.441 ----
+---- accept step: 2,  ac: 0.4898,  dx: 0.2506,  dt: 7.520 ----
+---- accept step: 3,  ac: 0.4898,  dx: 0.2506,  dt: 7.508 ----
+---- accept step: 4,  ac: 0.4899,  dx: 0.2506,  dt: 7.519 ----
+---- accept step: 5,  ac: 0.4899,  dx: 0.2506,  dt: 7.513 ----
+---- accept step: 6,  ac: 0.4902,  dx: 0.2506,  dt: 7.509 ----
+---- accept step: 7,  ac: 0.4900,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 8,  ac: 0.4902,  dx: 0.2506,  dt: 7.521 ----
+state: 61 [0 0 0 0 0 0 0 0 1 0 3 0] v9 + 3v11
+         E: 11959.712342 (0.101337)  K: 5945.714310 (3.349621)  V: 6013.998032 (3.348771)
+         ac: 0.4900  dt: 177.376
+
+================================================================================
+---- thermal step: 1,  ac: 0.4899,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 2,  ac: 0.4896,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.4900,  dx: 0.2506,  dt: 5.863 ----
+---- thermal step: 4,  ac: 0.4901,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 5,  ac: 0.4899,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 6,  ac: 0.4900,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 7,  ac: 0.4897,  dx: 0.2506,  dt: 5.873 ----
+---- thermal step: 8,  ac: 0.4899,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 9,  ac: 0.4899,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 10,  ac: 0.4897,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 11,  ac: 0.4898,  dx: 0.2506,  dt: 5.873 ----
+---- thermal step: 12,  ac: 0.4899,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 13,  ac: 0.4897,  dx: 0.2506,  dt: 5.860 ----
+---- thermal step: 14,  ac: 0.4899,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 15,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 16,  ac: 0.4902,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 17,  ac: 0.4899,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 18,  ac: 0.4905,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.4900,  dx: 0.2506,  dt: 5.867 ----
+---- thermal step: 20,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- accept step: 1,  ac: 0.4900,  dx: 0.2506,  dt: 7.441 ----
+---- accept step: 2,  ac: 0.4902,  dx: 0.2506,  dt: 7.520 ----
+---- accept step: 3,  ac: 0.4901,  dx: 0.2506,  dt: 7.509 ----
+---- accept step: 4,  ac: 0.4900,  dx: 0.2506,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.4899,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 6,  ac: 0.4899,  dx: 0.2506,  dt: 7.514 ----
+---- accept step: 7,  ac: 0.4901,  dx: 0.2506,  dt: 7.509 ----
+---- accept step: 8,  ac: 0.4901,  dx: 0.2506,  dt: 7.521 ----
+state: 62 [0 0 0 0 0 0 0 0 0 1 3 0] v10 + 3v11
+         E: 11961.005141 (0.098664)  K: 5948.594875 (3.356822)  V: 6012.410265 (3.355838)
+         ac: 0.4900  dt: 177.387
+
+================================================================================
+---- thermal step: 1,  ac: 0.4846,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 2,  ac: 0.4841,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 3,  ac: 0.4836,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 4,  ac: 0.4837,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 5,  ac: 0.4837,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 6,  ac: 0.4838,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 7,  ac: 0.4841,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 8,  ac: 0.4840,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 9,  ac: 0.4837,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 10,  ac: 0.4838,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.4841,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 12,  ac: 0.4840,  dx: 0.2506,  dt: 5.869 ----
+---- thermal step: 13,  ac: 0.4837,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 14,  ac: 0.4839,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 15,  ac: 0.4838,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 16,  ac: 0.4840,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 17,  ac: 0.4838,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 18,  ac: 0.4836,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 19,  ac: 0.4840,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 20,  ac: 0.4840,  dx: 0.2506,  dt: 5.859 ----
+---- accept step: 1,  ac: 0.4838,  dx: 0.2506,  dt: 7.433 ----
+---- accept step: 2,  ac: 0.4838,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 3,  ac: 0.4836,  dx: 0.2506,  dt: 7.503 ----
+---- accept step: 4,  ac: 0.4838,  dx: 0.2506,  dt: 7.505 ----
+---- accept step: 5,  ac: 0.4839,  dx: 0.2506,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.4839,  dx: 0.2506,  dt: 7.513 ----
+---- accept step: 7,  ac: 0.4838,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 8,  ac: 0.4841,  dx: 0.2506,  dt: 7.524 ----
+state: 63 [0 0 0 0 0 0 0 0 1 0 2 1] v9 + 2v11 + v12
+         E: 11958.948755 (0.097465)  K: 5955.358345 (3.325313)  V: 6003.590409 (3.324746)
+         ac: 0.4839  dt: 177.281
+
+================================================================================
+---- thermal step: 1,  ac: 0.4835,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 2,  ac: 0.4839,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 3,  ac: 0.4840,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.4839,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 5,  ac: 0.4838,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 6,  ac: 0.4837,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 7,  ac: 0.4840,  dx: 0.2506,  dt: 5.855 ----
+---- thermal step: 8,  ac: 0.4839,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 9,  ac: 0.4840,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4840,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 11,  ac: 0.4839,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.4836,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 13,  ac: 0.4838,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 14,  ac: 0.4839,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 15,  ac: 0.4837,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 16,  ac: 0.4836,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 17,  ac: 0.4838,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 18,  ac: 0.4839,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.4838,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 20,  ac: 0.4839,  dx: 0.2506,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.4841,  dx: 0.2506,  dt: 7.448 ----
+---- accept step: 2,  ac: 0.4838,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 3,  ac: 0.4838,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 4,  ac: 0.4839,  dx: 0.2506,  dt: 7.503 ----
+---- accept step: 5,  ac: 0.4838,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.4835,  dx: 0.2506,  dt: 7.512 ----
+---- accept step: 7,  ac: 0.4839,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 8,  ac: 0.4837,  dx: 0.2506,  dt: 7.512 ----
+state: 64 [0 0 0 0 0 0 0 0 0 1 2 1] v10 + 2v11 + v12
+         E: 11959.253285 (0.097762)  K: 5944.679204 (3.340577)  V: 6014.574081 (3.339460)
+         ac: 0.4838  dt: 177.241
+
+================================================================================
+---- thermal step: 1,  ac: 0.4842,  dx: 0.2506,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.4839,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.4836,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.4835,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 5,  ac: 0.4839,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 6,  ac: 0.4841,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 7,  ac: 0.4842,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 8,  ac: 0.4838,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 9,  ac: 0.4837,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4841,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.4841,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 12,  ac: 0.4839,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 13,  ac: 0.4841,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 14,  ac: 0.4840,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 15,  ac: 0.4838,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.4840,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 17,  ac: 0.4839,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 18,  ac: 0.4840,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.4836,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 20,  ac: 0.4838,  dx: 0.2506,  dt: 5.853 ----
+---- accept step: 1,  ac: 0.4841,  dx: 0.2506,  dt: 7.430 ----
+---- accept step: 2,  ac: 0.4838,  dx: 0.2506,  dt: 7.524 ----
+---- accept step: 3,  ac: 0.4839,  dx: 0.2506,  dt: 7.513 ----
+---- accept step: 4,  ac: 0.4837,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 5,  ac: 0.4838,  dx: 0.2506,  dt: 7.503 ----
+---- accept step: 6,  ac: 0.4837,  dx: 0.2506,  dt: 7.504 ----
+---- accept step: 7,  ac: 0.4839,  dx: 0.2506,  dt: 7.512 ----
+---- accept step: 8,  ac: 0.4838,  dx: 0.2506,  dt: 7.514 ----
+state: 65 [0 0 0 0 0 0 0 0 1 0 1 2] v9 + v11 + 2v12
+         E: 11959.005191 (0.097245)  K: 5952.923827 (3.332628)  V: 6006.081365 (3.331711)
+         ac: 0.4838  dt: 177.227
+
+================================================================================
+---- thermal step: 1,  ac: 0.4836,  dx: 0.2506,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.4838,  dx: 0.2506,  dt: 5.865 ----
+---- thermal step: 3,  ac: 0.4840,  dx: 0.2506,  dt: 5.852 ----
+---- thermal step: 4,  ac: 0.4839,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 5,  ac: 0.4839,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 6,  ac: 0.4840,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 7,  ac: 0.4839,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 8,  ac: 0.4841,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 9,  ac: 0.4838,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.4838,  dx: 0.2506,  dt: 5.860 ----
+---- thermal step: 11,  ac: 0.4840,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.4839,  dx: 0.2506,  dt: 5.856 ----
+---- thermal step: 13,  ac: 0.4841,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 14,  ac: 0.4840,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 15,  ac: 0.4838,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.4841,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 17,  ac: 0.4835,  dx: 0.2506,  dt: 5.854 ----
+---- thermal step: 18,  ac: 0.4836,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 19,  ac: 0.4836,  dx: 0.2506,  dt: 5.853 ----
+---- thermal step: 20,  ac: 0.4837,  dx: 0.2506,  dt: 5.856 ----
+---- accept step: 1,  ac: 0.4837,  dx: 0.2506,  dt: 7.433 ----
+---- accept step: 2,  ac: 0.4838,  dx: 0.2506,  dt: 7.514 ----
+---- accept step: 3,  ac: 0.4839,  dx: 0.2506,  dt: 7.514 ----
+---- accept step: 4,  ac: 0.4840,  dx: 0.2506,  dt: 7.511 ----
+---- accept step: 5,  ac: 0.4839,  dx: 0.2506,  dt: 7.507 ----
+---- accept step: 6,  ac: 0.4835,  dx: 0.2506,  dt: 7.504 ----
+---- accept step: 7,  ac: 0.4836,  dx: 0.2506,  dt: 7.506 ----
+---- accept step: 8,  ac: 0.4839,  dx: 0.2506,  dt: 7.519 ----
+state: 66 [0 0 0 0 0 0 0 0 0 1 1 2] v10 + v11 + 2v12
+         E: 11959.123147 (0.099163)  K: 5943.692609 (3.343069)  V: 6015.430538 (3.342349)
+         ac: 0.4838  dt: 177.264
+
+================================================================================
+---- thermal step: 1,  ac: 0.4891,  dx: 0.2506,  dt: 5.860 ----
+---- thermal step: 2,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 3,  ac: 0.4901,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 4,  ac: 0.4897,  dx: 0.2506,  dt: 5.863 ----
+---- thermal step: 5,  ac: 0.4901,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 6,  ac: 0.4898,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 7,  ac: 0.4898,  dx: 0.2506,  dt: 5.867 ----
+---- thermal step: 8,  ac: 0.4899,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 9,  ac: 0.4903,  dx: 0.2506,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.4901,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 11,  ac: 0.4902,  dx: 0.2506,  dt: 5.868 ----
+---- thermal step: 12,  ac: 0.4900,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 13,  ac: 0.4897,  dx: 0.2506,  dt: 5.863 ----
+---- thermal step: 14,  ac: 0.4898,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 15,  ac: 0.4904,  dx: 0.2506,  dt: 5.875 ----
+---- thermal step: 16,  ac: 0.4901,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 17,  ac: 0.4900,  dx: 0.2506,  dt: 5.864 ----
+---- thermal step: 18,  ac: 0.4901,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 19,  ac: 0.4899,  dx: 0.2506,  dt: 5.869 ----
+---- thermal step: 20,  ac: 0.4900,  dx: 0.2506,  dt: 5.859 ----
+---- accept step: 1,  ac: 0.4899,  dx: 0.2506,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.4903,  dx: 0.2506,  dt: 7.522 ----
+---- accept step: 3,  ac: 0.4900,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 4,  ac: 0.4900,  dx: 0.2506,  dt: 7.512 ----
+---- accept step: 5,  ac: 0.4899,  dx: 0.2506,  dt: 7.521 ----
+---- accept step: 6,  ac: 0.4899,  dx: 0.2506,  dt: 7.512 ----
+---- accept step: 7,  ac: 0.4901,  dx: 0.2506,  dt: 7.510 ----
+---- accept step: 8,  ac: 0.4900,  dx: 0.2506,  dt: 7.525 ----
+state: 67 [0 0 0 0 0 0 0 0 1 0 0 3] v9 + 3v12
+         E: 11960.646827 (0.097411)  K: 5944.555786 (3.355439)  V: 6016.091041 (3.354492)
+         ac: 0.4900  dt: 177.439
+
+================================================================================
+---- thermal step: 1,  ac: 0.4900,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 2,  ac: 0.4901,  dx: 0.2506,  dt: 5.857 ----
+---- thermal step: 3,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 4,  ac: 0.4898,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 5,  ac: 0.4901,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 6,  ac: 0.4903,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 7,  ac: 0.4902,  dx: 0.2506,  dt: 5.866 ----
+---- thermal step: 8,  ac: 0.4898,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 9,  ac: 0.4900,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 10,  ac: 0.4897,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 11,  ac: 0.4903,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 12,  ac: 0.4896,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 13,  ac: 0.4902,  dx: 0.2506,  dt: 5.862 ----
+---- thermal step: 14,  ac: 0.4900,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 15,  ac: 0.4903,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 16,  ac: 0.4901,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 17,  ac: 0.4899,  dx: 0.2506,  dt: 5.861 ----
+---- thermal step: 18,  ac: 0.4902,  dx: 0.2506,  dt: 5.858 ----
+---- thermal step: 19,  ac: 0.4901,  dx: 0.2506,  dt: 5.859 ----
+---- thermal step: 20,  ac: 0.4899,  dx: 0.2506,  dt: 5.867 ----
+---- accept step: 1,  ac: 0.4899,  dx: 0.2506,  dt: 7.442 ----
+---- accept step: 2,  ac: 0.4898,  dx: 0.2506,  dt: 7.519 ----
+---- accept step: 3,  ac: 0.4899,  dx: 0.2506,  dt: 7.508 ----
+---- accept step: 4,  ac: 0.4902,  dx: 0.2506,  dt: 7.510 ----
+---- accept step: 5,  ac: 0.4902,  dx: 0.2506,  dt: 7.516 ----
+---- accept step: 6,  ac: 0.4902,  dx: 0.2506,  dt: 7.512 ----
+---- accept step: 7,  ac: 0.4900,  dx: 0.2506,  dt: 7.508 ----
+---- accept step: 8,  ac: 0.4901,  dx: 0.2506,  dt: 7.517 ----
+state: 68 [0 0 0 0 0 0 0 0 0 1 0 3] v10 + 3v12
+         E: 11959.600006 (0.100878)  K: 5942.266417 (3.357678)  V: 6017.333589 (3.356231)
+         ac: 0.4900  dt: 177.359
+
+================================================================================
+---- thermal step: 1,  ac: 0.4551,  dx: 0.2506,  dt: 5.870 ----
+---- thermal step: 2,  ac: 0.5083,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 3,  ac: 0.5157,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 4,  ac: 0.5193,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 5,  ac: 0.5212,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 6,  ac: 0.5219,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 7,  ac: 0.5223,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 8,  ac: 0.5224,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 9,  ac: 0.5224,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 10,  ac: 0.5225,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 11,  ac: 0.5227,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 12,  ac: 0.5223,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 13,  ac: 0.5225,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 14,  ac: 0.5221,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 15,  ac: 0.5225,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 16,  ac: 0.5226,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 17,  ac: 0.5228,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 18,  ac: 0.5230,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 19,  ac: 0.5225,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 20,  ac: 0.5225,  dx: 0.2256,  dt: 5.869 ----
+---- accept step: 1,  ac: 0.5228,  dx: 0.2256,  dt: 7.448 ----
+---- accept step: 2,  ac: 0.5226,  dx: 0.2256,  dt: 7.535 ----
+---- accept step: 3,  ac: 0.5227,  dx: 0.2256,  dt: 7.520 ----
+---- accept step: 4,  ac: 0.5225,  dx: 0.2256,  dt: 7.529 ----
+---- accept step: 5,  ac: 0.5227,  dx: 0.2256,  dt: 7.523 ----
+---- accept step: 6,  ac: 0.5229,  dx: 0.2256,  dt: 7.532 ----
+---- accept step: 7,  ac: 0.5227,  dx: 0.2256,  dt: 7.523 ----
+---- accept step: 8,  ac: 0.5225,  dx: 0.2256,  dt: 7.530 ----
+state: 69 [0 0 0 0 0 0 0 0 0 0 6 0] 6v11
+         E: 12030.757583 (0.094712)  K: 5979.006736 (3.428368)  V: 6051.750846 (3.436159)
+         ac: 0.5227  dt: 177.665
+
+================================================================================
+---- thermal step: 1,  ac: 0.5151,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 2,  ac: 0.5139,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 3,  ac: 0.5141,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 4,  ac: 0.5138,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 5,  ac: 0.5137,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 6,  ac: 0.5136,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 7,  ac: 0.5138,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 8,  ac: 0.5137,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 9,  ac: 0.5137,  dx: 0.2256,  dt: 5.874 ----
+---- thermal step: 10,  ac: 0.5135,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 11,  ac: 0.5137,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 12,  ac: 0.5136,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 13,  ac: 0.5137,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 14,  ac: 0.5136,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 15,  ac: 0.5134,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 16,  ac: 0.5138,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 17,  ac: 0.5137,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 18,  ac: 0.5136,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 19,  ac: 0.5136,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 20,  ac: 0.5137,  dx: 0.2256,  dt: 5.866 ----
+---- accept step: 1,  ac: 0.5137,  dx: 0.2256,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.5137,  dx: 0.2256,  dt: 7.531 ----
+---- accept step: 3,  ac: 0.5135,  dx: 0.2256,  dt: 7.520 ----
+---- accept step: 4,  ac: 0.5136,  dx: 0.2256,  dt: 7.513 ----
+---- accept step: 5,  ac: 0.5139,  dx: 0.2256,  dt: 7.514 ----
+---- accept step: 6,  ac: 0.5133,  dx: 0.2256,  dt: 7.526 ----
+---- accept step: 7,  ac: 0.5135,  dx: 0.2256,  dt: 7.519 ----
+---- accept step: 8,  ac: 0.5136,  dx: 0.2256,  dt: 7.523 ----
+state: 70 [0 0 0 0 0 0 0 0 0 0 5 1] 5v11 + v12
+         E: 12027.820186 (0.091724)  K: 5979.416438 (3.379960)  V: 6048.403748 (3.386725)
+         ac: 0.5136  dt: 177.566
+
+================================================================================
+---- thermal step: 1,  ac: 0.5100,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 2,  ac: 0.5092,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 3,  ac: 0.5088,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 4,  ac: 0.5088,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 5,  ac: 0.5087,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 6,  ac: 0.5091,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 7,  ac: 0.5089,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 8,  ac: 0.5088,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 9,  ac: 0.5090,  dx: 0.2256,  dt: 5.876 ----
+---- thermal step: 10,  ac: 0.5092,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 11,  ac: 0.5088,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 12,  ac: 0.5091,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 13,  ac: 0.5088,  dx: 0.2256,  dt: 5.881 ----
+---- thermal step: 14,  ac: 0.5089,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 15,  ac: 0.5090,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 16,  ac: 0.5091,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 17,  ac: 0.5089,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 18,  ac: 0.5092,  dx: 0.2256,  dt: 5.878 ----
+---- thermal step: 19,  ac: 0.5089,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 20,  ac: 0.5090,  dx: 0.2256,  dt: 5.866 ----
+---- accept step: 1,  ac: 0.5089,  dx: 0.2256,  dt: 7.445 ----
+---- accept step: 2,  ac: 0.5091,  dx: 0.2256,  dt: 7.531 ----
+---- accept step: 3,  ac: 0.5091,  dx: 0.2256,  dt: 7.525 ----
+---- accept step: 4,  ac: 0.5093,  dx: 0.2256,  dt: 7.518 ----
+---- accept step: 5,  ac: 0.5091,  dx: 0.2256,  dt: 7.516 ----
+---- accept step: 6,  ac: 0.5087,  dx: 0.2256,  dt: 7.519 ----
+---- accept step: 7,  ac: 0.5091,  dx: 0.2256,  dt: 7.524 ----
+---- accept step: 8,  ac: 0.5089,  dx: 0.2256,  dt: 7.527 ----
+state: 71 [0 0 0 0 0 0 0 0 0 0 4 2] 4v11 + 2v12
+         E: 12026.034107 (0.087949)  K: 5979.804696 (3.346439)  V: 6046.229411 (3.352085)
+         ac: 0.5090  dt: 177.603
+
+================================================================================
+---- thermal step: 1,  ac: 0.5083,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 2,  ac: 0.5071,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 3,  ac: 0.5072,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 4,  ac: 0.5075,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 5,  ac: 0.5072,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 6,  ac: 0.5073,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 7,  ac: 0.5078,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 8,  ac: 0.5074,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 9,  ac: 0.5074,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 10,  ac: 0.5073,  dx: 0.2256,  dt: 5.877 ----
+---- thermal step: 11,  ac: 0.5073,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 12,  ac: 0.5074,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 13,  ac: 0.5075,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 14,  ac: 0.5073,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 15,  ac: 0.5071,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 16,  ac: 0.5073,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 17,  ac: 0.5075,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 18,  ac: 0.5076,  dx: 0.2256,  dt: 5.863 ----
+---- thermal step: 19,  ac: 0.5072,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 20,  ac: 0.5075,  dx: 0.2256,  dt: 5.867 ----
+---- accept step: 1,  ac: 0.5076,  dx: 0.2256,  dt: 7.446 ----
+---- accept step: 2,  ac: 0.5076,  dx: 0.2256,  dt: 7.524 ----
+---- accept step: 3,  ac: 0.5072,  dx: 0.2256,  dt: 7.516 ----
+---- accept step: 4,  ac: 0.5074,  dx: 0.2256,  dt: 7.521 ----
+---- accept step: 5,  ac: 0.5075,  dx: 0.2256,  dt: 7.520 ----
+---- accept step: 6,  ac: 0.5075,  dx: 0.2256,  dt: 7.515 ----
+---- accept step: 7,  ac: 0.5071,  dx: 0.2256,  dt: 7.518 ----
+---- accept step: 8,  ac: 0.5074,  dx: 0.2256,  dt: 7.531 ----
+state: 72 [0 0 0 0 0 0 0 0 0 0 3 3] 3v11 + 3v12
+         E: 12025.643751 (0.087448)  K: 5984.773029 (3.341523)  V: 6040.870723 (3.347380)
+         ac: 0.5074  dt: 177.542
+
+================================================================================
+---- thermal step: 1,  ac: 0.5096,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 2,  ac: 0.5085,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 3,  ac: 0.5086,  dx: 0.2256,  dt: 5.873 ----
+---- thermal step: 4,  ac: 0.5086,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 5,  ac: 0.5089,  dx: 0.2256,  dt: 5.864 ----
+---- thermal step: 6,  ac: 0.5088,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 7,  ac: 0.5087,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 8,  ac: 0.5090,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 9,  ac: 0.5090,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 10,  ac: 0.5088,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 11,  ac: 0.5087,  dx: 0.2256,  dt: 5.879 ----
+---- thermal step: 12,  ac: 0.5092,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 13,  ac: 0.5089,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 14,  ac: 0.5091,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 15,  ac: 0.5091,  dx: 0.2256,  dt: 5.883 ----
+---- thermal step: 16,  ac: 0.5090,  dx: 0.2256,  dt: 5.865 ----
+---- thermal step: 17,  ac: 0.5091,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 18,  ac: 0.5088,  dx: 0.2256,  dt: 5.866 ----
+---- thermal step: 19,  ac: 0.5093,  dx: 0.2256,  dt: 5.878 ----
+---- thermal step: 20,  ac: 0.5088,  dx: 0.2256,  dt: 5.866 ----
+---- accept step: 1,  ac: 0.5089,  dx: 0.2256,  dt: 7.452 ----
+---- accept step: 2,  ac: 0.5092,  dx: 0.2256,  dt: 7.528 ----
+---- accept step: 3,  ac: 0.5087,  dx: 0.2256,  dt: 7.526 ----
+---- accept step: 4,  ac: 0.5091,  dx: 0.2256,  dt: 7.522 ----
+---- accept step: 5,  ac: 0.5089,  dx: 0.2256,  dt: 7.530 ----
+---- accept step: 6,  ac: 0.5087,  dx: 0.2256,  dt: 7.519 ----
+---- accept step: 7,  ac: 0.5093,  dx: 0.2256,  dt: 7.517 ----
+---- accept step: 8,  ac: 0.5095,  dx: 0.2256,  dt: 7.533 ----
+state: 73 [0 0 0 0 0 0 0 0 0 0 2 4] 2v11 + 4v12
+         E: 12026.250293 (0.088234)  K: 5978.263217 (3.352028)  V: 6047.987076 (3.357998)
+         ac: 0.5090  dt: 177.639
+
+================================================================================
+---- thermal step: 1,  ac: 0.5140,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 2,  ac: 0.5130,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 3,  ac: 0.5136,  dx: 0.2256,  dt: 5.876 ----
+---- thermal step: 4,  ac: 0.5135,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 5,  ac: 0.5136,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 6,  ac: 0.5137,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 7,  ac: 0.5139,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 8,  ac: 0.5136,  dx: 0.2256,  dt: 5.867 ----
+---- thermal step: 9,  ac: 0.5139,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 10,  ac: 0.5136,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 11,  ac: 0.5135,  dx: 0.2256,  dt: 5.879 ----
+---- thermal step: 12,  ac: 0.5135,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 13,  ac: 0.5137,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 14,  ac: 0.5135,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 15,  ac: 0.5134,  dx: 0.2256,  dt: 5.877 ----
+---- thermal step: 16,  ac: 0.5135,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 17,  ac: 0.5136,  dx: 0.2256,  dt: 5.870 ----
+---- thermal step: 18,  ac: 0.5135,  dx: 0.2256,  dt: 5.869 ----
+---- thermal step: 19,  ac: 0.5136,  dx: 0.2256,  dt: 5.868 ----
+---- thermal step: 20,  ac: 0.5136,  dx: 0.2256,  dt: 5.871 ----
+---- accept step: 1,  ac: 0.5137,  dx: 0.2256,  dt: 7.453 ----
+---- accept step: 2,  ac: 0.5137,  dx: 0.2256,  dt: 7.531 ----
+---- accept step: 3,  ac: 0.5136,  dx: 0.2256,  dt: 7.522 ----
+---- accept step: 4,  ac: 0.5137,  dx: 0.2256,  dt: 7.527 ----
+---- accept step: 5,  ac: 0.5137,  dx: 0.2256,  dt: 7.528 ----
+---- accept step: 6,  ac: 0.5138,  dx: 0.2256,  dt: 7.526 ----
+---- accept step: 7,  ac: 0.5136,  dx: 0.2256,  dt: 7.528 ----
+---- accept step: 8,  ac: 0.5137,  dx: 0.2256,  dt: 7.531 ----
+state: 74 [0 0 0 0 0 0 0 0 0 0 1 5] v11 + 5v12
+         E: 12027.887888 (0.090209)  K: 5979.661070 (3.384401)  V: 6048.226818 (3.390845)
+         ac: 0.5137  dt: 177.686
+
+================================================================================
+---- thermal step: 1,  ac: 0.5219,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 2,  ac: 0.5220,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 3,  ac: 0.5222,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 4,  ac: 0.5226,  dx: 0.2256,  dt: 5.873 ----
+---- thermal step: 5,  ac: 0.5225,  dx: 0.2256,  dt: 5.871 ----
+---- thermal step: 6,  ac: 0.5226,  dx: 0.2256,  dt: 5.877 ----
+---- thermal step: 7,  ac: 0.5230,  dx: 0.2256,  dt: 5.874 ----
+---- thermal step: 8,  ac: 0.5226,  dx: 0.2256,  dt: 5.874 ----
+---- thermal step: 9,  ac: 0.5228,  dx: 0.2256,  dt: 5.873 ----
+---- thermal step: 10,  ac: 0.5226,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 11,  ac: 0.5228,  dx: 0.2256,  dt: 5.874 ----
+---- thermal step: 12,  ac: 0.5228,  dx: 0.2256,  dt: 5.887 ----
+---- thermal step: 13,  ac: 0.5230,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 14,  ac: 0.5225,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 15,  ac: 0.5227,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 16,  ac: 0.5226,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 17,  ac: 0.5224,  dx: 0.2256,  dt: 5.872 ----
+---- thermal step: 18,  ac: 0.5225,  dx: 0.2256,  dt: 5.875 ----
+---- thermal step: 19,  ac: 0.5227,  dx: 0.2256,  dt: 5.874 ----
+---- thermal step: 20,  ac: 0.5226,  dx: 0.2256,  dt: 5.881 ----
+---- accept step: 1,  ac: 0.5230,  dx: 0.2256,  dt: 7.454 ----
+---- accept step: 2,  ac: 0.5228,  dx: 0.2256,  dt: 7.541 ----
+---- accept step: 3,  ac: 0.5230,  dx: 0.2256,  dt: 7.528 ----
+---- accept step: 4,  ac: 0.5230,  dx: 0.2256,  dt: 7.537 ----
+---- accept step: 5,  ac: 0.5227,  dx: 0.2256,  dt: 7.526 ----
+---- accept step: 6,  ac: 0.5227,  dx: 0.2256,  dt: 7.537 ----
+---- accept step: 7,  ac: 0.5228,  dx: 0.2256,  dt: 7.525 ----
+---- accept step: 8,  ac: 0.5229,  dx: 0.2256,  dt: 7.541 ----
+state: 75 [0 0 0 0 0 0 0 0 0 0 0 6] 6v12
+         E: 12030.856347 (0.094678)  K: 5979.674450 (3.419892)  V: 6051.181897 (3.427349)
+         ac: 0.5229  dt: 177.818
+
+================================================================================
+---- thermal step: 1,  ac: 0.5317,  dx: 0.2256,  dt: 5.852 ----
+---- thermal step: 2,  ac: 0.5025,  dx: 0.2481,  dt: 5.856 ----
+---- thermal step: 3,  ac: 0.5051,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.5052,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 5,  ac: 0.5054,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 6,  ac: 0.5056,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 7,  ac: 0.5051,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 8,  ac: 0.5056,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 9,  ac: 0.5054,  dx: 0.2481,  dt: 5.859 ----
+---- thermal step: 10,  ac: 0.5052,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 11,  ac: 0.5052,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.5054,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 13,  ac: 0.5053,  dx: 0.2481,  dt: 5.861 ----
+---- thermal step: 14,  ac: 0.5055,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 15,  ac: 0.5057,  dx: 0.2481,  dt: 5.856 ----
+---- thermal step: 16,  ac: 0.5056,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 17,  ac: 0.5054,  dx: 0.2481,  dt: 5.861 ----
+---- thermal step: 18,  ac: 0.5056,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 19,  ac: 0.5052,  dx: 0.2481,  dt: 5.857 ----
+---- thermal step: 20,  ac: 0.5056,  dx: 0.2481,  dt: 5.853 ----
+---- accept step: 1,  ac: 0.5052,  dx: 0.2481,  dt: 7.429 ----
+---- accept step: 2,  ac: 0.5056,  dx: 0.2481,  dt: 7.515 ----
+---- accept step: 3,  ac: 0.5052,  dx: 0.2481,  dt: 7.506 ----
+---- accept step: 4,  ac: 0.5057,  dx: 0.2481,  dt: 7.501 ----
+---- accept step: 5,  ac: 0.5057,  dx: 0.2481,  dt: 7.515 ----
+---- accept step: 6,  ac: 0.5054,  dx: 0.2481,  dt: 7.508 ----
+---- accept step: 7,  ac: 0.5054,  dx: 0.2481,  dt: 7.505 ----
+---- accept step: 8,  ac: 0.5053,  dx: 0.2481,  dt: 7.511 ----
+state: 76 [0 0 0 2 0 0 0 0 0 0 1 0] 2v4 + v11
+         E: 11989.692759 (0.184385)  K: 5966.855502 (3.424849)  V: 6022.837257 (3.418810)
+         ac: 0.5054  dt: 177.214
+
+================================================================================
+---- thermal step: 1,  ac: 0.5049,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 2,  ac: 0.5056,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.5053,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 4,  ac: 0.5055,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 5,  ac: 0.5056,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 6,  ac: 0.5053,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 7,  ac: 0.5053,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 8,  ac: 0.5055,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 9,  ac: 0.5053,  dx: 0.2481,  dt: 5.863 ----
+---- thermal step: 10,  ac: 0.5053,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 11,  ac: 0.5054,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 12,  ac: 0.5056,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 13,  ac: 0.5054,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.5056,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 15,  ac: 0.5055,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 16,  ac: 0.5055,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.5054,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 18,  ac: 0.5057,  dx: 0.2481,  dt: 5.857 ----
+---- thermal step: 19,  ac: 0.5054,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.5054,  dx: 0.2481,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.5055,  dx: 0.2481,  dt: 7.429 ----
+---- accept step: 2,  ac: 0.5056,  dx: 0.2481,  dt: 7.510 ----
+---- accept step: 3,  ac: 0.5057,  dx: 0.2481,  dt: 7.506 ----
+---- accept step: 4,  ac: 0.5057,  dx: 0.2481,  dt: 7.513 ----
+---- accept step: 5,  ac: 0.5056,  dx: 0.2481,  dt: 7.500 ----
+---- accept step: 6,  ac: 0.5057,  dx: 0.2481,  dt: 7.516 ----
+---- accept step: 7,  ac: 0.5055,  dx: 0.2481,  dt: 7.510 ----
+---- accept step: 8,  ac: 0.5056,  dx: 0.2481,  dt: 7.513 ----
+state: 77 [0 0 0 2 0 0 0 0 0 0 0 1] 2v4 + v12
+         E: 11989.616744 (0.184795)  K: 5967.512117 (3.410782)  V: 6022.104627 (3.404765)
+         ac: 0.5056  dt: 177.189
+
+================================================================================
+---- thermal step: 1,  ac: 0.4960,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 2,  ac: 0.5031,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 3,  ac: 0.5044,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 4,  ac: 0.5049,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 5,  ac: 0.5049,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 6,  ac: 0.5049,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 7,  ac: 0.5048,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 8,  ac: 0.5048,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 9,  ac: 0.5047,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 10,  ac: 0.5049,  dx: 0.2481,  dt: 5.861 ----
+---- thermal step: 11,  ac: 0.5047,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 12,  ac: 0.5049,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 13,  ac: 0.5047,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 14,  ac: 0.5050,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 15,  ac: 0.5050,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 16,  ac: 0.5049,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 17,  ac: 0.5048,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.5050,  dx: 0.2481,  dt: 5.859 ----
+---- thermal step: 19,  ac: 0.5046,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 20,  ac: 0.5051,  dx: 0.2481,  dt: 5.854 ----
+---- accept step: 1,  ac: 0.5050,  dx: 0.2481,  dt: 7.432 ----
+---- accept step: 2,  ac: 0.5048,  dx: 0.2481,  dt: 7.510 ----
+---- accept step: 3,  ac: 0.5051,  dx: 0.2481,  dt: 7.518 ----
+---- accept step: 4,  ac: 0.5049,  dx: 0.2481,  dt: 7.507 ----
+---- accept step: 5,  ac: 0.5048,  dx: 0.2481,  dt: 7.506 ----
+---- accept step: 6,  ac: 0.5049,  dx: 0.2481,  dt: 7.501 ----
+---- accept step: 7,  ac: 0.5049,  dx: 0.2481,  dt: 7.504 ----
+---- accept step: 8,  ac: 0.5048,  dx: 0.2481,  dt: 7.515 ----
+state: 78 [0 0 0 0 0 0 1 0 0 0 2 0] v7 + 2v11
+         E: 12047.637166 (0.113386)  K: 5988.553751 (3.409302)  V: 6059.083415 (3.417467)
+         ac: 0.5049  dt: 177.181
+
+================================================================================
+---- thermal step: 1,  ac: 0.5048,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 2,  ac: 0.5047,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 3,  ac: 0.5047,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 4,  ac: 0.5047,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 5,  ac: 0.5046,  dx: 0.2481,  dt: 5.857 ----
+---- thermal step: 6,  ac: 0.5047,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 7,  ac: 0.5049,  dx: 0.2481,  dt: 5.860 ----
+---- thermal step: 8,  ac: 0.5049,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 9,  ac: 0.5046,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 10,  ac: 0.5047,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 11,  ac: 0.5048,  dx: 0.2481,  dt: 5.865 ----
+---- thermal step: 12,  ac: 0.5049,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.5049,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 14,  ac: 0.5047,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 15,  ac: 0.5048,  dx: 0.2481,  dt: 5.864 ----
+---- thermal step: 16,  ac: 0.5051,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 17,  ac: 0.5049,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 18,  ac: 0.5046,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 19,  ac: 0.5047,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 20,  ac: 0.5048,  dx: 0.2481,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.5049,  dx: 0.2481,  dt: 7.437 ----
+---- accept step: 2,  ac: 0.5051,  dx: 0.2481,  dt: 7.510 ----
+---- accept step: 3,  ac: 0.5048,  dx: 0.2481,  dt: 7.505 ----
+---- accept step: 4,  ac: 0.5050,  dx: 0.2481,  dt: 7.503 ----
+---- accept step: 5,  ac: 0.5049,  dx: 0.2481,  dt: 7.513 ----
+---- accept step: 6,  ac: 0.5047,  dx: 0.2481,  dt: 7.500 ----
+---- accept step: 7,  ac: 0.5048,  dx: 0.2481,  dt: 7.512 ----
+---- accept step: 8,  ac: 0.5046,  dx: 0.2481,  dt: 7.515 ----
+state: 79 [0 0 0 0 0 0 0 1 0 0 2 0] v8 + 2v11
+         E: 12048.082295 (0.119205)  K: 5990.774907 (3.415139)  V: 6057.307388 (3.421189)
+         ac: 0.5049  dt: 177.209
+
+================================================================================
+---- thermal step: 1,  ac: 0.5009,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 2,  ac: 0.5010,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 3,  ac: 0.5013,  dx: 0.2481,  dt: 5.860 ----
+---- thermal step: 4,  ac: 0.5009,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 5,  ac: 0.5011,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 6,  ac: 0.5011,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 7,  ac: 0.5010,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 8,  ac: 0.5011,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 9,  ac: 0.5011,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 10,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 11,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 12,  ac: 0.5012,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 13,  ac: 0.5010,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 14,  ac: 0.5011,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 15,  ac: 0.5013,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 16,  ac: 0.5012,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 17,  ac: 0.5010,  dx: 0.2481,  dt: 5.847 ----
+---- thermal step: 18,  ac: 0.5010,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 19,  ac: 0.5013,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 20,  ac: 0.5011,  dx: 0.2481,  dt: 5.853 ----
+---- accept step: 1,  ac: 0.5013,  dx: 0.2481,  dt: 7.423 ----
+---- accept step: 2,  ac: 0.5010,  dx: 0.2481,  dt: 7.506 ----
+---- accept step: 3,  ac: 0.5010,  dx: 0.2481,  dt: 7.491 ----
+---- accept step: 4,  ac: 0.5009,  dx: 0.2481,  dt: 7.494 ----
+---- accept step: 5,  ac: 0.5010,  dx: 0.2481,  dt: 7.502 ----
+---- accept step: 6,  ac: 0.5010,  dx: 0.2481,  dt: 7.495 ----
+---- accept step: 7,  ac: 0.5007,  dx: 0.2481,  dt: 7.493 ----
+---- accept step: 8,  ac: 0.5012,  dx: 0.2481,  dt: 7.517 ----
+state: 80 [0 0 0 0 0 0 1 0 0 0 1 1] v7 + v11 + v12
+         E: 12046.863646 (0.113966)  K: 5996.923604 (3.396242)  V: 6049.940042 (3.404399)
+         ac: 0.5010  dt: 177.023
+
+================================================================================
+---- thermal step: 1,  ac: 0.5008,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 2,  ac: 0.5014,  dx: 0.2481,  dt: 5.842 ----
+---- thermal step: 3,  ac: 0.5011,  dx: 0.2481,  dt: 5.844 ----
+---- thermal step: 4,  ac: 0.5008,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 5,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 6,  ac: 0.5010,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 7,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 8,  ac: 0.5009,  dx: 0.2481,  dt: 5.855 ----
+---- thermal step: 9,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 10,  ac: 0.5010,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 11,  ac: 0.5011,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 12,  ac: 0.5010,  dx: 0.2481,  dt: 5.857 ----
+---- thermal step: 13,  ac: 0.5011,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 14,  ac: 0.5007,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 15,  ac: 0.5008,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 16,  ac: 0.5010,  dx: 0.2481,  dt: 5.856 ----
+---- thermal step: 17,  ac: 0.5014,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 18,  ac: 0.5011,  dx: 0.2481,  dt: 5.846 ----
+---- thermal step: 19,  ac: 0.5010,  dx: 0.2481,  dt: 5.845 ----
+---- thermal step: 20,  ac: 0.5010,  dx: 0.2481,  dt: 5.844 ----
+---- accept step: 1,  ac: 0.5011,  dx: 0.2481,  dt: 7.422 ----
+---- accept step: 2,  ac: 0.5011,  dx: 0.2481,  dt: 7.505 ----
+---- accept step: 3,  ac: 0.5010,  dx: 0.2481,  dt: 7.499 ----
+---- accept step: 4,  ac: 0.5011,  dx: 0.2481,  dt: 7.493 ----
+---- accept step: 5,  ac: 0.5011,  dx: 0.2481,  dt: 7.496 ----
+---- accept step: 6,  ac: 0.5009,  dx: 0.2481,  dt: 7.507 ----
+---- accept step: 7,  ac: 0.5008,  dx: 0.2481,  dt: 7.494 ----
+---- accept step: 8,  ac: 0.5012,  dx: 0.2481,  dt: 7.511 ----
+state: 81 [0 0 0 0 0 0 0 1 0 0 1 1] v8 + v11 + v12
+         E: 12047.898890 (0.118948)  K: 5989.048514 (3.409324)  V: 6058.850376 (3.415825)
+         ac: 0.5010  dt: 177.005
+
+================================================================================
+---- thermal step: 1,  ac: 0.5037,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 2,  ac: 0.5045,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 3,  ac: 0.5048,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 4,  ac: 0.5050,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 5,  ac: 0.5047,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 6,  ac: 0.5048,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 7,  ac: 0.5048,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 8,  ac: 0.5047,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 9,  ac: 0.5050,  dx: 0.2481,  dt: 5.866 ----
+---- thermal step: 10,  ac: 0.5048,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 11,  ac: 0.5051,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 12,  ac: 0.5049,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 13,  ac: 0.5047,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 14,  ac: 0.5050,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 15,  ac: 0.5050,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 16,  ac: 0.5049,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.5050,  dx: 0.2481,  dt: 5.859 ----
+---- thermal step: 18,  ac: 0.5048,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 19,  ac: 0.5048,  dx: 0.2481,  dt: 5.854 ----
+---- thermal step: 20,  ac: 0.5049,  dx: 0.2481,  dt: 5.852 ----
+---- accept step: 1,  ac: 0.5048,  dx: 0.2481,  dt: 7.428 ----
+---- accept step: 2,  ac: 0.5051,  dx: 0.2481,  dt: 7.512 ----
+---- accept step: 3,  ac: 0.5047,  dx: 0.2481,  dt: 7.509 ----
+---- accept step: 4,  ac: 0.5047,  dx: 0.2481,  dt: 7.500 ----
+---- accept step: 5,  ac: 0.5046,  dx: 0.2481,  dt: 7.498 ----
+---- accept step: 6,  ac: 0.5047,  dx: 0.2481,  dt: 7.510 ----
+---- accept step: 7,  ac: 0.5050,  dx: 0.2481,  dt: 7.503 ----
+---- accept step: 8,  ac: 0.5049,  dx: 0.2481,  dt: 7.510 ----
+state: 82 [0 0 0 0 0 0 1 0 0 0 0 2] v7 + 2v12
+         E: 12047.367220 (0.111823)  K: 5995.410625 (3.406197)  V: 6051.956595 (3.413872)
+         ac: 0.5048  dt: 177.152
+
+================================================================================
+---- thermal step: 1,  ac: 0.5046,  dx: 0.2481,  dt: 5.857 ----
+---- thermal step: 2,  ac: 0.5048,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 3,  ac: 0.5051,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 4,  ac: 0.5050,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 5,  ac: 0.5047,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 6,  ac: 0.5048,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 7,  ac: 0.5047,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 8,  ac: 0.5052,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 9,  ac: 0.5049,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 10,  ac: 0.5049,  dx: 0.2481,  dt: 5.853 ----
+---- thermal step: 11,  ac: 0.5049,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 12,  ac: 0.5048,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 13,  ac: 0.5049,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 14,  ac: 0.5048,  dx: 0.2481,  dt: 5.850 ----
+---- thermal step: 15,  ac: 0.5049,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 16,  ac: 0.5046,  dx: 0.2481,  dt: 5.852 ----
+---- thermal step: 17,  ac: 0.5044,  dx: 0.2481,  dt: 5.851 ----
+---- thermal step: 18,  ac: 0.5048,  dx: 0.2481,  dt: 5.849 ----
+---- thermal step: 19,  ac: 0.5048,  dx: 0.2481,  dt: 5.848 ----
+---- thermal step: 20,  ac: 0.5049,  dx: 0.2481,  dt: 5.851 ----
+---- accept step: 1,  ac: 0.5045,  dx: 0.2481,  dt: 7.426 ----
+---- accept step: 2,  ac: 0.5051,  dx: 0.2481,  dt: 7.507 ----
+---- accept step: 3,  ac: 0.5048,  dx: 0.2481,  dt: 7.500 ----
+---- accept step: 4,  ac: 0.5046,  dx: 0.2481,  dt: 7.508 ----
+---- accept step: 5,  ac: 0.5048,  dx: 0.2481,  dt: 7.497 ----
+---- accept step: 6,  ac: 0.5050,  dx: 0.2481,  dt: 7.506 ----
+---- accept step: 7,  ac: 0.5046,  dx: 0.2481,  dt: 7.500 ----
+---- accept step: 8,  ac: 0.5049,  dx: 0.2481,  dt: 7.511 ----
+state: 83 [0 0 0 0 0 0 0 1 0 0 0 2] v8 + 2v12
+         E: 12048.793851 (0.119267)  K: 5989.387155 (3.412097)  V: 6059.406696 (3.417881)
+         ac: 0.5048  dt: 177.101
+
+================================================================================
+file_name: /data/ruisiwang/Vibration_gitlab_repo/CH3CN/CH3CN_n_12_alp_1000_orb_84_wgt_eq_rnvp_32_mlp_128_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_1024_acc_1_nde_1/epoch_020000.pkl
+
+Summarize (1): E
+level 000:  E: 9838.758449599685 (0.080189962147) [0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+level 001:  E: 10199.520937405332 (0.079075611441) [0 0 0 0 0 0 0 0 0 0 1 0 ] v11
+level 002:  E: 10199.494667414319 (0.079747128026) [0 0 0 0 0 0 0 0 0 0 0 1 ] v12
+level 003:  E: 10562.250041847783 (0.079550222858) [0 0 0 0 0 0 0 0 0 0 2 0 ] 2v11
+level 004:  E: 10561.771953789390 (0.078952614431) [0 0 0 0 0 0 0 0 0 0 1 1 ] v11 + v12
+level 005:  E: 10562.272294035552 (0.079670641284) [0 0 0 0 0 0 0 0 0 0 0 2 ] 2v12
+level 006:  E: 10738.061771725799 (0.093753353114) [0 0 0 1 0 0 0 0 0 0 0 0 ] v4
+level 007:  E: 10873.304781683257 (0.088965687318) [0 0 0 0 0 0 0 0 1 0 0 0 ] v9
+level 008:  E: 10873.439260397121 (0.088914040829) [0 0 0 0 0 0 0 0 0 1 0 0 ] v10
+level 009:  E: 10926.817541987224 (0.081667017315) [0 0 0 0 0 0 0 0 0 0 3 0 ] 3v11
+level 010:  E: 10925.557474057385 (0.080030972444) [0 0 0 0 0 0 0 0 0 0 2 1 ] 2v11 + v12
+level 011:  E: 10925.515674327098 (0.079403020084) [0 0 0 0 0 0 0 0 0 0 1 2 ] v11 + 2v12
+level 012:  E: 10926.656889201855 (0.080921606135) [0 0 0 0 0 0 0 0 0 0 0 3 ] 3v12
+level 013:  E: 11097.058680121198 (0.098302181784) [0 0 0 1 0 0 0 0 0 0 1 0 ] v4 + v11
+level 014:  E: 11097.258118106452 (0.097479606334) [0 0 0 1 0 0 0 0 0 0 0 1 ] v4 + v12
+level 015:  E: 11234.952189869882 (0.109608511598) [0 0 1 0 0 0 0 0 0 0 0 0 ] v3
+level 016:  E: 11233.378678360219 (0.091153765952) [0 0 0 0 0 0 0 0 1 0 1 0 ] v9 + v11
+level 017:  E: 11234.161828446786 (0.090567781441) [0 0 0 0 0 0 0 0 0 1 1 0 ] v10 + v11
+level 018:  E: 11234.023715897223 (0.090421770644) [0 0 0 0 0 0 0 0 1 0 0 1 ] v9 + v12
+level 019:  E: 11233.655628972754 (0.091119314149) [0 0 0 0 0 0 0 0 0 1 0 1 ] v10 + v12
+level 020:  E: 11293.076628728382 (0.084243854172) [0 0 0 0 0 0 0 0 0 0 4 0 ] 4v11
+level 021:  E: 11291.203007953280 (0.082139277815) [0 0 0 0 0 0 0 0 0 0 3 1 ] 3v11 + v12
+level 022:  E: 11290.548494864330 (0.081129214503) [0 0 0 0 0 0 0 0 0 0 2 2 ] 2v11 + 2v12
+level 023:  E: 11291.079601375066 (0.081329552295) [0 0 0 0 0 0 0 0 0 0 1 3 ] v11 + 3v12
+level 024:  E: 11293.025526927519 (0.083431973226) [0 0 0 0 0 0 0 0 0 0 0 4 ] 4v12
+level 025:  E: 11323.519737271945 (0.112779727433) [0 0 0 0 0 0 1 0 0 0 0 0 ] v7
+level 026:  E: 11324.948856871244 (0.119131815986) [0 0 0 0 0 0 0 1 0 0 0 0 ] v8
+level 027:  E: 11458.108699047518 (0.104928057746) [0 0 0 1 0 0 0 0 0 0 2 0 ] v4 + 2v11
+level 028:  E: 11457.697543275164 (0.102162143784) [0 0 0 1 0 0 0 0 0 0 1 1 ] v4 + v11 + v12
+level 029:  E: 11458.202744171525 (0.104137040204) [0 0 0 1 0 0 0 0 0 0 0 2 ] v4 + 2v12
+level 030:  E: 11595.880718162462 (0.109209603921) [0 0 1 0 0 0 0 0 0 0 1 0 ] v3 + v11
+level 031:  E: 11595.765305974548 (0.108831859165) [0 0 1 0 0 0 0 0 0 0 0 1 ] v3 + v12
+level 032:  E: 11595.693798571578 (0.095111445311) [0 0 0 0 0 0 0 0 1 0 2 0 ] v9 + 2v11
+level 033:  E: 11596.627096015578 (0.094239652949) [0 0 0 0 0 0 0 0 0 1 2 0 ] v10 + 2v11
+level 034:  E: 11595.349977992046 (0.093493979583) [0 0 0 0 0 0 0 0 1 0 1 1 ] v9 + v11 + v12
+level 035:  E: 11595.505909070898 (0.093801365464) [0 0 0 0 0 0 0 0 0 1 1 1 ] v10 + v11 + v12
+level 036:  E: 11596.373130328957 (0.094071565860) [0 0 0 0 0 0 0 0 1 0 0 2 ] v9 + 2v12
+level 037:  E: 11595.717972464679 (0.095761741917) [0 0 0 0 0 0 0 0 0 1 0 2 ] v10 + 2v12
+level 038:  E: 11661.106421336382 (0.088561360043) [0 0 0 0 0 0 0 0 0 0 5 0 ] 5v11
+level 039:  E: 11658.675732548332 (0.085141075841) [0 0 0 0 0 0 0 0 0 0 4 1 ] 4v11 + v12
+level 040:  E: 11657.491850180117 (0.083897836850) [0 0 0 0 0 0 0 0 0 0 3 2 ] 3v11 + 2v12
+level 041:  E: 11657.465074166625 (0.084280921552) [0 0 0 0 0 0 0 0 0 0 2 3 ] 2v11 + 3v12
+level 042:  E: 11658.657917364419 (0.085270976014) [0 0 0 0 0 0 0 0 0 0 1 4 ] v11 + 4v12
+level 043:  E: 11660.976442266594 (0.087791734180) [0 0 0 0 0 0 0 0 0 0 0 5 ] 5v12
+level 044:  E: 11632.133803030250 (0.171721762278) [0 0 0 2 0 0 0 0 0 0 0 0 ] 2v4
+level 045:  E: 11684.884069134445 (0.113537610786) [0 0 0 0 0 0 1 0 0 0 1 0 ] v7 + v11
+level 046:  E: 11685.569432115790 (0.118566528332) [0 0 0 0 0 0 0 1 0 0 1 0 ] v8 + v11
+level 047:  E: 11684.613265981328 (0.112387047503) [0 0 0 0 0 0 1 0 0 0 0 1 ] v7 + v12
+level 048:  E: 11685.891167585891 (0.118735139581) [0 0 0 0 0 0 0 1 0 0 0 1 ] v8 + v12
+level 049:  E: 11771.978358750725 (0.115394401837) [0 0 0 1 0 0 0 0 1 0 0 0 ] v4 + v9
+level 050:  E: 11772.167806065250 (0.115921262610) [0 0 0 1 0 0 0 0 0 1 0 0 ] v4 + v10
+level 051:  E: 11820.900681951111 (0.112660852710) [0 0 0 1 0 0 0 0 0 0 3 0 ] v4 + 3v11
+level 052:  E: 11819.766644479334 (0.108348175441) [0 0 0 1 0 0 0 0 0 0 2 1 ] v4 + 2v11 + v12
+level 053:  E: 11819.765960508628 (0.109530152969) [0 0 0 1 0 0 0 0 0 0 1 2 ] v4 + v11 + 2v12
+level 054:  E: 11820.887638209799 (0.112734765479) [0 0 0 1 0 0 0 0 0 0 0 3 ] v4 + 3v12
+level 055:  E: 11902.897132223941 (0.119878789551) [0 0 0 0 0 0 0 0 2 0 0 0 ] 2v9
+level 056:  E: 11904.633446664415 (0.112832717441) [0 0 0 0 0 0 0 0 1 1 0 0 ] v9 + v10
+level 057:  E: 11902.652242132017 (0.120433815956) [0 0 0 0 0 0 0 0 0 2 0 0 ] 2v10
+level 058:  E: 11958.644203293718 (0.111057105306) [0 0 1 0 0 0 0 0 0 0 2 0 ] v3 + 2v11
+level 059:  E: 11958.033935710970 (0.108879642970) [0 0 1 0 0 0 0 0 0 0 1 1 ] v3 + v11 + v12
+level 060:  E: 11958.797604406909 (0.109754967517) [0 0 1 0 0 0 0 0 0 0 0 2 ] v3 + 2v12
+level 061:  E: 11959.712342386943 (0.101337148191) [0 0 0 0 0 0 0 0 1 0 3 0 ] v9 + 3v11
+level 062:  E: 11961.005140528066 (0.098664197890) [0 0 0 0 0 0 0 0 0 1 3 0 ] v10 + 3v11
+level 063:  E: 11958.948754754787 (0.097464639112) [0 0 0 0 0 0 0 0 1 0 2 1 ] v9 + 2v11 + v12
+level 064:  E: 11959.253285425153 (0.097761632157) [0 0 0 0 0 0 0 0 0 1 2 1 ] v10 + 2v11 + v12
+level 065:  E: 11959.005191281920 (0.097245163651) [0 0 0 0 0 0 0 0 1 0 1 2 ] v9 + v11 + 2v12
+level 066:  E: 11959.123146746759 (0.099163090118) [0 0 0 0 0 0 0 0 0 1 1 2 ] v10 + v11 + 2v12
+level 067:  E: 11960.646826998673 (0.097410597304) [0 0 0 0 0 0 0 0 1 0 0 3 ] v9 + 3v12
+level 068:  E: 11959.600005727763 (0.100877803743) [0 0 0 0 0 0 0 0 0 1 0 3 ] v10 + 3v12
+level 069:  E: 12030.757582546505 (0.094712126008) [0 0 0 0 0 0 0 0 0 0 6 0 ] 6v11
+level 070:  E: 12027.820185751390 (0.091724476939) [0 0 0 0 0 0 0 0 0 0 5 1 ] 5v11 + v12
+level 071:  E: 12026.034106866680 (0.087949463079) [0 0 0 0 0 0 0 0 0 0 4 2 ] 4v11 + 2v12
+level 072:  E: 12025.643751416404 (0.087447967639) [0 0 0 0 0 0 0 0 0 0 3 3 ] 3v11 + 3v12
+level 073:  E: 12026.250292772544 (0.088234352522) [0 0 0 0 0 0 0 0 0 0 2 4 ] 2v11 + 4v12
+level 074:  E: 12027.887888205485 (0.090209426476) [0 0 0 0 0 0 0 0 0 0 1 5 ] v11 + 5v12
+level 075:  E: 12030.856346512428 (0.094677754913) [0 0 0 0 0 0 0 0 0 0 0 6 ] 6v12
+level 076:  E: 11989.692759111127 (0.184384643503) [0 0 0 2 0 0 0 0 0 0 1 0 ] 2v4 + v11
+level 077:  E: 11989.616744312183 (0.184794830650) [0 0 0 2 0 0 0 0 0 0 0 1 ] 2v4 + v12
+level 078:  E: 12047.637166032224 (0.113385746724) [0 0 0 0 0 0 1 0 0 0 2 0 ] v7 + 2v11
+level 079:  E: 12048.082295012749 (0.119205026413) [0 0 0 0 0 0 0 1 0 0 2 0 ] v8 + 2v11
+level 080:  E: 12046.863646284583 (0.113966449363) [0 0 0 0 0 0 1 0 0 0 1 1 ] v7 + v11 + v12
+level 081:  E: 12047.898890250532 (0.118948258080) [0 0 0 0 0 0 0 1 0 0 1 1 ] v8 + v11 + v12
+level 082:  E: 12047.367219931290 (0.111822789713) [0 0 0 0 0 0 1 0 0 0 0 2 ] v7 + 2v12
+level 083:  E: 12048.793851031061 (0.119266690322) [0 0 0 0 0 0 0 1 0 0 0 2 ] v8 + 2v12
+

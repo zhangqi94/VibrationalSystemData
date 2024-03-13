@@ -1,0 +1,24 @@
+================================================================================
+file_name: /data/ruisiwang/Vibration_gitlab_repo/CH3CN/CH3CN_n_12_alp_1000_orb_1_wgt_eq_rnvp_16_mlp_128_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_031900.pkl
+
+Summarize (1): E
+level 000:  E: 9837.407396235065 (0.020441497452) [0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/ruisiwang/Vibration_gitlab_repo/CH3CN/CH3CN_n_12_alp_1000_orb_1_wgt_eq_rnvp_16_mlp_256_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_028600.pkl
+
+Summarize (1): E
+level 000:  E: 9837.421721595903 (0.028339323647) [0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/ruisiwang/Vibration_gitlab_repo/CH3CN/CH3CN_n_12_alp_1000_orb_1_wgt_eq_rnvp_32_mlp_128_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_1/epoch_035600.pkl
+
+Summarize (1): E
+level 000:  E: 9837.386617258611 (0.027706791614) [0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+
+================================================================================
+file_name: /data/ruisiwang/Vibration_gitlab_repo/CH3CN/CH3CN_n_12_alp_1000_orb_1_wgt_eq_rnvp_64_mlp_64_2_mcthr_20_stp_200_std_0.2_adamlr_0.001_clp_5_bth_65536_acc_1_nde_4/epoch_039600.pkl
+
+Summarize (1): E
+level 000:  E: 9837.386097692895 (0.018648906897) [0 0 0 0 0 0 0 0 0 0 0 0 ] ZPE
+

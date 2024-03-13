@@ -1,0 +1,113 @@
+jax.__version__: 0.4.24
+Thu Mar  7 21:34:07 2024       
++---------------------------------------------------------------------------------------+
+| NVIDIA-SMI 545.23.08              Driver Version: 545.23.08    CUDA Version: 12.3     |
+|-----------------------------------------+----------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |         Memory-Usage | GPU-Util  Compute M. |
+|                                         |                      |               MIG M. |
+|=========================================+======================+======================|
+|   0  NVIDIA A800 80GB PCIe          Off | 00000000:41:00.0 Off |                  Off |
+| N/A   53C    P0              77W / 300W |      4MiB / 81920MiB |      0%      Default |
+|                                         |                      |             Disabled |
++-----------------------------------------+----------------------+----------------------+
+                                                                                         
++---------------------------------------------------------------------------------------+
+| Processes:                                                                            |
+|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |
+|        ID   ID                                                             Usage      |
+|=======================================================================================|
+|  No running processes found                                                           |
++---------------------------------------------------------------------------------------+
+
+mode: CH3CN   w2_indices: nan   lam: nan
+n: 12   dim: 1   alpha: 1000.0
+flow_type: RNVP
+flow_depth: 16   mlp_width: 256   mlp_depth: 2
+mc_therm: 20   mc_steps: 200   mc_stddev: 0.2
+batch: 65536   acc_steps: 8   num_devices: 1
+mc_therm: 20   mc_steps: 200   mc_stddev: 0.2
+
+========== Initialize Hamiltonian ==========
+Harmonic oscillator:
+    mode: CH3CN, n: 12, dim: 1
+w0, harmonic constants: 12
+k30, non-zero terms: 108
+k40, non-zero terms: 191
+
+========== Initialize orbitals ==========
+Total number of orbitals: 1
+Energy of non-interacting system:
+    0, E: 9905.50, level: ZPE
+
+========== Initialize flow model & logpsi_wavefunction ==========
+RNVP:    depth: 16 ,  mlp hidden layers: 256, 2
+    parameters in the flow model: 1204620
+
+========== Check point ==========
+Number of GPU devices: 1
+x.shape: (1, 65536, 12, 1)
+
+========== Energy levels measured ==========
+Calculate these energy levels: (Energies for non-interacting systems)
+    000, E: 9905.500000, level: ZPE
+
+========== Start measuring ==========
+
+================================================================================
+---- thermal step: 1,  ac: 0.6273,  dx: 0.2000,  dt: 11.010 ----
+---- thermal step: 2,  ac: 0.6018,  dx: 0.2200,  dt: 5.428 ----
+---- thermal step: 3,  ac: 0.5665,  dx: 0.2420,  dt: 5.435 ----
+---- thermal step: 4,  ac: 0.5290,  dx: 0.2662,  dt: 5.441 ----
+---- thermal step: 5,  ac: 0.4893,  dx: 0.2928,  dt: 5.452 ----
+---- thermal step: 6,  ac: 0.4892,  dx: 0.2928,  dt: 5.464 ----
+---- thermal step: 7,  ac: 0.4896,  dx: 0.2928,  dt: 5.468 ----
+---- thermal step: 8,  ac: 0.4893,  dx: 0.2928,  dt: 5.477 ----
+---- thermal step: 9,  ac: 0.4893,  dx: 0.2928,  dt: 5.485 ----
+---- thermal step: 10,  ac: 0.4896,  dx: 0.2928,  dt: 5.489 ----
+---- thermal step: 11,  ac: 0.4894,  dx: 0.2928,  dt: 5.494 ----
+---- thermal step: 12,  ac: 0.4896,  dx: 0.2928,  dt: 5.499 ----
+---- thermal step: 13,  ac: 0.4896,  dx: 0.2928,  dt: 5.505 ----
+---- thermal step: 14,  ac: 0.4896,  dx: 0.2928,  dt: 5.506 ----
+---- thermal step: 15,  ac: 0.4898,  dx: 0.2928,  dt: 5.510 ----
+---- thermal step: 16,  ac: 0.4895,  dx: 0.2928,  dt: 5.514 ----
+---- thermal step: 17,  ac: 0.4894,  dx: 0.2928,  dt: 5.516 ----
+---- thermal step: 18,  ac: 0.4895,  dx: 0.2928,  dt: 5.520 ----
+---- thermal step: 19,  ac: 0.4894,  dx: 0.2928,  dt: 5.522 ----
+---- thermal step: 20,  ac: 0.4895,  dx: 0.2928,  dt: 5.526 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 1,  ac: 0.4893,  dx: 0.2928,  dt: 25.187 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 2,  ac: 0.4894,  dx: 0.2928,  dt: 21.287 ----
+---- accept step: 3,  ac: 0.4893,  dx: 0.2928,  dt: 7.144 ----
+---- accept step: 4,  ac: 0.4896,  dx: 0.2928,  dt: 7.161 ----
+---- accept step: 5,  ac: 0.4893,  dx: 0.2928,  dt: 7.169 ----
+---- accept step: 6,  ac: 0.4894,  dx: 0.2928,  dt: 7.185 ----
+---- accept step: 7,  ac: 0.4895,  dx: 0.2928,  dt: 7.201 ----
+/home/ruisiwang/Research_Realm/vibration-gitlab-repo/.venv/lib/python3.11/site-packages/jax/_src/interpreters/mlir.py:917: UserWarning: Some donated buffers were not usable: ShapedArray(float64[65536,12,1]).
+See an explanation at https://jax.readthedocs.io/en/latest/faq.html#buffer-donation.
+  warnings.warn("Some donated buffers were not usable:"
+Computed gradient...
+foriloop version...
+Computed laplacian...
+grad.shape: (65536, 12, 1)
+laplacian.shape: (65536,)
+---- accept step: 8,  ac: 0.4894,  dx: 0.2928,  dt: 25.680 ----
+state: 0 [0 0 0 0 0 0 0 0 0 0 0 0] ZPE
+         E: 9837.421722 (0.028339)  K: 4889.023710 (3.229364)  V: 4948.398012 (3.232230)
+         ac: 0.4894  dt: 225.555
+
