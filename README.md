@@ -7,9 +7,9 @@
 - [Excited states RNVP $\{16, 128, 2\}$](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/NDCO/NDCO64_get_full_16_128_2.txt)
 
 ## CH3CN
-- [Excited states RNVP $\{16, 128, 2\} HO basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/CH3CN/CH3CN_get_full_eq_16_128_2.txt)
-- [Excited states RNVP $\{16, 128, 2\} VSCF basis$](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/CH3CN/CH3CN_vscf.txt)
+- [Excited states RNVP $\{16, 128, 2\}$ HO basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/CH3CN/CH3CN_get_full_eq_16_128_2.txt)
+- [Excited states RNVP $\{16, 128, 2\}$ VSCF basis$](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/CH3CN/CH3CN_vscf.txt)
 
 ## C2H4O
-- [Excited states RNVP $\{16, 128, 2\} HO basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/C2H4O/C2H4O_excited_getenergy.txt)
+- [Excited states RNVP $\{16, 128, 2\}$ HO basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/C2H4O/C2H4O_excited_getenergy.txt)
 
