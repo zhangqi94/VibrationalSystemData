@@ -15,5 +15,4 @@
 ## C2H4O
 - [Training data of neural networks, and raw data of energies](https://github.com/zhangqi94/VibrationalSystemData/tree/main/data/C2H4O)
 - [Excited states RNVP $\{16, 128, 2\}$ HO basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/C2H4O/C2H4O_excited_getenergy.txt)
-- [Excited states RNVP $\{16, 128, 2\}$ VSCF basis]
-(https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/C2H4O/C2H4O_vscf_rnvp_16_128_2.txt)
+- [Excited states RNVP $\{16, 128, 2\}$ VSCF basis](https://github.com/zhangqi94/VibrationalSystemData/blob/main/data/C2H4O/C2H4O_vscf_rnvp_16_128_2.txt)
